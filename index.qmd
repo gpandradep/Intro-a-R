@@ -1,0 +1,28 @@
+---
+title: "Introducción a R y RStudio"
+author: 
+ - name: "Gabriel Andrade Ponce"
+   url: https://gpandradep.github.io/gpandradep/ 
+   affiliation: Posgrado, Instituto de Ecología A.C.
+date: last-modified
+listing:
+  contents: posts
+  sort: "title"
+  type: table
+  fields: [image, title]
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+lang: es
+---
+
+# Bienvendos 🤓
+
+Hola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.
+
+![](RUNR.jpg){fig-align="center" width="470"}
+
+Nota: [Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link \[`r icons::fontawesome("link")`\]](https://gpandradep.github.io/Intro_est_inecol_website/)
+
+# Talleres 👨‍💻👩‍💻

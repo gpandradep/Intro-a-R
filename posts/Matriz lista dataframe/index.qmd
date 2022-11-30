@@ -1,0 +1,6 @@
+---
+title: "4. Matrices, listas y dataframes"
+description: "La diferencia entre matrices, listas y dataframes. Cómo extraer y modificar"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-24"
+---

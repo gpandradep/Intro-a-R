@@ -1,0 +1,6 @@
+---
+title: "8. Modo tidyverse"
+description: "Paquetes y filosofia tidyverse"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-28"
+---

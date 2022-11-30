@@ -1,0 +1,6 @@
+---
+title: "5. Carga tus datos"
+description: "Ya tengo mis datos, pero ¿Cómo los subo a R?"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-25"
+---

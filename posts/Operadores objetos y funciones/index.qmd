@@ -1,0 +1,6 @@
+---
+title: "3. Objetos, operadores y funciones"
+description: "Lo básico de R, tipos de objetos, operadores y funciones"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-23"
+---

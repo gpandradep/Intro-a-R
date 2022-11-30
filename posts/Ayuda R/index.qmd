@@ -1,0 +1,6 @@
+---
+title: "7. Errores en R y donde solucionarlos"
+description: "Ayuda, Warnings, Errores y donde solucionarlos"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-27"
+---

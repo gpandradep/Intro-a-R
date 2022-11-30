@@ -1,0 +1,6 @@
+---
+title: "6. Gráficos básicos en R"
+description: "Generar y guardar mis gráficos en R"
+author: "Gabriel Andrade Ponce"
+date: "2022-11-26"
+---
