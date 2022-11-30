@@ -55,5 +55,4 @@ rsconnect/
 /Data/
 /Proyectos/
 .profile.jpg
-.imagenes.pptx
-.~imagenes.pptx
+*.pptx

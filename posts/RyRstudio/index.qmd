@@ -72,7 +72,7 @@ En parte es para lo que fue creado R. Por base tiene la capacidad de ajustar una
 
 La capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarrte por páginas como https://r-graph-gallery.com/index.htmlRgraph o https://r-charts.com/ para ver muchísimos ejemplos y tips
 
-![](grficos.gif)
+![](https://blog.revolutionanalytics.com/downloads/datasaurus.gif)
 
 ## Documentos
 
