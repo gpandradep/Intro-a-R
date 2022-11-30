@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introducción a R y RStudio",
+    "section": "",
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [ ]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n \n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n \n\n\n\n4. Matrices, listas y dataframes\n\n\n\n\n\n \n\n\n\n5. Carga tus datos\n\n\n\n\n\n \n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n \n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n \n\n\n\n8. Modo tidyverse\n\n\n\n\n\n \n\n\n\n9. Documentos desde R\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/Instalar R y Rstudio/index.html",
+    "href": "posts/Instalar R y Rstudio/index.html",
+    "title": "1. Instalar R y RStudio",
+    "section": "",
+    "text": "Para instalar R lo primero que tienes que hacer es dirigerte a la página https://www.r-project.org/. Una vez allí solo tienes que dar click en download R. Una vez den click en downlad, llegarán a una página con todos los mirrors para descargar R. Pueden cualquiera esté mas cerca de su lozalización.\nLlegarán a otra página en donde les darán a escoger el instalador dependiendo de su sistema operativo: Linuz, Mac o Windows. En mi caso, yo trabajo con Windows (creo que la mayoría también), entonces seguimos a otra página con las posibles instalaciones de R. Nosotros instalaremos el base. Finalmente, estaremos en la página donde podremos dar click en Download R-4.2.2. La versión puede cambiar dependiendo de la fecha, entonces los números puede variar dependiendo de cuando sigan este tutorial.\nGuarden el instalador en donde ustedes consideren.\n\n\n\nTodo el procedimiento descargar R\n\n\n\nSi ya tienes R instalado, volverlo a descargar implica actualizarlo. Ten en cuenta que al actualizar R, tendrás que re-instalar toda la paquetería (ya veremos que son los paquetes de R)\n\n\n\n\nVamos a abrir el instalador que descargaron. Simplemente abrimos el archivo y seguimos todas las instrucciones tal cual. Si todo sale bien, R empezará a instalarse y solo debemos esperar y darle finalizar.\n\n\n\nInstalador de R\n\n\nUna vez R este instalado, tendrán en el escritorio o el inicio un icono como este:\n\n\n\nLogo de R\n\n\ncon un título como R x 64 4.x.x (los x cambián depeniendo de la versión instalada).\nAl abrirlo, tendremos una ventana que tiene una subventana con el nombre de Console. Pueden también poner archivo, nuevo script y tendrán otra ventana de script. En la consola podemos escribir y ejecutar código, pero sin guardarlo. En la ventana de script podemos escribir código y guardarlo, pero todo lo que ejecutemos se verá solo en la consola.\n\nLa verdad es que R como tal no es muy amigable de buenas a primeras. De hecho, yo nunca uso el R base. Por este motivo, vamos a instalar una interfaz de usuario más amigable llamada RStudio."
+  },
+  {
+    "objectID": "posts/Instalar R y Rstudio/index.html#descargar-rstudio",
+    "href": "posts/Instalar R y Rstudio/index.html#descargar-rstudio",
+    "title": "1. Instalar R y RStudio",
+    "section": "Descargar RStudio",
+    "text": "Descargar RStudio\nPara descargar RStudio tenemos que ir a la página de https://posit.co/ (posit es la empresa). Le damos a Download RStudio y luego en RStudio Desktop (el free). Llegaremos a una página donde nos dice que el primer paso es instalar R, ya que RStudio es solo una interfaz, este no funciona sin tener instalado R. Como ya instalamos R, vamos ir al paso dos que es instalar RStudio desktop. Nota: aunque dice “for mac” descarga el .exe de windows. Guardamos el instalador y listo.\n\n\n\nDescargar RStudio"
+  },
+  {
+    "objectID": "posts/Instalar R y Rstudio/index.html#instalar-rstudio-1",
+    "href": "posts/Instalar R y Rstudio/index.html#instalar-rstudio-1",
+    "title": "1. Instalar R y RStudio",
+    "section": "Instalar RStudio",
+    "text": "Instalar RStudio\nAl abrir el instalador simplemente seguimos las instrucciones. El único paso importante es donde le decimos donde esta instalado R, pero si seguimos por default la instalación de R no tenemos que cambiar ningúna dirección.\n\nFinalmente, se instalará y te generará un icono como este\n\n\n\nRstudio logo\n\n\nAl abrir RStudio tendremos algo así:\n\n\n\nRStudio\n\n\nTenemos nuestra consola, donde se ejecutan los procesos, los scripts donde vamos desarrollando el código, pero además tenemos un ambiente: donde se guardan todos los objetos que vamos creando. También tenemos otra pestaña con los archivos, los gráficos que se generan, los paquetes entre otas cosas.\nCréanme RStudio facilita mucho la vida a quienes no somos programadores, ayuda a completar funciones, objetos, pero además tienen muchas extensiones qué expanden las capacidades de R. Es por eso que les recomiendo trabajen siempre desde RStudio, no se van a arrepentir 😉.\n\n\n\nIllustrating having funR: Artwork by ’@’allison_horst"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html",
+    "href": "posts/RyRstudio/index.html",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "",
+    "text": "En pocas palabras R es un lenguaje y un ambiente creado para realizar operaciones estadísticas y gráficas. En un principio R se derivó de otro lenguaje, S. El lenguaje S fue un proyecto que inició en 1976 de la mano de John Chambers y que maduró hasta 1998. La idea de S era generar una interfaz que facilitara el análisis de datos a los programadores, pero paulatinamente también a un público menos especializado. Es decir, querían crear algo que nos permitiera escribir un código sin sentirnos programadores.\nEl problema con S es que tenias que comprarlo y ya sabemos que en nuestros países preferimos invertir el dinero en cosas más importantes, como comida. En 1991 Ross Ihaka y Robert Gentleman se basaron en S, para crear R (Ihaka and Gentleman 1996). Lo crucial respecto a R es que fue creado como un software libre, es decir que además de ser gratuito, su código es abierto. Ésto último quiere decir que cualquiera puede ver cómo funciona por dentro y modificarlo. De hecho, R se beneficia de que miles de personas crean herramientas destinadas para muchísimos fines.\nR en sí es joven ya que la primera versión se lanzó al público en el 2000 y ahora es manejado por el R core Team (R Core Team 2017).\n\n\n\nCronología de R"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#los-proyectos-de-rstudio",
+    "href": "posts/RyRstudio/index.html#los-proyectos-de-rstudio",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Los proyectos de RStudio",
+    "text": "Los proyectos de RStudio\nEntre otras cosas RStudio permite un esquema de trabajo en proyectos. Cuando empecemos a trabajar con R se darán cuenta que debemos especificar la ruta (dirección de la carpeta) donde estarán los archivos que usaremos. Para ello, cada vez que iniciamos R debemos especificar la dirección. Al crear proyectos con RStudio el IDE automaticamente selecciona la carpeta del proyecto como directiorio de trabajo. Tiene otras ventajas, pero esta es la que más nos compete en este nivel.\nPara crear el proyecto hay que abrir RStudio, ir a archivo (file) y crear un nuevo proyecto (new Project). Se abrirá una nueva ventana con tres opciones: Nueva carpeta, carpeta existente y versión de control (este último e spar github). Por ahora centrémonos en las dos primeros. La principal diferencia es que en una se crea una nueva carpeta y en la segunda se selecciona una carpeta previamente existente. Como verán hay muchos tipos de proyectos, pero por ahora solo nos interesa un proyecto de R simple. Luego veremos que nos pide que le demos un nombre y verifiquemos la carpeta en la cual se creará.\n\n\n\nCrear un proyecto\n\n\nPara abrir el proyecto simplemente nos vamos a la carpeta que escogimos y abrimos el archivo .Rproj. Este archivo automáticamente abre RStudio. Para verificar que estamos dentro de un proyecto podemos observar en la parte superior derecha del RStudio, donde estará el nombre de nuestro proyecto.\n\n\n\nabrir el proyecto"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#manejo-de-datos",
+    "href": "posts/RyRstudio/index.html#manejo-de-datos",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Manejo de datos",
+    "text": "Manejo de datos\nProcesar, transformar y explorar tus datos. Una habilidad que nos ahorrará mucho tiempo y dolor de cabeza. Con R puedes transformar tus datos como tu quieras, siempre y cuando sepas cómo. Esto es importante, porque ciertos análisis requieren una estructura de datos particular.\n\n\n\nhttps://bookdown.org/content/3515/tidydata.html"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#estadística",
+    "href": "posts/RyRstudio/index.html#estadística",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Estadística",
+    "text": "Estadística\nEn parte es para lo que fue creado R. Por base tiene la capacidad de ajustar una buena variedad de modelos, pero es la comunidad la que se ha encargado de agregar a R una gama bastante amplia de modelos . Puedes encontrar hoy en día modelos estadísticos para temas ecológicos, de bioinformatica, filogenia, biología molecular, morfometría etc. Solo basta con saber buscar.\n\n\n\nhttps://lakens.github.io/statistical_inferences"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#gráficas",
+    "href": "posts/RyRstudio/index.html#gráficas",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Gráficas",
+    "text": "Gráficas\nLa capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarrte por páginas como https://r-graph-gallery.com/index.htmlRgraph o https://r-charts.com/ para ver muchísimos ejemplos y tips"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#documentos",
+    "href": "posts/RyRstudio/index.html#documentos",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Documentos",
+    "text": "Documentos\nCon la inclusión de Rmakrwon y Quarto se pude generar documentos de html, pdf y word desde R. Incluso las nuevas versionesqu de RStudio cuentan con un modo visual para facilitar la escritura de documentos\n\n\n\nhttps://yihui.org/en/2022/04/quarto-r-markdown/"
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#páginas-web",
+    "href": "posts/RyRstudio/index.html#páginas-web",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Páginas web",
+    "text": "Páginas web\nBasta con que te diga que esta página web esta construida con RStudio, usando Quarto blogs."
+  },
+  {
+    "objectID": "posts/RyRstudio/index.html#aplicaciones",
+    "href": "posts/RyRstudio/index.html#aplicaciones",
+    "title": "2. ¿Qué son R y Rstudio?",
+    "section": "Aplicaciones",
+    "text": "Aplicaciones\nTambién puedes crear aplicaciones e interfaz de usuario para explorar datos o facilitar la vida. Por ejemplo, es muy común que la gente que le gusta pokemon cree aplicaciones para evaluar las estadísticas de los pokemones: https://dgranjon.shinyapps.io/shinyMons/_w_74175819/"
+  }
+]

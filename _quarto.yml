@@ -1,7 +1,12 @@
 project:
   type: website
+  output-dir: docs
 
 website:
+  page-footer:
+    right: "Página construida con [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2022, Gabriel Andrade-Ponce"
+    background: "#D9E3E4"
 
   navbar:
     left: 

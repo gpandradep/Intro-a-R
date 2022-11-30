@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gabriel Andrade Ponce">
+<meta name="dcterms.date" content="2022-11-21">
+<meta name="description" content="Aprende el procedimiento para instalar R y su interfaz RStudio">
+
+<title>1. Instalar R y RStudio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Inicio</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/gpandradep"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/Gatorco_AP"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://gpandradep.github.io/gpandradep/"><i class="bi bi-globe" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">1. Instalar R y RStudio</h1>
+                  <div>
+        <div class="description">
+          Aprende el procedimiento para instalar R y su interfaz RStudio
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Gabriel Andrade Ponce </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 21, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instalar-r" id="toc-instalar-r" class="nav-link active" data-scroll-target="#instalar-r">Instalar R</a>
+  <ul class="collapse">
+  <li><a href="#descarga-de-r" id="toc-descarga-de-r" class="nav-link" data-scroll-target="#descarga-de-r">Descarga de R</a></li>
+  <li><a href="#instalar-r-1" id="toc-instalar-r-1" class="nav-link" data-scroll-target="#instalar-r-1">Instalar R</a></li>
+  </ul></li>
+  <li><a href="#instalar-rstudio" id="toc-instalar-rstudio" class="nav-link" data-scroll-target="#instalar-rstudio">Instalar RStudio</a>
+  <ul class="collapse">
+  <li><a href="#descargar-rstudio" id="toc-descargar-rstudio" class="nav-link" data-scroll-target="#descargar-rstudio">Descargar RStudio</a></li>
+  <li><a href="#instalar-rstudio-1" id="toc-instalar-rstudio-1" class="nav-link" data-scroll-target="#instalar-rstudio-1">Instalar RStudio</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="instalar-r" class="level1">
+<h1>Instalar R</h1>
+<section id="descarga-de-r" class="level2">
+<h2 class="anchored" data-anchor-id="descarga-de-r">Descarga de R</h2>
+<p>Para instalar R lo primero que tienes que hacer es dirigerte a la página <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>. Una vez allí solo tienes que dar click en <strong><em>download R.</em></strong> Una vez den click en downlad, llegarán a una página con todos los mirrors para descargar R. Pueden cualquiera esté mas cerca de su lozalización.</p>
+<p>Llegarán a otra página en donde les darán a escoger el instalador dependiendo de su sistema operativo: Linuz, Mac o Windows. En mi caso, yo trabajo con Windows (creo que la mayoría también), entonces seguimos a otra página con las posibles instalaciones de R. Nosotros instalaremos el <strong>base</strong>. Finalmente, estaremos en la página donde podremos dar click en Download R-4.2.2. La versión puede cambiar dependiendo de la fecha, entonces los números puede variar dependiendo de cuando sigan este tutorial.</p>
+<p>Guarden el instalador en donde ustedes consideren.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Uno.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Todo el procedimiento descargar R</figcaption><p></p>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Si ya tienes R instalado, volverlo a descargar implica actualizarlo. Ten en cuenta que al actualizar R, tendrás que re-instalar toda la paquetería (ya veremos que son los paquetes de R)</p>
+</blockquote>
+</section>
+<section id="instalar-r-1" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-r-1">Instalar R</h2>
+<p>Vamos a abrir el instalador que descargaron. Simplemente abrimos el archivo y seguimos todas las instrucciones tal cual. Si todo sale bien, R empezará a instalarse y solo debemos esperar y darle finalizar.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dos.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Instalador de R</figcaption><p></p>
+</figure>
+</div>
+<p>Una vez R este instalado, tendrán en el escritorio o el inicio un icono como este:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.r-project.org/logo/Rlogo.png" class="img-fluid figure-img" width="113"></p>
+<p></p><figcaption class="figure-caption">Logo de R</figcaption><p></p>
+</figure>
+</div>
+<p>con un título como <code>R x 64 4.x.x</code> (los x cambián depeniendo de la versión instalada).</p>
+<p>Al abrirlo, tendremos una ventana que tiene una subventana con el nombre de Console. Pueden también poner archivo, nuevo script y tendrán otra ventana de script. En la consola podemos escribir y ejecutar código, pero sin guardarlo. En la ventana de script podemos escribir código y guardarlo, pero todo lo que ejecutemos se verá solo en la consola.</p>
+<p><img src="tres.png" class="img-fluid"></p>
+<p>La verdad es que R como tal no es muy amigable de buenas a primeras. De hecho, yo nunca uso el R base. Por este motivo, vamos a instalar una interfaz de usuario más amigable llamada <strong>RStudio.</strong></p>
+</section>
+</section>
+<section id="instalar-rstudio" class="level1">
+<h1>Instalar RStudio</h1>
+<section id="descargar-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-rstudio">Descargar RStudio</h2>
+<p>Para descargar RStudio tenemos que ir a la página de <a href="https://posit.co/" class="uri">https://posit.co/</a> (posit es la empresa). Le damos a Download RStudio y luego en RStudio Desktop (el free). Llegaremos a una página donde nos dice que el primer paso es instalar R, ya que RStudio es solo una interfaz, este no funciona sin tener instalado R. Como ya instalamos R, vamos ir al paso dos que es instalar RStudio desktop. <em>Nota: aunque dice “for mac” descarga el .exe de windows</em>. Guardamos el instalador y listo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cuatro.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Descargar RStudio</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="instalar-rstudio-1" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-rstudio-1">Instalar RStudio</h2>
+<p>Al abrir el instalador simplemente seguimos las instrucciones. El único paso importante es donde le decimos donde esta instalado R, pero si seguimos por default la instalación de R no tenemos que cambiar ningúna dirección.</p>
+<p><img src="cinco.gif" class="img-fluid"></p>
+<p>Finalmente, se instalará y te generará un icono como este</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://d33wubrfki0l68.cloudfront.net/1ac3f0e3753f18c7e2a8893957d1841fba1e3d08/48a33/wp-content/uploads/2018/10/rstudio-logo-flat.png" class="img-fluid figure-img" width="218"></p>
+<p></p><figcaption class="figure-caption">Rstudio logo</figcaption><p></p>
+</figure>
+</div>
+<p>Al abrir RStudio tendremos algo así:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="seis.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">RStudio</figcaption><p></p>
+</figure>
+</div>
+<p>Tenemos nuestra consola, donde se ejecutan los procesos, los scripts donde vamos desarrollando el código, pero además tenemos un ambiente: donde se guardan todos los objetos que vamos creando. También tenemos otra pestaña con los archivos, los gráficos que se generan, los paquetes entre otas cosas.</p>
+<p>Créanme RStudio facilita mucho la vida a quienes no somos programadores, ayuda a completar funciones, objetos, pero además tienen muchas extensiones qué expanden las capacidades de R. Es por eso que les recomiendo trabajen siempre desde RStudio, no se van a arrepentir 😉.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://bookdown.org/tiagoandremarques/ecomodbook/extfiles/r_first_then.png" class="img-fluid figure-img" width="442"></p>
+<p></p><figcaption class="figure-caption">Illustrating having funR: Artwork by ’@’allison_horst</figcaption><p></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2022, Gabriel Andrade-Ponce</div>   
+    <div class="nav-footer-right">Página construida con <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
