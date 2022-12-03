@@ -1,6 +1,8 @@
 ---
-title: "4. Matrices, listas y dataframes"
-description: "La diferencia entre matrices, listas y dataframes. Cómo extraer y modificar"
+title: "4. Vectores, Matrices, listas y dataframes"
+description: "Objetos más complejos, distinguirlos y extraer información"
 author: "Gabriel Andrade Ponce"
 date: "2022-11-24"
 ---
+
+# Vectores

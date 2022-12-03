@@ -50,7 +50,7 @@ rsconnect/
 
 /.quarto/
 /_site/
-
+#/posts/
 /img/
 /Data/
 /Proyectos/

@@ -23,6 +23,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -142,7 +205,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#manos-a-la-obra" id="toc-manos-a-la-obra" class="nav-link active" data-scroll-target="#manos-a-la-obra">Manos a la obra</a></li>
+  <li><a href="#ejecutar-comandos" id="toc-ejecutar-comandos" class="nav-link" data-scroll-target="#ejecutar-comandos">Ejecutar comandos</a></li>
+  <li><a href="#crear-objetos" id="toc-crear-objetos" class="nav-link" data-scroll-target="#crear-objetos">Crear objetos</a></li>
+  <li><a href="#tipos-de-objetos" id="toc-tipos-de-objetos" class="nav-link" data-scroll-target="#tipos-de-objetos">Tipos de objetos</a>
+  <ul class="collapse">
+  <li><a href="#numericos" id="toc-numericos" class="nav-link" data-scroll-target="#numericos">Numericos</a></li>
+  <li><a href="#caracteres" id="toc-caracteres" class="nav-link" data-scroll-target="#caracteres">Caracteres</a></li>
+  <li><a href="#lógicos" id="toc-lógicos" class="nav-link" data-scroll-target="#lógicos">Lógicos</a></li>
+  <li><a href="#valores-faltantes" id="toc-valores-faltantes" class="nav-link" data-scroll-target="#valores-faltantes">Valores faltantes</a></li>
+  </ul></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a>
+  <ul class="collapse">
+  <li><a href="#funciones-de-externas-a-base-r" id="toc-funciones-de-externas-a-base-r" class="nav-link" data-scroll-target="#funciones-de-externas-a-base-r">Funciones de externas a base R</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -150,8 +232,292 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="manos-a-la-obra" class="level1">
+<h1>Manos a la obra</h1>
+<p>Lo primero es abrir RStudio y crear un nuevo R script.</p>
+</section>
+<section id="ejecutar-comandos" class="level1">
+<h1>Ejecutar comandos</h1>
+<p>R básicamente funciona dándole ordenes escritas por medio de comandaos o expresiones. Un comando de R puede ser la suma de <code>2 +2</code>, pero si lo tecleamos en nuestro script probablemente no suceda mucho. Para decirle a R que evalué el comando es necesario “<em>ejecutarlo</em>”. Para ejecutar una linea basta con poner el cursor sobre la misma y clickear el botón “run” o usar las teclas Ctrl + Enter. Si queremos ejecutar una linea específica, tenemos que seleccionar la operación que queremos ejecutar.</p>
+<p>Vamos a comenzar con algo sencillo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Cuando ejecutan esta linea verán que en la consola aparecerá el resultado. En este caso R nos dice que la evaluación del comando es un objeto que contiene el número 4. Recuerden que R funciona con objetos.</p>
+<p>También podemos usar paréntesis para agrupar operaciones</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">50</span><span class="sc">+</span><span class="dv">9</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.833333</code></pre>
+</div>
+</div>
+<p>En R a veces queremos escribir notas o “comentar” nuestro código para recordar que hace. Si escribimos normalmente en un script o en la consola, probablemente tendrémos un error, porque R no entenderá todo la palabrería.</p>
+<p>En esos casos usamos el numeral o gato (para los mexicanos) <code>#</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Esto no lo ejecuta R porque tiene un # al inicio</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># objeto &lt;- 23, esto tampoco funcionará</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="co"># este es un número y su se ejecuta porque el númeral esta despues del objeto, o función</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section id="crear-objetos" class="level1">
+<h1>Crear objetos</h1>
+<p>Como verán estos objetos se reflejan en la consola, pero a medida que corremos más lineas se van perdiendo. La mayoría del tiempo vamos a asignar nuestras operaciones a un objeto que queremos conservar. En R definimos un objeto mediante <code>&lt;-</code> (Alt + “-”), por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>numerote <span class="ot">&lt;-</span> <span class="dv">56</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Creé dos objetos que contienen cada uno un número. Estos números quedaron almacenados en los objetos, pero para verlos necesitaremos llamar a dichos objetos. Entonces si yo ejecuto la linea de numerote, que número saldrá?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numerote</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56</code></pre>
+</div>
+</div>
+<p>Tu puedes poner el nombre del objeto que quieras, pero hay que tener cuidado. R tiene su propia ortografía y es sensible a las mayúsculas. Por ejemplo, si escribes <code>Numerote</code> y lo ejecutas, tendrás un error. Otra cosa que jamás se recomienda en R es el uso de acentos para crear objetos (ni para carpetas o columnas dentro de databases), ya que dependiendo de la codificación podrás tener errores. Además, los nombres no deben iniciar con un número o contener operadores cómo: espacio , + - * / # % [ ] { } ( ) ~. Por último, debes evitar nombrar tus objetos como otras funciones comunes de R como <code>mean</code> .</p>
+<p>Se recomienda que los nombres de los objetos sean informativos de lo que contienen y en algunos casos objetos con nombres granes, se pueden usar algunos caracteres o gramática</p>
+<p><img src="https://i.redd.it/lpeksn1rfqj81.jpg" class="img-fluid" width="619"></p>
+<p>Finalmente, hay que tener cuidado cuando se repiten los nombres de los objetos ya que se re-escribirán. Por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>numerote</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>numerote <span class="ot">&lt;-</span> <span class="st">"ciencuentayseis"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>numerote <span class="co"># Ya no es un número</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ciencuentayseis"</code></pre>
+</div>
+</div>
+</section>
+<section id="tipos-de-objetos" class="level1">
+<h1>Tipos de objetos</h1>
+<p>En R hay distintos tipos de objetos</p>
+<section id="numericos" class="level2">
+<h2 class="anchored" data-anchor-id="numericos">Numericos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Numericos (pueden se enteros o continuos)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>numero_1 <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>numero_2 <span class="ot">&lt;-</span> <span class="fl">27.5</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Los objetos numericos permiten hacer operaciones</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>(suma <span class="ot">&lt;-</span> numero_1<span class="sc">+</span>numero_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 52.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(resta <span class="ot">&lt;-</span> suma <span class="sc">-</span> numero_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(producto <span class="ot">&lt;-</span> suma<span class="sc">*</span>resta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1312.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(etc <span class="ot">&lt;-</span> ((producto<span class="sc">/</span>suma)<span class="sc">+</span> resta)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2500</code></pre>
+</div>
+</div>
+<table class="table">
+<caption>Operadores aritméticos</caption>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Operación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Suma</td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>Resta</td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Multiplicación</td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>División</td>
+</tr>
+<tr class="odd">
+<td><code>^</code></td>
+<td>Potencia</td>
+</tr>
+</tbody>
+</table>
+<p>Pero también se pueden usar operadores relacionales, en este caso tendremos como resultado un objeto lógico</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="sc">&lt;</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span><span class="sc">&gt;=</span><span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="dv">50</span><span class="sc">==</span><span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<table class="table">
+<caption>Operadores relacionales</caption>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Operación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>Menor que</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>Menor o igual que</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>Mayor que</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>Mayor o igual que</td>
+</tr>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Igual que</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>Diferente de</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="caracteres" class="level2">
+<h2 class="anchored" data-anchor-id="caracteres">Caracteres</h2>
+<p>Como su nombre lo indica son nombres o palabras . Los caracteres siempre estarán delimitados por comillas <code>"xx"</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(carac_1 <span class="ot">&lt;-</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>(carac_2 <span class="ot">&lt;-</span> <span class="st">"me gusta la estadística.com"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "me gusta la estadística.com"</code></pre>
+</div>
+</div>
+<p>¿Que pasa cuando hacemos esto?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>numero_ment <span class="ot">&lt;-</span> <span class="st">"69"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Está de más decir que con los caracteres no se pueden hacer operaciones aritméticas. Aun así se pueden usar operadores relacionales con los caracteres.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="st">"a"</span><span class="sc">&lt;</span> <span class="st">"b"</span> <span class="co"># En este caso R usa el orden alfabético para decidir.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a> <span class="st">"hola"</span><span class="sc">==</span> <span class="st">"Que onda"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="st">"23"</span><span class="sc">!=</span> <span class="st">"veintitres"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="lógicos" class="level2">
+<h2 class="anchored" data-anchor-id="lógicos">Lógicos</h2>
+<p>Los objetos de tipo lógico pueden ser o de verdadero (<code>TRUE</code>) o falso (<code>FALSE</code>). Básicamente representan cuando una condición se cumple o no</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos crear un objeto que dentro tenga un valor lógico</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>(logic <span class="ot">&lt;-</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Son más útiles para operadores relacionale so booleanos</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>numero_1<span class="sc">&lt;</span> numero_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Por ejemplo el operador condicional, donde si una condición es verdadera, entonces es igual a verdadero</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span><span class="sc">|</span><span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="valores-faltantes" class="level2">
+<h2 class="anchored" data-anchor-id="valores-faltantes">Valores faltantes</h2>
+<p>Hay un tipo de valor en R que especifica que dicha observación o valor no existe o es perdido. Cabe aclarar que NA es diferente de 0: un 0 indica por ejemplo que si fuimos a contar ranas en cierto estanque no había ninguna, pero un NA quiere decir que nunca se fue a contar ranas a ese estanque. En R, un NA se reconoce como un objeto tipo lógico.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>(no_hay <span class="ot">&lt;-</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="funciones" class="level1">
+<h1>Funciones</h1>
+<p>Las funciones son operaciones prediseñadas para cumplir cierto objetivo. Todas las unciones en R tienen esta estructura <code>nombrefuncion(objeto)</code>.</p>
+<p>Por ejemplo, esta función nos dejará saber de que tipo es un objeto. Esto es muy importante porque muchos errores suceden en R porque se ingresa un tipo de objeto no aceptado por la función u operador.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero_ment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(no_hay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+<p>Cada función recibirá un tipo especial de objeto o argumento. Una función que nos ayudará a tener más información sobre esto es <code>help</code>. Esta función nos mostrará la ayuda de R para.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="funciones-de-externas-a-base-r" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-de-externas-a-base-r">Funciones de externas a base R</h2>
+<p>Hay muchas funciones que vienen por defecto en R. Sin embargo, gran parte de las funciones son creadas por la comunidad y vienen en <code>paquetes</code>. Para usar este tipo de funciones debemos primero instalar un paquete, luego llamarlo y ahí si ejecutar su función. Si no llamamos el paquete R nos dirá que hay un error porque no encuentra dicha función.</p>
+<p>Primero instalemos un paquete mediante la función <code>install.packages</code>, adentro de la función le diremos el nombre del paquete entre comillas. Recuerden que para instalar un paquete necesitamos conexión a Internet.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"beepr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora vamos a llamar al paquete con la función <code>library</code>. Note que en este caso ya no necesitamos poner el paquete entre comillas</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(beepr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finalmente, usaremos una función que viene con el paquete beepr</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">beep</span>(<span class="at">sound =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Existen una cantidad inmensa de paquetes en R, la mayoría se encuentran en un repositorio llamado CRAN. Creo que la mejor manera de encontrar el paquete que buscas es por medio de san google. Supongamos que queremos buscar algún paquete que calcule índices de diversidad : <em>package for shannon index in R.</em> Probablemente aparezca <code>vegan</code>, entonces es solo cuestión de instalarlo y claro aprender a usarlo.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

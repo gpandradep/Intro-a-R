@@ -22,6 +22,8 @@ website:
 format:
   html:
     theme: Lumen
+    mainfont: "Palatino Linotype"
+    fontsize: 1.5em
     css: styles.css
     toc: true
 

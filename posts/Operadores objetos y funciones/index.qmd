@@ -4,3 +4,207 @@ description: "Lo básico de R, tipos de objetos, operadores y funciones"
 author: "Gabriel Andrade Ponce"
 date: "2022-11-23"
 ---
+
+# Manos a la obra
+
+Lo primero es abrir RStudio y crear un nuevo R script.
+
+# Ejecutar comandos
+
+R básicamente funciona dándole ordenes escritas por medio de comandaos o expresiones. Un comando de R puede ser la suma de `2 +2`, pero si lo tecleamos en nuestro script probablemente no suceda mucho. Para decirle a R que evalué el comando es necesario "*ejecutarlo*". Para ejecutar una linea basta con poner el cursor sobre la misma y clickear el botón "run" o usar las teclas Ctrl + Enter. Si queremos ejecutar una linea específica, tenemos que seleccionar la operación que queremos ejecutar.
+
+Vamos a comenzar con algo sencillo:
+
+```{r}
+2+2
+```
+
+Cuando ejecutan esta linea verán que en la consola aparecerá el resultado. En este caso R nos dice que la evaluación del comando es un objeto que contiene el número 4. Recuerden que R funciona con objetos.
+
+También podemos usar paréntesis para agrupar operaciones
+
+```{r}
+(50+9)/(2*3)
+```
+
+En R a veces queremos escribir notas o "comentar" nuestro código para recordar que hace. Si escribimos normalmente en un script o en la consola, probablemente tendrémos un error, porque R no entenderá todo la palabrería.
+
+En esos casos usamos el numeral o gato (para los mexicanos) `#`
+
+```{r}
+# Esto no lo ejecuta R porque tiene un # al inicio
+# objeto <- 23, esto tampoco funcionará
+2 # este es un número y su se ejecuta porque el númeral esta despues del objeto, o función
+```
+
+# Crear objetos
+
+Como verán estos objetos se reflejan en la consola, pero a medida que corremos más lineas se van perdiendo. La mayoría del tiempo vamos a asignar nuestras operaciones a un objeto que queremos conservar. En R definimos un objeto mediante `<-` (Alt + "-"), por ejemplo:
+
+```{r}
+numero <- 2
+numerote <- 56
+```
+
+Creé dos objetos que contienen cada uno un número. Estos números quedaron almacenados en los objetos, pero para verlos necesitaremos llamar a dichos objetos. Entonces si yo ejecuto la linea de numerote, que número saldrá?
+
+```{r}
+numerote
+```
+
+Tu puedes poner el nombre del objeto que quieras, pero hay que tener cuidado. R tiene su propia ortografía y es sensible a las mayúsculas. Por ejemplo, si escribes `Numerote` y lo ejecutas, tendrás un error. Otra cosa que jamás se recomienda en R es el uso de acentos para crear objetos (ni para carpetas o columnas dentro de databases), ya que dependiendo de la codificación podrás tener errores. Además, los nombres no deben iniciar con un número o contener operadores cómo: espacio , + - \* / \# % \[ \] { } ( ) \~. Por último, debes evitar nombrar tus objetos como otras funciones comunes de R como `mean` .
+
+Se recomienda que los nombres de los objetos sean informativos de lo que contienen y en algunos casos objetos con nombres granes, se pueden usar algunos caracteres o gramática
+
+![](https://i.redd.it/lpeksn1rfqj81.jpg){width="619"}
+
+Finalmente, hay que tener cuidado cuando se repiten los nombres de los objetos ya que se re-escribirán. Por ejemplo:
+
+```{r}
+numerote
+numerote <- "ciencuentayseis"
+numerote # Ya no es un número
+```
+
+# Tipos de objetos
+
+En R hay distintos tipos de objetos
+
+## Numericos
+
+```{r}
+#Numericos (pueden se enteros o continuos)
+numero_1 <- 25
+numero_2 <- 27.5
+
+# Los objetos numericos permiten hacer operaciones
+(suma <- numero_1+numero_2)
+(resta <- suma - numero_2)
+(producto <- suma*resta)
+(etc <- ((producto/suma)+ resta)^2)
+
+
+```
+
+| Operador | Operación      |
+|----------|----------------|
+| `+`      | Suma           |
+| `-`      | Resta          |
+| `*`      | Multiplicación |
+| `/`      | División       |
+| `^`      | Potencia       |
+
+: Operadores aritméticos
+
+Pero también se pueden usar operadores relacionales, en este caso tendremos como resultado un objeto lógico
+
+```{r}
+7<3
+30>=50
+50==50
+```
+
+| Operador | Operación         |
+|----------|-------------------|
+| `<`      | Menor que         |
+| `<=`     | Menor o igual que |
+| `>`      | Mayor que         |
+| `>=`     | Mayor o igual que |
+| `==`     | Igual que         |
+| `!=`     | Diferente de      |
+
+: Operadores relacionales
+
+## Caracteres
+
+Como su nombre lo indica son nombres o palabras . Los caracteres siempre estarán delimitados por comillas `"xx"`
+
+```{r}
+(carac_1 <- "a")
+(carac_2 <- "me gusta la estadística.com")
+```
+
+¿Que pasa cuando hacemos esto?
+
+```{r}
+numero_ment <- "69"
+```
+
+Está de más decir que con los caracteres no se pueden hacer operaciones aritméticas. Aun así se pueden usar operadores relacionales con los caracteres.
+
+```{r}
+"a"< "b" # En este caso R usa el orden alfabético para decidir.
+ "hola"== "Que onda"
+ 
+"23"!= "veintitres"
+```
+
+## Lógicos
+
+Los objetos de tipo lógico pueden ser o de verdadero (`TRUE`) o falso (`FALSE`). Básicamente representan cuando una condición se cumple o no
+
+```{r}
+# Podemos crear un objeto que dentro tenga un valor lógico
+(logic <- TRUE)
+
+# Son más útiles para operadores relacionale so booleanos
+
+numero_1< numero_2
+
+# Por ejemplo el operador condicional, donde si una condición es verdadera, entonces es igual a verdadero
+
+TRUE|FALSE
+```
+
+## Valores faltantes
+
+Hay un tipo de valor en R que especifica que dicha observación o valor no existe o es perdido. Cabe aclarar que NA es diferente de 0: un 0 indica por ejemplo que si fuimos a contar ranas en cierto estanque no había ninguna, pero un NA quiere decir que nunca se fue a contar ranas a ese estanque. En R, un NA se reconoce como un objeto tipo lógico.
+
+```{r}
+(no_hay <- NA)
+```
+
+# Funciones
+
+Las funciones son operaciones prediseñadas para cumplir cierto objetivo. Todas las unciones en R tienen esta estructura `nombrefuncion(objeto)`.
+
+Por ejemplo, esta función nos dejará saber de que tipo es un objeto. Esto es muy importante porque muchos errores suceden en R porque se ingresa un tipo de objeto no aceptado por la función u operador.
+
+```{r}
+class(23)
+class(numero_ment)
+class(TRUE)
+class(no_hay)
+```
+
+Cada función recibirá un tipo especial de objeto o argumento. Una función que nos ayudará a tener más información sobre esto es `help`. Esta función nos mostrará la ayuda de R para.
+
+```{r}
+#| eval: false
+help(class)
+```
+
+## Funciones de externas a base R
+
+Hay muchas funciones que vienen por defecto en R. Sin embargo, gran parte de las funciones son creadas por la comunidad y vienen en `paquetes`. Para usar este tipo de funciones debemos primero instalar un paquete, luego llamarlo y ahí si ejecutar su función. Si no llamamos el paquete R nos dirá que hay un error porque no encuentra dicha función.
+
+Primero instalemos un paquete mediante la función `install.packages`, adentro de la función le diremos el nombre del paquete entre comillas. Recuerden que para instalar un paquete necesitamos conexión a Internet.
+
+```{r}
+#| eval: false
+install.packages("beepr")
+```
+
+Ahora vamos a llamar al paquete con la función `library`. Note que en este caso ya no necesitamos poner el paquete entre comillas
+
+```{r}
+library(beepr)
+```
+
+Finalmente, usaremos una función que viene con el paquete beepr
+
+```{r}
+beep(sound = 8)
+```
+
+Existen una cantidad inmensa de paquetes en R, la mayoría se encuentran en un repositorio llamado CRAN. Creo que la mejor manera de encontrar el paquete que buscas es por medio de san google. Supongamos que queremos buscar algún paquete que calcule índices de diversidad : *package for shannon index in R.* Probablemente aparezca `vegan`, entonces es solo cuestión de instalarlo y claro aprender a usarlo.

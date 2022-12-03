@@ -10,7 +10,7 @@ bibliography: references.bib
 
 En pocas palabras R es un lenguaje y un ambiente creado para realizar operaciones estadísticas y gráficas. En un principio R se derivó de otro lenguaje, **S**. El lenguaje S fue un proyecto que inició en 1976 de la mano de John Chambers y que maduró hasta 1998. La idea de **S** era generar una interfaz que facilitara el análisis de datos a los programadores, pero paulatinamente también a un público menos especializado. Es decir, querían crear algo que nos permitiera escribir un código sin sentirnos programadores.
 
-El problema con S es que tenias que comprarlo y ya sabemos que en nuestros países preferimos invertir el dinero en cosas más importantes, como comida. En 1991 **R**oss Ihaka y **R**obert Gentleman se basaron en S, para crear **R** [@ihaka1996]. Lo crucial respecto a R es que fue creado como un software libre, es decir que además de ser gratuito, su código es abierto. Ésto último quiere decir que cualquiera puede ver cómo funciona por dentro y modificarlo. De hecho, R se beneficia de que miles de personas crean herramientas destinadas para muchísimos fines.
+El problema con S es que tenias que comprarlo y ya sabemos que en nuestros países preferimos invertir el dinero en cosas más importantes, como comida 🍔. En 1991 **R**oss Ihaka y **R**obert Gentleman se basaron en S, para crear **R** [@ihaka1996]. Lo crucial respecto a R es que fue creado como un software libre, es decir que además de ser gratuito, su código es abierto. Ésto último quiere decir que cualquiera puede ver cómo funciona por dentro y modificarlo. De hecho, R se beneficia de que miles de personas crean herramientas destinadas para muchísimos fines.
 
 R en sí es joven ya que la primera versión se lanzó al público en el 2000 y ahora es manejado por el *R core Team* [@rcoreteam2017].
 
@@ -18,17 +18,17 @@ R en sí es joven ya que la primera versión se lanzó al público en el 2000 y 
 
 # ¿Qué es RStudio?
 
-Según la wikipedia RStudio es un entorno de desarrollo integrado (IDE), pero básicamente es una interfaz que ayuda a mejorar y potenciar varios aspectos de R (actualmente también de otros lenguajes). Aunque no es el único IDE que existe si es el más popular, probablemente porque su filiosofia encaja muy bien con la de R. Es un software libre que busca ser usado por todo el mundo. RStudio es bastante joven ya que fue lanzado en el 2010. Recientemente (Octubre 2022) Rstudio fue adquirido por posit, aunque no cambia mucho su filosofía, este cambio busca integrar lenguajes como phyton, java y julia a la misma interfaz. Una excelente noticia para los locos del data sicence, pero un leve cambio para nosotros los biólogos mortales.
+Según la wikipedia RStudio es un entorno de desarrollo integrado (IDE), pero básicamente es una interfaz que ayuda a mejorar y potenciar varios aspectos de R (actualmente también de otros lenguajes). Aunque no es el único IDE que existe, si es el más popular. Probablemente porque su filosofía encaja muy bien con la de R. Es un software libre que busca ser usado por todo el mundo. RStudio es bastante joven ya que fue lanzado en el 2010. Recientemente (Octubre 2022), Rstudio fue adquirido por posit. Aunque no cambia mucho su filosofía, este cambio busca integrar lenguajes como phyton, java y julia a la misma interfaz. Una excelente noticia para los locos del data sicence, pero un leve cambio para nosotros los biólogos mortales.
 
-Una cosa bonita de RStudio es que además mantiene y crea una serie de ayudaras para aprender R y las funcionalidades de ciertos paquetes. No se si se siga manteniento en un futuro, pero para saber más de RStudio pueden visitar https://education.rstudio.com/
+Una cosa bonita de RStudio es que, mantiene y crea una serie de ayudas para aprender R y las funcionalidades de ciertos paquetes. No se si se siga manteniendo en un futuro, pero para saber más de RStudio pueden visitar <https://education.rstudio.com/>
 
 ![Cheatsheets de la página de posit](Rstudio.png)
 
 ## Los proyectos de RStudio
 
-Entre otras cosas RStudio permite un esquema de trabajo en proyectos. Cuando empecemos a trabajar con R se darán cuenta que debemos especificar la ruta (dirección de la carpeta) donde estarán los archivos que usaremos. Para ello, cada vez que iniciamos R debemos especificar la dirección. Al crear proyectos con RStudio el IDE automaticamente selecciona la carpeta del proyecto como directiorio de trabajo. Tiene otras ventajas, pero esta es la que más nos compete en este nivel.
+Entre otras cosas, RStudio permite un esquema de trabajo en proyectos. Cuando empecemos a trabajar con R se darán cuenta que debemos especificar la ruta (dirección de la carpeta) donde estarán los archivos que usaremos. Para ello, cada vez que iniciamos R debemos especificar la dirección. Al crear proyectos con RStudio el IDE automáticamente selecciona la carpeta del proyecto como directorio de trabajo. Tiene otras ventajas, pero esta es la que más nos compete en este nivel.
 
-Para crear el proyecto hay que abrir RStudio, ir a archivo (file) y crear un nuevo proyecto (new Project). Se abrirá una nueva ventana con tres opciones: Nueva carpeta, carpeta existente y versión de control (este último e spar github). Por ahora centrémonos en las dos primeros. La principal diferencia es que en una se crea una nueva carpeta y en la segunda se selecciona una carpeta previamente existente. Como verán hay muchos tipos de proyectos, pero por ahora solo nos interesa un proyecto de R simple. Luego veremos que nos pide que le demos un nombre y verifiquemos la carpeta en la cual se creará.
+Para crear el proyecto hay que abrir RStudio, ir a archivo (file) -\> nuevo proyecto (new Project). Se abrirá una nueva ventana con tres opciones: Nueva carpeta, carpeta existente y versión de control (este último es para github). Por ahora centrémonos en las dos primeros. La principal diferencia es que en una se crea una nueva carpeta y en la segunda se selecciona una carpeta previamente existente. Como verán hay muchos tipos de proyectos, pero por ahora solo nos interesa un proyecto de R simple. Luego veremos que nos pide que le demos un nombre y verifiquemos la carpeta en la cual se creará.
 
 ![Crear un proyecto](crear%20proyecto.gif)
 
@@ -38,19 +38,19 @@ Para abrir el proyecto simplemente nos vamos a la carpeta que escogimos y abrimo
 
 # ¿Porqué usar R?
 
-Te estarás preguntando porque despues de años de perfeccionar tus poderes en Excel, ahora tienes que aprender R. Te puedo dar una razón"fea" y es que en este curso y en muchos de posgrado, ya es un requisito saber R.
+Te estarás preguntando porque después de años de perfeccionar tus poderes en Excel, ahora tienes que aprender R. Te puedo dar una razón"fea" y es que en este curso y en muchos de posgrado, ya es un requisito saber R.
 
 ![](bob.png){fig-align="center" width="286"}
 
 Pero tranquil\@, R no debería ser una tortura y hay muchas razones más bonitas para aprenderlo:
 
-1.  La reproducibilidad: Algo muy importante en la ciencia, pero que quizás no tenemos muy en cuenta. Al desarrollar un script con el análisi de tu papiro o tesis en R, tienes la capacidad de compartirlo. No solo para que alguien lo replique tal cual y sepa que esta bien o mal, sino también para que otras personas aprendan. De hecho, ahora muchos papers vienen acompañados de sus respectivo código
+1.  La reproducibilidad: Algo muy importante en la ciencia, pero que quizás no tenemos muy en cuenta. Al desarrollar un script con el análisis de tu papiro o tesis en R, tienes la capacidad de compartirlo. No solo para que alguien lo replique tal cual y sepa que esta bien o mal, sino también para que otras personas aprendan. De hecho, ahora muchos papiros vienen acompañados de sus respectivo código.
 
-2.  Es como aprender un idioma: Ejercita tu cerebro y te ayuda a mejorar tu razonamiento cuantitavo. No lo digo yo, lo dice la ciencia [@auker2020].
+2.  Es como aprender un idioma: Ejercita tu cerebro y te ayuda a mejorar tu razonamiento cuantitativo. No lo digo yo, lo dice la ciencia [@auker2020].
 
-3.  Es el futuro: Nos guste o no las habilidades de programación son cada vez más requeridas y apreciadas [@lai2019]. No solo en la academia, sino también en la industria, saber manejar, gráficar y analizar datos puede ser una gran ventaja [@feng2020] . No digo que todos tengan que ser especialistas, pero si tener al menos nociones.
+3.  Es el futuro: Nos guste o no, las habilidades de programación son cada vez más requeridas y apreciadas [@lai2019]. No solo en la academia, sino también en la industria, saber manejar, graficar y analizar datos puede ser una gran ventaja [@feng2020] . No digo que todos tengan que ser especialistas, pero si tener al menos nociones.
 
-4.  Infinitas (casi) posibilidades: En la actualidad R no es solo para la estadística, puedes hacer muchisimas cosas. Desde documentos, infografías, hasta memes (si hay un paquete para hacer memes). Personalmente, cuando más he aprendido R es cuando lo junto con mis pasatiempos. Hacer gráficas, explorar datos de series, música hasta de política etc.
+4.  Infinitas (casi) posibilidades: En la actualidad R no es solo para la estadística, puedes hacer muchísimas cosas. Desde documentos, infografias, hasta memes (si hay un paquete para hacer memes). Personalmente, cuando más he aprendido R es cuando lo junto con mis pasatiempos. Hacer gráficas, explorar datos de series, música hasta de política etc.
 
 # Todo lo que se puede hacer
 
@@ -58,25 +58,25 @@ Veamos algo de las principales aplicaciones
 
 ## Manejo de datos
 
-Procesar, transformar y explorar tus datos. Una habilidad que nos ahorrará mucho tiempo y dolor de cabeza. Con R puedes transformar tus datos como tu quieras, siempre y cuando sepas cómo. Esto es importante, porque ciertos análisis requieren una estructura de datos particular.
+Procesar, transformar y explorar tus datos. Una habilidad que nos ahorrará mucho tiempo y dolor de cabeza. Con R puedes transformar tus datos como tu quieras, siempre y cuando sepas cómo. Esto es importante porque ciertos análisis requieren una estructura de datos particular.
 
 ![https://bookdown.org/content/3515/tidydata.html](https://bookdown.org/content/3515/Libro_files/figure-html/leftjoin-1.gif){width="512"}
 
 ## Estadística
 
-En parte es para lo que fue creado R. Por base tiene la capacidad de ajustar una buena variedad de modelos, pero es la comunidad la que se ha encargado de agregar a R una gama bastante amplia de modelos . Puedes encontrar hoy en día modelos estadísticos para temas ecológicos, de bioinformatica, filogenia, biología molecular, morfometría etc. Solo basta con saber buscar.
+En parte es para lo que fue creado R. R tiene la capacidad de ajustar una buena variedad de modelos. Pero es la comunidad la que se ha encargado de agregar a R una gama bastante amplia de análisis . Puedes encontrar hoy en día modelos estadísticos para temas ecológicos, de bioinformatica, filogenia, biología molecular, morfometría etc. Solo basta con saber buscar.
 
 ![https://lakens.github.io/statistical_inferences](https://lakens.github.io/statistical_inferences/images/animatep2.gif)
 
 ## Gráficas
 
-La capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarrte por páginas como https://r-graph-gallery.com/index.htmlRgraph o https://r-charts.com/ para ver muchísimos ejemplos y tips
+La capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarte por páginas como <https://r-graph-gallery.com/index.html> o <https://r-charts.com/> para ver muchísimos ejemplos y tips. Aprender a graficar hace parte importante del proceso de explorar tus datos.
 
 ![](https://blog.revolutionanalytics.com/downloads/datasaurus.gif)
 
 ## Documentos
 
-Con la inclusión de Rmakrwon y Quarto se pude generar documentos de html, pdf y word desde R. Incluso las nuevas versionesqu de RStudio cuentan con un modo visual para facilitar la escritura de documentos
+Con la inclusión de Rmakrwon y Quarto se pude generar documentos de html, pdf y word desde R. Incluso las nuevas versiones de RStudio cuentan con un modo visual para facilitar la escritura de documentos. Hay paquetes diseñados para generar CV, presentaciones, libros, artículos científicos e incluso tesis.
 
 ![https://yihui.org/en/2022/04/quarto-r-markdown/](markdonw%20quarto.png){width="566"}
 
@@ -86,8 +86,30 @@ Basta con que te diga que esta página web esta construida con RStudio, usando Q
 
 ## Aplicaciones
 
-También puedes crear aplicaciones e interfaz de usuario para explorar datos o facilitar la vida. Por ejemplo, es muy común que la gente que le gusta pokemon cree aplicaciones para evaluar las estadísticas de los pokemones: <https://dgranjon.shinyapps.io/shinyMons/_w_74175819/>
+También puedes crear aplicaciones e interfaz de usuario para explorar datos o facilitar la vida. Por ejemplo, si tienes dudas de las estadísticas de algunos pokémon, puedes checar esta app creada en R <https://dgranjon.shinyapps.io/shinyMons/_w_74175819/>
 
 # La comunidad
+
+![Allison Horst code hero](https://imgs.njtierney.com/code_hero_rstats.png){fig-align="center" width="518"}
+
+Quizás lo mejor que tiene R y RStudio es su comunidad. Existen mucha información, tutoriales, guías, páginas de ayuda, foros y comunidades enfocadas en ayudar y enseñar. Lo mejor de todo es que casi siempre es de manera gratuita siguiendo la filosofía de R.
+
+Existe incluso conferencias de R dirigidas a Latinoamérica, patrocinadas por RStudio (ahora posit). Casi todas las charlas están grabadas en youtube así que le pueden chismosear:
+
+[![Logo R latin america](https://community-cdn.rstudio.com/uploads/default/original/3X/5/8/583cb8f87098fca9a0a0eaa276aff0b11f07fff1.jpeg){fig-align="center" width="352"}](https://github.com/LatinR/presentaciones-LatinR2022)
+
+Otro ejemplo muy importante de como se organiza la comunidad de R, es el de [Rladies](https://twitter.com/RLadiesGlobal). R-laides busca promover la diversidad de género en la comunidad de R. Existe un capítulo de R-ladies en Xalapa y su misión es proporcionar un espacio comunitario seguro para cualquier persona que se identifique como género minoritario. Yo soy muy fan de estas comunidades porque comparten cosas muy bonitas y divertidas de aprender.
+
+[![Logo R-ladies Xalapa](https://pbs.twimg.com/profile_images/1124352295448092672/kruQyvMK_400x400.jpg){fig-align="center" width="342"}](https://www.facebook.com/profile.php?id=100042617837216&paipv=0&eav=AfbqFij-bTFOhb3mBQnlB2LJIACjLQUVQy7NN7gxVbJ5jUOYZfTB41H-MJmQ-tOAaO0)
+
+# Aquí no aprenderán R
+
+R cómo cualquier idioma se aprende practicando, es decir escribiendo. No esperes aprender inglés después de ver una película con subtitulos. Seguramente, aprenderás una palabra u otra, pero no estarás listo para tener una conversación. Lo mismo pasa con R, en este curso te daremos las herramientas para comenzar, pero es normal que al final sientas que no sabes nada (me pasó a mi y creo que nos pasará a todos). No te frustres si terminas el curso y sientes que no sabes nada, porque este es apenas el inicio. Seguramente, cuando estés por tu cuenta regresaras a buscar scripts, para recordar como se graficaba o incluso la manera en que se cargan los datos. También te enfrentaras a muchos errores y es que R no se trata de no cometer errores, sino de cometer tantos que ya sabes como solucionarlos.
+
+![Lawlor J, Banville F, Forero-Muñoz N-R, Hébert K, Martínez-Lanfranco JA, Rogy P, et al. (2022) Ten simple rules for teaching yourself R. PLoS Comput Biol 18(9): e1010372. https://doi.org/10.1371/journal.pcbi.1010372](timeR.PNG){width="592"}
+
+En conclusión, que aprendas R dependerá de cuanto tiempo le dediques, no de que tomes este tutorial o no [@lawlor2022]. Así que mucho ánimo y éxitos en tu aventura.
+
+![Allison Horst rollercoaster](https://bcullen.rbind.io/post/2020-10-19-teaching-an-r-bootcamp-remotely/r_rollercoaster.png){width="642"}
 
 # Bibliografía

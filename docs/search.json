@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introducción a R y RStudio",
     "section": "",
-    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [ ]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n \n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n \n\n\n\n4. Matrices, listas y dataframes\n\n\n\n\n\n \n\n\n\n5. Carga tus datos\n\n\n\n\n\n \n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n \n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n \n\n\n\n8. Modo tidyverse\n\n\n\n\n\n \n\n\n\n9. Documentos desde R\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [ ]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n \n\n\n\n4. Matrices, listas y dataframes\n\n\n\n\n\n \n\n\n\n5. Carga tus datos\n\n\n\n\n\n \n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n \n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n \n\n\n\n8. Modo tidyverse\n\n\n\n\n\n \n\n\n\n9. Documentos desde R\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -39,42 +39,42 @@
     "href": "posts/RyRstudio/index.html",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "",
-    "text": "En pocas palabras R es un lenguaje y un ambiente creado para realizar operaciones estadísticas y gráficas. En un principio R se derivó de otro lenguaje, S. El lenguaje S fue un proyecto que inició en 1976 de la mano de John Chambers y que maduró hasta 1998. La idea de S era generar una interfaz que facilitara el análisis de datos a los programadores, pero paulatinamente también a un público menos especializado. Es decir, querían crear algo que nos permitiera escribir un código sin sentirnos programadores.\nEl problema con S es que tenias que comprarlo y ya sabemos que en nuestros países preferimos invertir el dinero en cosas más importantes, como comida. En 1991 Ross Ihaka y Robert Gentleman se basaron en S, para crear R (Ihaka and Gentleman 1996). Lo crucial respecto a R es que fue creado como un software libre, es decir que además de ser gratuito, su código es abierto. Ésto último quiere decir que cualquiera puede ver cómo funciona por dentro y modificarlo. De hecho, R se beneficia de que miles de personas crean herramientas destinadas para muchísimos fines.\nR en sí es joven ya que la primera versión se lanzó al público en el 2000 y ahora es manejado por el R core Team (R Core Team 2017).\n\n\n\nCronología de R"
+    "text": "En pocas palabras R es un lenguaje y un ambiente creado para realizar operaciones estadísticas y gráficas. En un principio R se derivó de otro lenguaje, S. El lenguaje S fue un proyecto que inició en 1976 de la mano de John Chambers y que maduró hasta 1998. La idea de S era generar una interfaz que facilitara el análisis de datos a los programadores, pero paulatinamente también a un público menos especializado. Es decir, querían crear algo que nos permitiera escribir un código sin sentirnos programadores.\nEl problema con S es que tenias que comprarlo y ya sabemos que en nuestros países preferimos invertir el dinero en cosas más importantes, como comida 🍔. En 1991 Ross Ihaka y Robert Gentleman se basaron en S, para crear R (Ihaka and Gentleman 1996). Lo crucial respecto a R es que fue creado como un software libre, es decir que además de ser gratuito, su código es abierto. Ésto último quiere decir que cualquiera puede ver cómo funciona por dentro y modificarlo. De hecho, R se beneficia de que miles de personas crean herramientas destinadas para muchísimos fines.\nR en sí es joven ya que la primera versión se lanzó al público en el 2000 y ahora es manejado por el R core Team (R Core Team 2017).\n\n\n\nCronología de R"
   },
   {
     "objectID": "posts/RyRstudio/index.html#los-proyectos-de-rstudio",
     "href": "posts/RyRstudio/index.html#los-proyectos-de-rstudio",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Los proyectos de RStudio",
-    "text": "Los proyectos de RStudio\nEntre otras cosas RStudio permite un esquema de trabajo en proyectos. Cuando empecemos a trabajar con R se darán cuenta que debemos especificar la ruta (dirección de la carpeta) donde estarán los archivos que usaremos. Para ello, cada vez que iniciamos R debemos especificar la dirección. Al crear proyectos con RStudio el IDE automaticamente selecciona la carpeta del proyecto como directiorio de trabajo. Tiene otras ventajas, pero esta es la que más nos compete en este nivel.\nPara crear el proyecto hay que abrir RStudio, ir a archivo (file) y crear un nuevo proyecto (new Project). Se abrirá una nueva ventana con tres opciones: Nueva carpeta, carpeta existente y versión de control (este último e spar github). Por ahora centrémonos en las dos primeros. La principal diferencia es que en una se crea una nueva carpeta y en la segunda se selecciona una carpeta previamente existente. Como verán hay muchos tipos de proyectos, pero por ahora solo nos interesa un proyecto de R simple. Luego veremos que nos pide que le demos un nombre y verifiquemos la carpeta en la cual se creará.\n\n\n\nCrear un proyecto\n\n\nPara abrir el proyecto simplemente nos vamos a la carpeta que escogimos y abrimos el archivo .Rproj. Este archivo automáticamente abre RStudio. Para verificar que estamos dentro de un proyecto podemos observar en la parte superior derecha del RStudio, donde estará el nombre de nuestro proyecto.\n\n\n\nabrir el proyecto"
+    "text": "Los proyectos de RStudio\nEntre otras cosas, RStudio permite un esquema de trabajo en proyectos. Cuando empecemos a trabajar con R se darán cuenta que debemos especificar la ruta (dirección de la carpeta) donde estarán los archivos que usaremos. Para ello, cada vez que iniciamos R debemos especificar la dirección. Al crear proyectos con RStudio el IDE automáticamente selecciona la carpeta del proyecto como directorio de trabajo. Tiene otras ventajas, pero esta es la que más nos compete en este nivel.\nPara crear el proyecto hay que abrir RStudio, ir a archivo (file) -> nuevo proyecto (new Project). Se abrirá una nueva ventana con tres opciones: Nueva carpeta, carpeta existente y versión de control (este último es para github). Por ahora centrémonos en las dos primeros. La principal diferencia es que en una se crea una nueva carpeta y en la segunda se selecciona una carpeta previamente existente. Como verán hay muchos tipos de proyectos, pero por ahora solo nos interesa un proyecto de R simple. Luego veremos que nos pide que le demos un nombre y verifiquemos la carpeta en la cual se creará.\n\n\n\nCrear un proyecto\n\n\nPara abrir el proyecto simplemente nos vamos a la carpeta que escogimos y abrimos el archivo .Rproj. Este archivo automáticamente abre RStudio. Para verificar que estamos dentro de un proyecto podemos observar en la parte superior derecha del RStudio, donde estará el nombre de nuestro proyecto.\n\n\n\nabrir el proyecto"
   },
   {
     "objectID": "posts/RyRstudio/index.html#manejo-de-datos",
     "href": "posts/RyRstudio/index.html#manejo-de-datos",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Manejo de datos",
-    "text": "Manejo de datos\nProcesar, transformar y explorar tus datos. Una habilidad que nos ahorrará mucho tiempo y dolor de cabeza. Con R puedes transformar tus datos como tu quieras, siempre y cuando sepas cómo. Esto es importante, porque ciertos análisis requieren una estructura de datos particular.\n\n\n\nhttps://bookdown.org/content/3515/tidydata.html"
+    "text": "Manejo de datos\nProcesar, transformar y explorar tus datos. Una habilidad que nos ahorrará mucho tiempo y dolor de cabeza. Con R puedes transformar tus datos como tu quieras, siempre y cuando sepas cómo. Esto es importante porque ciertos análisis requieren una estructura de datos particular.\n\n\n\nhttps://bookdown.org/content/3515/tidydata.html"
   },
   {
     "objectID": "posts/RyRstudio/index.html#estadística",
     "href": "posts/RyRstudio/index.html#estadística",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Estadística",
-    "text": "Estadística\nEn parte es para lo que fue creado R. Por base tiene la capacidad de ajustar una buena variedad de modelos, pero es la comunidad la que se ha encargado de agregar a R una gama bastante amplia de modelos . Puedes encontrar hoy en día modelos estadísticos para temas ecológicos, de bioinformatica, filogenia, biología molecular, morfometría etc. Solo basta con saber buscar.\n\n\n\nhttps://lakens.github.io/statistical_inferences"
+    "text": "Estadística\nEn parte es para lo que fue creado R. R tiene la capacidad de ajustar una buena variedad de modelos. Pero es la comunidad la que se ha encargado de agregar a R una gama bastante amplia de análisis . Puedes encontrar hoy en día modelos estadísticos para temas ecológicos, de bioinformatica, filogenia, biología molecular, morfometría etc. Solo basta con saber buscar.\n\n\n\nhttps://lakens.github.io/statistical_inferences"
   },
   {
     "objectID": "posts/RyRstudio/index.html#gráficas",
     "href": "posts/RyRstudio/index.html#gráficas",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Gráficas",
-    "text": "Gráficas\nLa capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarrte por páginas como https://r-graph-gallery.com/index.htmlRgraph o https://r-charts.com/ para ver muchísimos ejemplos y tips"
+    "text": "Gráficas\nLa capacidad gráfica de R es grandiosa. Esta diseñado para generar gráficas con calidad de publicación, pero también puedes ingeniártelas par generar gráficos de divulgación. Puedes hacer mapas, animaciones, arte etc. Puedes pasarte por páginas como https://r-graph-gallery.com/index.html o https://r-charts.com/ para ver muchísimos ejemplos y tips. Aprender a graficar hace parte importante del proceso de explorar tus datos."
   },
   {
     "objectID": "posts/RyRstudio/index.html#documentos",
     "href": "posts/RyRstudio/index.html#documentos",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Documentos",
-    "text": "Documentos\nCon la inclusión de Rmakrwon y Quarto se pude generar documentos de html, pdf y word desde R. Incluso las nuevas versionesqu de RStudio cuentan con un modo visual para facilitar la escritura de documentos\n\n\n\nhttps://yihui.org/en/2022/04/quarto-r-markdown/"
+    "text": "Documentos\nCon la inclusión de Rmakrwon y Quarto se pude generar documentos de html, pdf y word desde R. Incluso las nuevas versiones de RStudio cuentan con un modo visual para facilitar la escritura de documentos. Hay paquetes diseñados para generar CV, presentaciones, libros, artículos científicos e incluso tesis.\n\n\n\nhttps://yihui.org/en/2022/04/quarto-r-markdown/"
   },
   {
     "objectID": "posts/RyRstudio/index.html#páginas-web",
@@ -88,6 +88,48 @@
     "href": "posts/RyRstudio/index.html#aplicaciones",
     "title": "2. ¿Qué son R y Rstudio?",
     "section": "Aplicaciones",
-    "text": "Aplicaciones\nTambién puedes crear aplicaciones e interfaz de usuario para explorar datos o facilitar la vida. Por ejemplo, es muy común que la gente que le gusta pokemon cree aplicaciones para evaluar las estadísticas de los pokemones: https://dgranjon.shinyapps.io/shinyMons/_w_74175819/"
+    "text": "Aplicaciones\nTambién puedes crear aplicaciones e interfaz de usuario para explorar datos o facilitar la vida. Por ejemplo, si tienes dudas de las estadísticas de algunos pokémon, puedes checar esta app creada en R https://dgranjon.shinyapps.io/shinyMons/_w_74175819/"
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html",
+    "href": "posts/Operadores objetos y funciones/index.html",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "",
+    "text": "Lo primero es abrir RStudio y crear un nuevo R script."
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html#numericos",
+    "href": "posts/Operadores objetos y funciones/index.html#numericos",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "Numericos",
+    "text": "Numericos\n\n#Numericos (pueden se enteros o continuos)\nnumero_1 <- 25\nnumero_2 <- 27.5\n\n# Los objetos numericos permiten hacer operaciones\n(suma <- numero_1+numero_2)\n\n[1] 52.5\n\n(resta <- suma - numero_2)\n\n[1] 25\n\n(producto <- suma*resta)\n\n[1] 1312.5\n\n(etc <- ((producto/suma)+ resta)^2)\n\n[1] 2500\n\n\n\nOperadores aritméticos\n\n\nOperador\nOperación\n\n\n\n\n+\nSuma\n\n\n-\nResta\n\n\n*\nMultiplicación\n\n\n/\nDivisión\n\n\n^\nPotencia\n\n\n\nPero también se pueden usar operadores relacionales, en este caso tendremos como resultado un objeto lógico\n\n7<3\n\n[1] FALSE\n\n30>=50\n\n[1] FALSE\n\n50==50\n\n[1] TRUE\n\n\n\nOperadores relacionales\n\n\nOperador\nOperación\n\n\n\n\n<\nMenor que\n\n\n<=\nMenor o igual que\n\n\n>\nMayor que\n\n\n>=\nMayor o igual que\n\n\n==\nIgual que\n\n\n!=\nDiferente de"
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html#caracteres",
+    "href": "posts/Operadores objetos y funciones/index.html#caracteres",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "Caracteres",
+    "text": "Caracteres\nComo su nombre lo indica son nombres o palabras . Los caracteres siempre estarán delimitados por comillas \"xx\"\n\n(carac_1 <- \"a\")\n\n[1] \"a\"\n\n(carac_2 <- \"me gusta la estadística.com\")\n\n[1] \"me gusta la estadística.com\"\n\n\n¿Que pasa cuando hacemos esto?\n\nnumero_ment <- \"69\"\n\nEstá de más decir que con los caracteres no se pueden hacer operaciones aritméticas. Aun así se pueden usar operadores relacionales con los caracteres.\n\n\"a\"< \"b\" # En este caso R usa el orden alfabético para decidir.\n\n[1] TRUE\n\n \"hola\"== \"Que onda\"\n\n[1] FALSE\n\n\"23\"!= \"veintitres\"\n\n[1] TRUE"
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html#lógicos",
+    "href": "posts/Operadores objetos y funciones/index.html#lógicos",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "Lógicos",
+    "text": "Lógicos\nLos objetos de tipo lógico pueden ser o de verdadero (TRUE) o falso (FALSE). Básicamente representan cuando una condición se cumple o no\n\n# Podemos crear un objeto que dentro tenga un valor lógico\n(logic <- TRUE)\n\n[1] TRUE\n\n# Son más útiles para operadores relacionale so booleanos\n\nnumero_1< numero_2\n\n[1] TRUE\n\n# Por ejemplo el operador condicional, donde si una condición es verdadera, entonces es igual a verdadero\n\nTRUE|FALSE\n\n[1] TRUE"
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html#valores-faltantes",
+    "href": "posts/Operadores objetos y funciones/index.html#valores-faltantes",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "Valores faltantes",
+    "text": "Valores faltantes\nHay un tipo de valor en R que especifica que dicha observación o valor no existe o es perdido. Cabe aclarar que NA es diferente de 0: un 0 indica por ejemplo que si fuimos a contar ranas en cierto estanque no había ninguna, pero un NA quiere decir que nunca se fue a contar ranas a ese estanque. En R, un NA se reconoce como un objeto tipo lógico.\n\n(no_hay <- NA)\n\n[1] NA"
+  },
+  {
+    "objectID": "posts/Operadores objetos y funciones/index.html#funciones-de-externas-a-base-r",
+    "href": "posts/Operadores objetos y funciones/index.html#funciones-de-externas-a-base-r",
+    "title": "3. Objetos, operadores y funciones",
+    "section": "Funciones de externas a base R",
+    "text": "Funciones de externas a base R\nHay muchas funciones que vienen por defecto en R. Sin embargo, gran parte de las funciones son creadas por la comunidad y vienen en paquetes. Para usar este tipo de funciones debemos primero instalar un paquete, luego llamarlo y ahí si ejecutar su función. Si no llamamos el paquete R nos dirá que hay un error porque no encuentra dicha función.\nPrimero instalemos un paquete mediante la función install.packages, adentro de la función le diremos el nombre del paquete entre comillas. Recuerden que para instalar un paquete necesitamos conexión a Internet.\n\ninstall.packages(\"beepr\")\n\nAhora vamos a llamar al paquete con la función library. Note que en este caso ya no necesitamos poner el paquete entre comillas\n\nlibrary(beepr)\n\nFinalmente, usaremos una función que viene con el paquete beepr\n\nbeep(sound = 8)\n\nExisten una cantidad inmensa de paquetes en R, la mayoría se encuentran en un repositorio llamado CRAN. Creo que la mejor manera de encontrar el paquete que buscas es por medio de san google. Supongamos que queremos buscar algún paquete que calcule índices de diversidad : package for shannon index in R. Probablemente aparezca vegan, entonces es solo cuestión de instalarlo y claro aprender a usarlo."
   }
 ]
