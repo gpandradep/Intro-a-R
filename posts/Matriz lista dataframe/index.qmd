@@ -6,3 +6,86 @@ date: "2022-11-24"
 ---
 
 # Vectores
+
+Los vectores son objetos que llevan una colección de uno o más datos del mismo tipo. El tipo del vector es igual al tipo de datos que contiene y solo puede contener datos del mismo tipo. Los vectores también tienen un largo, es decir el número de datos que contiene.
+
+![](vectors.png){fig-align="center"}
+
+En esencia un solo número o caracter es un vector de largo 1
+
+```{r}
+minivec <- 25
+is.vector(minivec)
+length(minivec)
+```
+
+## Concantenar
+
+Para generar vectores de mayor tamaño debemos usar la función de `c()`o concatenar.
+
+```{r}
+# Vector numerico
+vec1 <- c(1,223,4,5)
+length(vec1)
+class(vec1)
+
+# Vector de caracteres
+vec2 <- c("a", "b", "c", "d")
+class(vec2)
+
+# Vector lógico
+
+vec3 <- c(TRUE, FALSE, TRUE, FALSE)
+class(vec2)
+
+# Si admite NA
+
+vec4 <- c(2.5, 30, 45.5, NA)
+class(vec4)
+```
+
+## Sequencia
+
+```{r}
+
+(vec_seq1 <- 1:10)
+(vec_seq2 <- seq(from=1, # Valor de inicio
+               to= 6)) # Valor final
+(vec_seq3 <- seq(from= 1,
+                to= 10,
+                by= 0.5))
+```
+
+## Repetir valores
+
+```{r}
+(vec_rep1 <- rep(x=25,
+                times= 5))
+(vec_rep2 <- rep(vec_rep1,
+                 times=3))
+
+(vec_rep3 <- rep(vec2,
+                each=3))
+```
+
+## Selección de valores
+
+```{r}
+vec_rep3[1]
+vec_rep2[5]
+vec_seq3[17]
+```
+
+# Matrices
+
+## Array
+
+![](array.png){fig-align="center"}
+
+# Data Frame
+
+![](dataframe.png){fig-align="center"}
+
+# Lista
+
+![](Litst.png){fig-align="center"}

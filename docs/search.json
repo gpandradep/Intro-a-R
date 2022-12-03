@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introducción a R y RStudio",
     "section": "",
-    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [ ]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n \n\n\n\n4. Matrices, listas y dataframes\n\n\n\n\n\n \n\n\n\n5. Carga tus datos\n\n\n\n\n\n \n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n \n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n \n\n\n\n8. Modo tidyverse\n\n\n\n\n\n \n\n\n\n9. Documentos desde R\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [ ]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n \n\n\n\n5. Carga tus datos\n\n\n\n\n\n \n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n \n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n \n\n\n\n8. Modo tidyverse\n\n\n\n\n\n \n\n\n\n9. Documentos desde R\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -131,5 +131,19 @@
     "title": "3. Objetos, operadores y funciones",
     "section": "Funciones de externas a base R",
     "text": "Funciones de externas a base R\nHay muchas funciones que vienen por defecto en R. Sin embargo, gran parte de las funciones son creadas por la comunidad y vienen en paquetes. Para usar este tipo de funciones debemos primero instalar un paquete, luego llamarlo y ahí si ejecutar su función. Si no llamamos el paquete R nos dirá que hay un error porque no encuentra dicha función.\nPrimero instalemos un paquete mediante la función install.packages, adentro de la función le diremos el nombre del paquete entre comillas. Recuerden que para instalar un paquete necesitamos conexión a Internet.\n\ninstall.packages(\"beepr\")\n\nAhora vamos a llamar al paquete con la función library. Note que en este caso ya no necesitamos poner el paquete entre comillas\n\nlibrary(beepr)\n\nFinalmente, usaremos una función que viene con el paquete beepr\n\nbeep(sound = 8)\n\nExisten una cantidad inmensa de paquetes en R, la mayoría se encuentran en un repositorio llamado CRAN. Creo que la mejor manera de encontrar el paquete que buscas es por medio de san google. Supongamos que queremos buscar algún paquete que calcule índices de diversidad : package for shannon index in R. Probablemente aparezca vegan, entonces es solo cuestión de instalarlo y claro aprender a usarlo."
+  },
+  {
+    "objectID": "posts/Matriz lista dataframe/index.html",
+    "href": "posts/Matriz lista dataframe/index.html",
+    "title": "4. Vectores, Matrices, listas y dataframes",
+    "section": "",
+    "text": "Los vectores son objetos que llevan una colección de uno o más datos del mismo tipo. El tipo del vector es igual al tipo de datos que contiene y solo puede contener datos del mismo tipo. Los vectores también tienen un largo, es decir el número de datos que contiene.\n\n\n\n\n\nEn esencia un solo número o caracter es un vector de largo 1\n\nminivec <- 25\nis.vector(minivec)\n\n[1] TRUE\n\nlength(minivec)\n\n[1] 1\n\n\n\n\nPara generar vectores de mayor tamaño debemos usar la función de c()o concatenar.\n\n# Vector numerico\nvec1 <- c(1,223,4,5)\nlength(vec1)\n\n[1] 4\n\nclass(vec1)\n\n[1] \"numeric\"\n\n# Vector de caracteres\nvec2 <- c(\"a\", \"b\", \"c\", \"d\")\nclass(vec2)\n\n[1] \"character\"\n\n# Vector lógico\n\nvec3 <- c(TRUE, FALSE, TRUE, FALSE)\nclass(vec2)\n\n[1] \"character\"\n\n# Si admite NA\n\nvec4 <- c(2.5, 30, 45.5, NA)\nclass(vec4)\n\n[1] \"numeric\"\n\n\n\n\n\n\n(vec_seq1 <- 1:10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n(vec_seq2 <- seq(from=1, # Valor de inicio\n               to= 6)) # Valor final\n\n[1] 1 2 3 4 5 6\n\n(vec_seq3 <- seq(from= 1,\n                to= 10,\n                by= 0.5))\n\n [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5  8.0\n[16]  8.5  9.0  9.5 10.0\n\n\n\n\n\n\n(vec_rep1 <- rep(x=25,\n                times= 5))\n\n[1] 25 25 25 25 25\n\n(vec_rep2 <- rep(vec_rep1,\n                 times=3))\n\n [1] 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25\n\n(vec_rep3 <- rep(vec2,\n                each=3))\n\n [1] \"a\" \"a\" \"a\" \"b\" \"b\" \"b\" \"c\" \"c\" \"c\" \"d\" \"d\" \"d\"\n\n\n\n\n\n\nvec_rep3[1]\n\n[1] \"a\"\n\nvec_rep2[5]\n\n[1] 25\n\nvec_seq3[17]\n\n[1] 9"
+  },
+  {
+    "objectID": "posts/Matriz lista dataframe/index.html#array",
+    "href": "posts/Matriz lista dataframe/index.html#array",
+    "title": "4. Vectores, Matrices, listas y dataframes",
+    "section": "Array",
+    "text": "Array"
   }
 ]
