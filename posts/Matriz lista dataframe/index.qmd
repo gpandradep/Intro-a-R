@@ -44,19 +44,41 @@ vec4 <- c(2.5, 30, 45.5, NA)
 class(vec4)
 ```
 
-## Sequencia
+Podemos incluso concatenar objetos que contengan vectores de la misma clase
+
+```{r}
+vec5 <- c(27,28,29,30)
+(vec6 <- c(vec1, vec5))
+```
+
+¿Que sucede cuando creamos un vector con dos tipos de datos?
+
+```{r}
+vec7 <- c(1,2,3, "4")
+class(vec7)
+```
+
+![](/posts/Ayuda%20R/teletubo.png){fig-align="center" width="290"}
+
+## Secuencias
+
+Podemos crear vectores mediante función de secuencia. Cuando es una secuencia sencilla podemos usar el comando `:`. Si necesitamos secuencias más específicas o con ciertas características, entonces podemos usar la función `seq`. Ésta función tiene varios argumentos, `from` es el número de inicio, el `to` el número final y mediante `by` podemos especificar el intervalo de la secuencia.
 
 ```{r}
 
 (vec_seq1 <- 1:10)
+
 (vec_seq2 <- seq(from=1, # Valor de inicio
                to= 6)) # Valor final
+
 (vec_seq3 <- seq(from= 1,
                 to= 10,
                 by= 0.5))
 ```
 
 ## Repetir valores
+
+`rep` permite repetir valores un determinado número de veces. El argumento de `times` nos permite especificar el número de veces que un valor o un vector se va a repetir. Cuando especificamos `each` podemos controlar el número de veces que se repite cada valor dentro del vector.
 
 ```{r}
 (vec_rep1 <- rep(x=25,
@@ -68,19 +90,165 @@ class(vec4)
                 each=3))
 ```
 
-## Selección de valores
+## Caso de factores
+
+Los factores son un caso especial de los caracteres y tienen la peculiaridad de que están compuestos por niveles. En otras palabras los factores pueden asumir un número limitado de valores posibles conocidos o niveles.
+
+Por ejemplo, imaginemos un experimento donde se aplica el tratamiento de sombra a unas plantas en crecimiento. En este caso el tratamiento de sombra es un factor y puede tomar "si" cuando tiene sombra o "no" cuando no se aplicó sombra. Para crear un factor usamos la función `factor`
 
 ```{r}
-vec_rep3[1]
-vec_rep2[5]
-vec_seq3[17]
+somb <- c(rep("si", 5), rep("no", 5))
+
+fact_somb <- factor(somb)
+
+class(somb)
+class(fact_somb)
+```
+
+Es importante especificar los factores porque muchos funciones y análisis estadísticos requieren de usar objetos de tipo factor.
+
+## Crear vectores basados en números aleatorios
+
+Podemos crear vectores basados en números al azar basados en una distribución. Por ejemplo, la más común es la distribución normal y se crea mediante `rnorm`. Ésta función hace parte de una familia de funciones basadas en distribuciones y basicamente traduce números aleatorios basados en una distribución normal.
+
+```{r}
+# en este ejemplo vamos a crear un vector de 100 valores
+vec_norm <- rnorm(100, 
+                  mean = 0, 
+                  sd=1)
+is.vector(vec_norm)
+```
+
+## Selección de elementos
+
+En los vectores podemos seleccionar valores con `[]` , el número que pongamos dentro será la posición del valor que seleccionaremos
+
+```{r}
+vec_rep3[1] # el primer valor
+vec_rep2[5] # el quinto valor
+
+```
+
+Podemos seleccionar varios valores utilizando el comando de concatenar
+
+```{r}
+vec_seq3[c(1,5,9)] # Seleccionamos el primer, el quinto y el 9 valor
+```
+
+## Operaciones de vectores
+
+Las operaciones aritméticas y lógicas también funcionan con vectores. Pero en este caso obtenemos un resultado por cada elemento
+
+```{r}
+(vec_sum <- vec_seq3 + 5)
+```
+
+```{r}
+vec_seq3 > 5
 ```
 
 # Matrices
 
+Las matrices son vectores multi-dimensionales y al igual que los vectores solo pueden contener un tipo de datos. Las matrices tienen dos dimensiones "alto" dado por el número de filas y largo por el número de columnas.
+
+![](Matrix.png)
+
+Podemos crear una matriz a partir de un vector, especificando las dimensiones de columnas por medio de la función matrix
+
+```{r}
+(x1 <- matrix(1:20))
+
+# Podemos especificar las columnas y las filas
+
+matrix(1:20, nrow = 5, ncol = 4)
+
+matrix(1:20, nrow = 10, ncol = 10)
+
+matrix(1:20, nrow = 4, ncol = 3)
+
+```
+
+cbind y rbind
+
+```{r}
+v1 <- 1:4
+v2 <- 9:12
+v3 <- 13:16
+
+(m1 <- rbind(v1, v2, v3))
+(m3 <- cbind(v1, v2, v3))
+class(m1)
+
+v4 <- 20:28
+
+m2 <- rbind(v1,v4)
+```
+
+```{r}
+v5 <- c("1", "2", "3", "4")
+
+(m4 <- cbind(v1, v5))
+str(m4)
+dim(m4)
+class(m4)
+```
+
+```{r}
+m2+1
+# m4+1
+
+
+```
+
+```{r}
+# Podemos transponer una matriz
+m3t <- t(m3)
+```
+
+```{r}
+# Podemos usar [] para seleccionar columas y filas de las matrices
+
+m3[c(1,3),]
+
+diag(m3)
+diag(m3t)
+
+m3[-1,2]
+
+m3[c(-1,-4), c(1,3)]
+```
+
+```{r}
+# Podemos reemplazar valores de las matrices
+
+m3[2,] <- c(100,200, 300)
+m3
+
+m3[c(4,3),2] <- 1000
+m3
+
+m3[c(1,3), c(1,3)] <- 500
+m3
+
+m3[,3] <- m3[,1]+3 
+m3
+```
+
 ## Array
 
 ![](array.png){fig-align="center"}
+
+```{r}
+# Un Array es una matriz con más de dos dimensiones
+
+AR1 <- array(1:30, dim = c(3,4,2))
+AR1
+class(AR1)
+dim(AR1)
+str(AR1)
+# Seleccionar la celda con el valor de 13
+x <- AR1[,,2]
+```
 
 # Data Frame
 
@@ -89,3 +257,25 @@ vec_seq3[17]
 # Lista
 
 ![](Litst.png){fig-align="center"}
+
+```{r}
+# Las listas también son objetos unidimensionales. Pero pueden tener elementos de diferente tipo y clase
+
+v <- 1:10
+df <- data.frame(num= 1:4, letra= letters[1:4])
+
+lista <- list(vector=v, dataframe= df, Matriz= m3)
+
+dim(lista)
+length(lista)
+
+v2 <- lista[1]
+v3 <- lista[[1]]
+class(v3)
+
+df_list <- lista[[2]]
+
+mat <- lista$Matriz
+
+lista[[1]][]
+```
