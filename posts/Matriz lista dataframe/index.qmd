@@ -11,7 +11,7 @@ Los vectores son objetos que llevan una colección de uno o más datos del mismo
 
 ![](vectors.png){fig-align="center"}
 
-En esencia un solo número o caracter es un vector de largo 1
+En esencia un solo número o carácter es un vector de largo 1
 
 ```{r}
 minivec <- 25
@@ -19,7 +19,7 @@ is.vector(minivec)
 length(minivec)
 ```
 
-## Concantenar
+## Concatenar
 
 Para generar vectores de mayor tamaño debemos usar la función de `c()`o concatenar.
 
@@ -62,14 +62,15 @@ class(vec7)
 
 ## Secuencias
 
-Podemos crear vectores mediante función de secuencia. Cuando es una secuencia sencilla podemos usar el comando `:`. Si necesitamos secuencias más específicas o con ciertas características, entonces podemos usar la función `seq`. Ésta función tiene varios argumentos, `from` es el número de inicio, el `to` el número final y mediante `by` podemos especificar el intervalo de la secuencia.
+Podemos crear vectores mediante función de secuencia. Cuando es una secuencia sencilla podemos usar el comando `:`. Si necesitamos secuencias más específicas o con ciertas características, entonces podemos usar la función `seq`. Ésta función tiene varios argumentos, `from` es el número de inicio, el `to` el número final, `length.out` sirve para controlar el largo del vector y mediante `by` podemos especificar el intervalo de la secuencia.
 
 ```{r}
 
 (vec_seq1 <- 1:10)
 
 (vec_seq2 <- seq(from=1, # Valor de inicio
-               to= 6)) # Valor final
+               to= 6,
+               length.out= 10)) # Valor final
 
 (vec_seq3 <- seq(from= 1,
                 to= 10,
@@ -109,7 +110,7 @@ Es importante especificar los factores porque muchos funciones y análisis estad
 
 ## Crear vectores basados en números aleatorios
 
-Podemos crear vectores basados en números al azar basados en una distribución. Por ejemplo, la más común es la distribución normal y se crea mediante `rnorm`. Ésta función hace parte de una familia de funciones basadas en distribuciones y basicamente traduce números aleatorios basados en una distribución normal.
+Podemos crear vectores basados en números al azar basados en una distribución. Por ejemplo, la más común es la distribución normal y se crea mediante `rnorm`. Ésta función hace parte de una familia de funciones basadas en distribuciones (ver help de rnorm) y básicamente genera números aleatorios basados en una distribución normal.
 
 ```{r}
 # en este ejemplo vamos a crear un vector de 100 valores
@@ -149,11 +150,11 @@ vec_seq3 > 5
 
 # Matrices
 
-Las matrices son vectores multi-dimensionales y al igual que los vectores solo pueden contener un tipo de datos. Las matrices tienen dos dimensiones "alto" dado por el número de filas y largo por el número de columnas.
+Las matrices son vectores multi-dimensionales y al igual que los vectores solo pueden contener un tipo de datos. Las matrices tienen dos dimensiones "alto" dado por el número de filas y "largo" por el número de columnas.
 
 ![](Matrix.png)
 
-Podemos crear una matriz a partir de un vector, especificando las dimensiones de columnas por medio de la función matrix
+Podemos crear una matriz a partir de un vector, especificando las dimensiones de columnas por medio de la función `matrix`. Los argumentos de `nrow` y `ncol` ayudan a definir el número de filas y columnas respectivamente.
 
 ```{r}
 (x1 <- matrix(1:20))
@@ -168,7 +169,7 @@ matrix(1:20, nrow = 4, ncol = 3)
 
 ```
 
-cbind y rbind
+A veces es más intuitivo unir dos o más vectores previamente existentes, por lo que en estos casos podemos combinarlos por filas `rbind` o por columnas `cbind` .
 
 ```{r}
 v1 <- 1:4
@@ -184,6 +185,8 @@ v4 <- 20:28
 m2 <- rbind(v1,v4)
 ```
 
+Se pueden combinar vectores de distinto tipo, pero el de tipo carácter siempre transformará al numérico. Entonces, cuidado con lo que combinan.
+
 ```{r}
 v5 <- c("1", "2", "3", "4")
 
@@ -193,6 +196,10 @@ dim(m4)
 class(m4)
 ```
 
+## Operadores de matrices
+
+Se pueden usar operadores aritméticos en matrices de tipo numérico.
+
 ```{r}
 m2+1
 # m4+1
@@ -200,36 +207,51 @@ m2+1
 
 ```
 
+Podemos hacer uso de la función `t()` para transponer una matriz
+
 ```{r}
 # Podemos transponer una matriz
 m3t <- t(m3)
 ```
 
-```{r}
-# Podemos usar [] para seleccionar columas y filas de las matrices
+## Selección de valores
 
+Igual que en los vectores podemos usar`[]` para seleccionar valores. La grán diferencia es que como las matrices son de 2 dimensiones, debemos especificar ambas en los paréntesis y separarlos por una coma: \[filas , columnas\]. Cuando seleccionamos más de una fila o columna podemos usar `c` para concatenar el vector de selección. Cuando ponemos un signo de "menos" (-) dentro de los paréntesis de selección, vamos a eliminar dicha columna o fila.
+
+```{r}
+
+# Vamos a seleccionar la fila 1 y 3 de m3
 m3[c(1,3),]
 
+#Tabién podemos seleccionar valores de la diagonal por medio de diag
 diag(m3)
 diag(m3t)
 
+# Eliminar la fila 1 y seleccionar la columna 2
 m3[-1,2]
 
+# Eliminar las filas 1 y 4, y seleccionar las columnas 1 y 3
 m3[c(-1,-4), c(1,3)]
 ```
+
+Cunado usamos los selectores al lado izquierdo de la definición de objeto, podemos reemplazar los valores, por los que estamos definiendo.
 
 ```{r}
 # Podemos reemplazar valores de las matrices
 
+# Reemplazar la segunda fila por 100, 200 y 300
 m3[2,] <- c(100,200, 300)
 m3
 
+# Reemplazar fila 4 y 3 y columna 2 por 1000
 m3[c(4,3),2] <- 1000
 m3
 
+# Reemplaza 1 y 3 fila y 1 y 3 fila por 500
 m3[c(1,3), c(1,3)] <- 500
 m3
 
+# Reemplaza la tercea columna por la 1 columna más 3
 m3[,3] <- m3[,1]+3 
 m3
 ```
@@ -238,8 +260,9 @@ m3
 
 ![](array.png){fig-align="center"}
 
+El array es un tipo matriz, pero con más de dos dimensiones 😵🤯. Las array, al igual que las matrices, solo pueden ser formadas por objetos del mismo tipo. Podemos usar la función `array` y definir filas, columnas y tercera dimensión
+
 ```{r}
-# Un Array es una matriz con más de dos dimensiones
 
 AR1 <- array(1:30, dim = c(3,4,2))
 AR1
@@ -254,12 +277,81 @@ x <- AR1[,,2]
 
 ![](dataframe.png){fig-align="center"}
 
+Los data frames al igual que las matrices son objetos de dos dimensiones, pero pueden tener diferentes tipos de datos. Ésta característica los convierte en uno de los objetos más usados para muchos tipos de análisis, por su versatilidad. En general se puede entender las filas de un dataframe como observaciones, casos o individuos y las columnas como variables.
+
+En los data frames cada columna puede ser de distinto tipo pero todas tienen que ser del mismo largo
+
+```{r}
+col1 <- 1:5
+col2 <- c("Z", "W", "L", "M", "R")
+col3 <- c(TRUE, FALSE, FALSE, TRUE, FALSE)
+
+df1 <- data.frame(numeros= col1,
+                  letras= col2,
+                  logico= col3)
+
+```
+
+Podemos usar la función `view` para visualizar el dataframe
+
+```{r}
+#| eval: false
+View(df1)
+```
+
+```{r}
+#| echo: false
+DT::datatable(df1)
+```
+
+Podemos extraer diferentes características de los data frames
+
+```{r}
+# las dimensiones
+dim(df1)
+
+# Los nombres de las columnas
+names(df1)
+
+# La clase
+class(df1)
+```
+
+Podemos transformar una matriz a un data frame o un data frame con solo números a una matriz.
+
+```{r}
+df2 <- as.data.frame(m3)
+df2
+```
+
+## Seleccionar en data frame
+
+En los data frames también podemos seleccionar valores por medio de `[]` , incluyendo los nombres de las columnas
+
+```{r}
+# Seleccionar primera columna
+df1[,1]
+
+# Seleccionar primera fila
+df1[1,]
+
+# Seleccionar por nombres
+df1[c("letras", "logico")]
+```
+
+Otra manera muy común de seleccionar columnas en un data frame es por medio de `$` . El operador de peso selecciona el objeto conservando su clase original, es decir el data frame
+
+```{r}
+(letras2 <- df1$letras)
+```
+
 # Lista
 
 ![](Litst.png){fig-align="center"}
 
+Las listas como los vectores son de una sola dimensión. Sin embargo, pueden tener diferentes tipos de valores e incluso de elementos. Una lista puede tener dentro un vector, una matriz, un data frame e incluso otra lista
+
 ```{r}
-# Las listas también son objetos unidimensionales. Pero pueden tener elementos de diferente tipo y clase
 
 v <- 1:10
 df <- data.frame(num= 1:4, letra= letters[1:4])
@@ -269,13 +361,23 @@ lista <- list(vector=v, dataframe= df, Matriz= m3)
 dim(lista)
 length(lista)
 
-v2 <- lista[1]
-v3 <- lista[[1]]
+```
+
+Podemos utilizar los selectores que ya vimos en las listas
+
+```{r}
+# selección que resulta en lista
+(v2 <- lista[1])
+
+# Selección que termina en vector
+(v3 <- lista[[1]])
 class(v3)
 
-df_list <- lista[[2]]
+# Selección de dataframe
+(df_list <- lista[[2]])
 
-mat <- lista$Matriz
+# Selección termina en matriz
+(mat <- lista$Matriz)
 
-lista[[1]][]
+
 ```
