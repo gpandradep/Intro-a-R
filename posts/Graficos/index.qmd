@@ -4,3 +4,204 @@ description: "Generar y guardar mis gráficos en R"
 author: "Gabriel Andrade Ponce"
 date: "2022-11-26"
 ---
+
+Una de las cosas más divertidas y potentes de R es su capacidad gráfica. En esta sección vamos a explorar algunos gráficos sencillos de R base y su versión en ggplot2. Cuanado me refiero a base R son aquellos gráficos que vienen por defecto. Mientras que ggplot2 es una sintaxis especializada para generar gráficos por capas en R. No hay un camino correcto en este caso, lo mejor es que cada quien use el lenguaje gratificador que más entienda o que más le llame la atención entonces no se preocupen.
+
+# Datos
+
+Vamos a usar unos datos especiales para realizar la mayoria de las gráficas. Estos datos vienen en un paquete de R llamado `palmerpenguins` y si es sobre pingüinos. Para usarlo tenemos que instalarlo y luego cargar los datos
+
+```{r}
+library(ggplot2) # Carguemos ggplo2
+#install.packages("palmerpenguins")
+library(palmerpenguins) # Cargar el paquete
+
+
+```
+
+[![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)](https://allisonhorst.github.io/palmerpenguins/articles/art.html)
+
+```{r}
+#| echo: false
+DT::datatable(penguins)
+```
+
+# Nubes de puntos
+
+::: panel-tabset
+## Plot
+
+```{r}
+plot(x= penguins$flipper_length_mm, # Definir eje x
+     y= penguins$body_mass_g, # Definir eje y
+     pch= 18, # Tipo de punto
+     cex= 2, # Tamaño
+     col= "#69b3a2", # Color
+     xlab = "Largo de aleta (mm)", # Nombre eje x
+     ylab= "Masa corporal (g)", # Nombre eje y
+     main= "Tamaño de pingüinos") # Título
+```
+
+## Ggplot
+
+```{r}
+ggplot(data = penguins, # Definir datos
+       aes(x=flipper_length_mm, # Eje x
+           y = bill_length_mm))+ # Eje y
+  geom_point(shape= 18, # Tipo de punto
+             col= "#69b3a2", # Color
+             size= 3)+ # Tamaño
+  labs(title= "Tamaño de pingüinos", #título
+       x= "Largo de aleta (mm)", # Leyenda eje x
+       y= "Masa corporal (g)")+ # Leyenda eje y
+  theme_bw() # Adicional de diseño
+```
+:::
+
+# Histogramas
+
+::: panel-tabset
+## Plot
+
+```{r}
+hist(penguins$bill_depth_mm, # Datos
+     prob= TRUE, # False es de frecuencia
+     breaks = 10, # Número de segmentos
+     col= "#E1DEFC", # Color
+     border = "#9A68A4", # Borde
+     main= "Histograma con plot",
+     xlab= "Alto del pico",
+     ylab= "Densidad")
+```
+
+## Ggplot
+
+```{r}
+ggplot(data = penguins, # Definir datos
+       aes(x=bill_depth_mm))+ # Eje x
+         geom_histogram(aes(y=..density..), #Definir densidad
+                        fill= "#E1DEFC", # Color
+                        col= "#9A68A4", # Borde
+                        bins = 10)+ # Número de segmentos
+  labs(title= "Histograma con ggplot",
+       x= "Alto del pico",
+       y= "Densidad")+
+  theme_classic()
+```
+:::
+
+# Gráfico de densidad
+
+::: panel-tabset
+## Plot
+
+```{r}
+# Generar densidades por especie
+densidades <- tapply(penguins$bill_length_mm, penguins$species, density, na.rm=TRUE)
+
+# Gráfico
+plot(densidades$Adelie,
+     xlim= c(min(penguins$bill_length_mm, 
+                 na.rm = TRUE),
+             max(penguins$bill_length_mm, 
+                 na.rm = TRUE)),
+     main= "Densidad por especie")# Gráfico principal
+lines(densidades$Chinstrap, col=2) # Linea por especie
+lines(densidades$Gentoo, col=3)
+# Legenda
+legend("topright", # Posición
+       legend = levels(as.factor(penguins$species)) , # Definir niveles
+        lty = 1, # Tipo de linea
+       col = 1:3) # Color
+```
+
+## Ggplot
+
+```{r}
+ggplot(penguins, aes(x= bill_length_mm))+ # Datos
+  geom_density(aes(fill= species), # Color por especie
+               alpha= 0.5)+ # Opacidad
+  labs("Densidad por especie",
+       x= "Largo del pico",
+       fill= "Especies")+
+  theme_bw()
+```
+:::
+
+# Boxplot
+
+::: panel-tabset
+## Plot
+
+```{r}
+boxplot(flipper_length_mm ~ species,
+        data = penguins,
+        col= "white",
+        main= "Boxplot",
+        ylab= "Largo de aleta (mm)",
+        xlab= "Species")
+stripchart(flipper_length_mm ~ species,
+        data = penguins,
+        method= "jitter",
+        pch= 19,
+        col= 2:4,
+        vertical= TRUE,
+        add= TRUE)
+      
+```
+
+## Ggplot
+
+```{r}
+ggplot(penguins, aes(x= species, 
+                     y= flipper_length_mm))+
+  geom_boxplot()+
+  geom_jitter(aes(col=species),
+              width = 0.2)+
+  labs(title = "Boxplot con ggplot",
+       y= "Largo de aleta (mm)",
+       x= "Especies")+
+  theme_bw()+
+  theme(legend.position = "none")
+  
+```
+:::
+
+# Lineas de regresión
+
+::: panel-tabset
+## Plot
+
+```{r}
+plot(x= penguins$bill_length_mm,
+     y= penguins$bill_depth_mm,
+     pch= 16,
+     xlab= "Alto de pico (mm)",
+     ylab= "Longitud de pico (mm)")
+abline(lm(bill_depth_mm~bill_length_mm,
+          data = penguins),
+       col= 4,
+       lwd= 3)
+
+coef <- round(coef(lm(bill_depth_mm~bill_length_mm,
+          data = penguins)),
+          2)
+text(x=36,
+     y=14,
+     paste("Y = ", coef[1], "+", coef[2], "x"))
+```
+
+## Ggplot
+
+```{r}
+ggplot(penguins, aes(x= bill_length_mm,
+                     y= bill_depth_mm))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  annotate("text", x=36, y=14,
+           label= paste("Y = ", coef[1], "+", coef[2], "x") )+
+  labs(x= "Alto de pico (mm)",
+     y= "Longitud de pico (mm)")+
+  theme_minimal()
+```
+:::

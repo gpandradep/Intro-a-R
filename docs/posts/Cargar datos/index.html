@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2022-11-25">
 <meta name="description" content="Ya tengo mis datos, pero ¿Cómo los subo a R?">
 
-<title>5. Carga tus datos</title>
+<title>5. Carga tus datos a R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -108,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">5. Carga tus datos</h1>
+      <h1 class="title">5. Carga tus datos a R</h1>
                   <div>
         <div class="description">
           Ya tengo mis datos, pero ¿Cómo los subo a R?
@@ -142,7 +205,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link active" data-scroll-target="#ejemplo-1">Ejemplo 1</a>
+  <ul class="collapse">
+  <li><a href="#cargar-datos-manual-desde-r" id="toc-cargar-datos-manual-desde-r" class="nav-link" data-scroll-target="#cargar-datos-manual-desde-r">Cargar datos manual desde R</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2">Ejemplo 2</a>
+  <ul class="collapse">
+  <li><a href="#delimitado-por-tabulador-.txt" id="toc-delimitado-por-tabulador-.txt" class="nav-link" data-scroll-target="#delimitado-por-tabulador-.txt">Delimitado por tabulador .txt</a></li>
+  <li><a href="#delimitado-por-comas-.csv" id="toc-delimitado-por-comas-.csv" class="nav-link" data-scroll-target="#delimitado-por-comas-.csv">Delimitado por comas .csv</a>
+  <ul class="collapse">
+  <li><a href="#csv-con-readr" id="toc-csv-con-readr" class="nav-link" data-scroll-target="#csv-con-readr">csv con readr</a></li>
+  </ul></li>
+  <li><a href="#libro-de-excel" id="toc-libro-de-excel" class="nav-link" data-scroll-target="#libro-de-excel">Libro de excel</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -150,8 +231,152 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>Cargar tus datos a R es relativamente sencillo y es algo que harás muchas veces conforme utilices más y más R en distintos proyectos. Sin embargo, es un paso que puede costar bastante a los recién iniciados. Especialmente si vienen del curso de estadística, necesitan tener esto claro si no quieren perder tiempo en el parcial.</p>
+<section id="ejemplo-1" class="level1">
+<h1>Ejemplo 1</h1>
+<p>Imagina que en el parcial te piden hacer un modelo con una base de datos así:</p>
+<p><img src="ejem.png" class="img-fluid"></p>
+<section id="cargar-datos-manual-desde-r" class="level2">
+<h2 class="anchored" data-anchor-id="cargar-datos-manual-desde-r">Cargar datos manual desde R</h2>
+<p>Hay que recordar que para R las columnas son variables y las filas observaciones. Así que lo que necesitaremos es tener dos columnas para hacer el modelo que nos piden. Como ya vimos antes lo podemos lograr de diferentes maneras. Vamos a poner aprueba lo aprendido y primero generemos los vectores</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var_resp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">56.3</span>, <span class="fl">30.2</span>, <span class="fl">25.4</span>, <span class="fl">30.2</span>, <span class="fl">40.1</span>, <span class="fl">22.3</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>var_exp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">23.0</span>, <span class="fl">41.1</span>, <span class="fl">70.2</span>, <span class="fl">30.0</span>, <span class="fl">28.8</span>, <span class="fl">30.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>1- Podemos usar las funciones que vimos para combinar columnas (<code>cbind</code>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(parcial1 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(var_resp, var_exp) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     var_resp var_exp
+[1,]     56.3    23.0
+[2,]     30.2    41.1
+[3,]     25.4    70.2
+[4,]     30.2    30.0
+[5,]     40.1    28.8
+[6,]     22.3    30.1</code></pre>
+</div>
+</div>
+<p>2- También podemos crear un dataframe con los dos vectores</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(parcial2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">variable1=</span> var_resp,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">variable2=</span> var_exp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  variable1 variable2
+1      56.3      23.0
+2      30.2      41.1
+3      25.4      70.2
+4      30.2      30.0
+5      40.1      28.8
+6      22.3      30.1</code></pre>
+</div>
+</div>
+<p>Con cualquiera e estos objetos ya podemos construir un modelo lineal. Solo hay que tener cuidado con el nombre que le ponen a cada columna. Para estar seguros pueden usar la función <code>names</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(parcial2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "variable1" "variable2"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(variable1<span class="sc">~</span> variable2, <span class="at">data=</span> parcial2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = variable1 ~ variable2, data = parcial2)
+
+Coefficients:
+(Intercept)    variable2  
+    48.0734      -0.3761  </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-2" class="level1">
+<h1>Ejemplo 2</h1>
+<p>Ahora nos piden hacer el análisis esta base de datos de 4 tratamientos:</p>
+<p><img src="ejem2.png" class="img-fluid"></p>
+<p>Estoy seguro que ya sabrían hacerlo desde R, pero hay veces que no conviene digitar todo. O incluyo hay bases de datos que ya están en excel, entonces ¿cómo cargarlas en R?</p>
+<p>Vamos a pasar la base a excel. Es tan sencillo como digitar todo en excel o copiar y pegar. Lo único importante es recordar que en R cada columna es una variable o en este caso, un tratamiento. Por lo tanto la base debería verse así:</p>
+<p><img src="excel.png" class="img-fluid"></p>
+<p>Es importante que no exista celdas con datos adicionales, porque pueden aparecer en R cómo NAS.</p>
+<p>Ahora vamos a guardar el archivo, pero lo vamos a guardar con una extensión determinada. Ya saben la ruta-&gt; archivo -&gt; Guardar como. Aquí tenemos dos opciones principales el .<code>csv</code> (<em>comma separated values</em>) separado por comas o .<code>txt</code> (<em>text file format</em>) delimitado por tabulaciones. Ambos son formatos mucho menos pesado que un libro de Excel y por lo tanto más sencillos de leer para R.</p>
+<p><img src="save.png" class="img-fluid"></p>
+<p>Es importante saber donde guardar tu archivo porque luego tienes que dar la ruta específica en R. Cómo yo uso proyectos es decir que mi carpeta es el directorio de trabajo, pero mi archivo esta dentro de la carpeta “posts” y luego dentro de otra que se llama “Cargar datos”</p>
+<section id="delimitado-por-tabulador-.txt" class="level2">
+<h2 class="anchored" data-anchor-id="delimitado-por-tabulador-.txt">Delimitado por tabulador .txt</h2>
+<p>También deben saber que cada tipo de archivo requiere una función diferente. Por ejemplo el txt se lee con <code>read.delim</code>. En testa función simplemente le daremos la dirección del archivo en comillas, y separando cada carpeta con “/”. Hay que tener mucho cuidado con la extensión del archivo, es decir esta función solo cargará los archivos .txt</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"tratamiento.txt"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>texto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sin.sombra X10..Sombra X50..Sombra X100..Sombra
+1       60.4        54.2        47.5         12.3
+2       38.3        45.2        14.2         11.4
+3       70.2        38.1        69.2         10.9
+4       59.6        12.5        47.4          9.5</code></pre>
+</div>
+</div>
+<p>Como verán R no lee muy bien caracteres extraños como porcentajes o espacios, por lo que no es recomendado usarlos. Noten, que por defecto R lee la primera fila como los títulos de cada columna.</p>
+</section>
+<section id="delimitado-por-comas-.csv" class="level2">
+<h2 class="anchored" data-anchor-id="delimitado-por-comas-.csv">Delimitado por comas .csv</h2>
+<p>Para cargar el csv hacemos lo mismo pero con <code>read.csv</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>comas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"tratamiento.csv"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>comas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sin.sombra.10..Sombra.50..Sombra.100..Sombra
+1                          60.4;54.2;47.5;12.3
+2                          38.3;45.2;14.2;11.4
+3                          70.2;38.1;69.2;10.9
+4                           59.6;12.5;47.4;9.5</code></pre>
+</div>
+</div>
+<p>Si lo notan, hay algo mal con la base de datos cuando cargo el csv. Las columnas no se separan bien. Esto sucede porque por defecto mi excel separa los csv con “;”. Podemos especificarle a R el separador con el argumento <code>sep</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>comas2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"tratamiento.csv"</span>,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>comas2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sin.sombra X10..Sombra X50..Sombra X100..Sombra
+1       60.4        54.2        47.5         12.3
+2       38.3        45.2        14.2         11.4
+3       70.2        38.1        69.2         10.9
+4       59.6        12.5        47.4          9.5</code></pre>
+</div>
+</div>
+<p>Ahora si :D.</p>
+<section id="csv-con-readr" class="level3">
+<h3 class="anchored" data-anchor-id="csv-con-readr">csv con readr</h3>
+<p>Las nuevas versiones de RStudio tienen una manera muy manual e interactiva de cargar archivos. Para usarla tenemos que instalar el paquete readr <code>install.packages("readr")</code>. Una vez instalados vamos a ir a la pestaña de archivos (files) en la parte interior derecha (generalmente) de RStudio. Ahora damos click en el archivo de tratamiento.csv</p>
+<p><img src="archivo.png" class="img-fluid"></p>
+<p>Al dar click se desplegaran unas opciones y la daremos de nuevo click en import Dataset. Se abrirá una ventana donde aparece la previsualización de los datos y en la esquina inferior, el código para cargarlo. Note que la función usada es <code>read_delim</code> . En la zona inferior izquierda hay otras opciones, una de ellas es la del delimitador que como les dije en mi caso es “;”. Podemos darle en import o copiar y pegar el código, lo que prefieran.</p>
+<p><img src="import.png" class="img-fluid" width="583"></p>
+</section>
+</section>
+<section id="libro-de-excel" class="level2">
+<h2 class="anchored" data-anchor-id="libro-de-excel">Libro de excel</h2>
+<p>Si, existe la manera de cargar los datos directamente en excel con el paquete readxl. Es un paquete bastante potente y la función <code>read_excel</code> funciona muy parecido a las que ya vimos. Por supuesto esta es una base sencilla por lo que no necesitamos especificar más argumentos. Conforme tengamos más pestañas o libros en excel, podemos especificarlo. Ya saben como ver la ayuda de las funciones entonces pueden explorar todas las opciones</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("readxl")</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.1.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"tratamiento.xlsx"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 4
+  `Sin sombra` `10% Sombra` `50% Sombra` `100% Sombra`
+         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;
+1         60.4         54.2         47.5          12.3
+2         38.3         45.2         14.2          11.4
+3         70.2         38.1         69.2          10.9
+4         59.6         12.5         47.4           9.5</code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
