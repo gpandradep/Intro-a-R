@@ -4,3 +4,232 @@ description: "Paquetes y filosofia tidyverse"
 author: "Gabriel Andrade Ponce"
 date: "2022-11-28"
 ---
+
+# ¿Qué es?
+
+# Instalar paquetes
+
+```{r}
+#| eval: false
+install.packages("palmerpenguins")
+install.packages("tidyverse")
+```
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+# Datos
+
+```{r}
+data(package = 'palmerpenguins')
+head(penguins)
+
+df <- penguins
+```
+
+# Algunas funciones
+
+## Renombrar
+
+```{r}
+df2 <- rename(df,
+  peso= "body_mass_g",
+  largo_pico = "bill_length_mm",
+  prof_pico = "bill_depth_mm"
+)
+names(df2)
+```
+
+## Seleccionar y filtrar datos
+
+```{r}
+df_fil1 <- filter(df2, peso> 4000)
+df2[df2$peso > 4000,]
+```
+
+```{r}
+min(df_fil1$peso)
+```
+
+```{r}
+df_fil2 <- filter(df2, peso>4000, 
+                  sex != "male", 
+                  largo_pico < 47, 
+                  species %in% c("Gentoo", "Adelie"))
+```
+
+```{r}
+df2[df2$peso > 4000 & df2$species == c("Adelie","Gentoo"),]
+```
+
+## Seleccionar columnas
+
+```{r}
+df_sel <- dplyr::select(df_fil1, species, island)
+
+dplyr::select(df_fil1, -species, -island)
+```
+
+incluso permite reordenar y renombrar
+
+```{r}
+dplyr::select(df_fil1, 
+              isla=island, 
+              aleta=flipper_length_mm, 
+              species)
+```
+
+o seleccionar dependiendo de la clase
+
+```{r}
+dplyr::select(df, where(is.factor))
+```
+
+## Nuevas columnas y operaciones
+
+```{r}
+df_mut <- mutate(df_fil1, 
+                 porportion= largo_pico/length(df_fil1$species))
+```
+
+## Conteos
+
+```{r}
+count(df_mut, species)
+count(df_mut, porportion)
+```
+
+pero es más divertido agrupandola
+
+```{r}
+df_group <- group_by(df_mut, island)
+
+resum <- summarise(df_group,
+                   total_peso= sum(peso),
+                   promedio_peso= mean(peso),
+                   sd_pespo= sd(peso))
+```
+
+## Uso de tuberías o pipes
+
+```{r}
+df_pipe <- df %>%
+  rename(peso= "body_mass_g",
+         largo_pico = "bill_length_mm",
+         prof_pico = "bill_depth_mm"
+  ) %>%
+  dplyr::select(-island) %>% 
+  filter(peso>4000) %>%
+  mutate(relacion= largo_pico/prof_pico)
+```
+
+## Especificando ggplot
+
+Grámatica para hacer gráficos. La filosifía de ggplot va en capas
+
+1\. Capa es para los datos y la estética de los datos
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))
+```
+
+Ahora la geometría de los datos que queremos
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))+
+  geom_point()
+```
+
+la geometria puede tener estéticas
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))+
+  geom_point(aes(color=species, shape= species))
+```
+
+Podemos tener varias geometrías
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))+
+  geom_point(aes(color=species, shape= species))+
+  geom_smooth(aes(color= species),method = "lm", se= T)
+```
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))+
+  geom_smooth(method = "lm", se= T)+
+  geom_point()
+```
+
+Hay varios temas por defecto en ggplot que controlan las carácteristicas del gráfico
+
+```{r}
+ggplot(data= df2, 
+       aes(x=largo_pico, y=peso))+
+  geom_point(aes(color=species, shape= species))+
+  geom_smooth(aes(color= species),method = "lm", se= T)+
+  theme_void()
+```
+
+probemos a hacer histogramas
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram()
+```
+
+histograma por especie
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram(aes(fill= species), alpha= 0.5)
+```
+
+Podemos controlar los colores
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram(aes(fill= species), alpha= 0.5)+
+  scale_fill_manual(values = c("#812C30","purple","black"))
+```
+
+Cambiar el tema
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram(aes(fill= species), alpha= 0.5)+
+  scale_fill_manual(values = c("darkorange","purple","cyan4"))+
+  theme_gray()
+```
+
+Cambiar la leyenda
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram(aes(fill= species), alpha= 0.5)+
+  scale_fill_manual(name=" Especies", values = c("darkorange","purple","cyan4"))+
+  theme_minimal()+
+  labs(x= "Largo de la aleta (mm)",
+       y= " Frecuencia",
+       title = " Histograma de aletas")
+```
+
+Por últim también podemos hacer marcos del mismo gráfico agrupado por determinada variable
+
+```{r}
+ggplot(data = df2, aes(x=flipper_length_mm))+
+  geom_histogram(aes(fill= species), alpha= 0.5)+
+  scale_fill_manual(name=" Especies", values = c("darkorange","purple","cyan4"))+
+  theme_minimal()+
+  labs(x= "Largo de la aleta (mm)",
+       y= " Frecuencia",
+       title = " Histograma de aletas")+
+  facet_grid(~year)
+```

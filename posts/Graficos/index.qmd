@@ -5,11 +5,11 @@ author: "Gabriel Andrade Ponce"
 date: "2022-11-26"
 ---
 
-Una de las cosas más divertidas y potentes de R es su capacidad gráfica. En esta sección vamos a explorar algunos gráficos sencillos de R base y su versión en ggplot2. Cuanado me refiero a base R son aquellos gráficos que vienen por defecto. Mientras que ggplot2 es una sintaxis especializada para generar gráficos por capas en R. No hay un camino correcto en este caso, lo mejor es que cada quien use el lenguaje gratificador que más entienda o que más le llame la atención entonces no se preocupen.
+Una de las cosas más divertidas y potentes de R es su capacidad gráfica. En esta sección vamos a explorar algunos gráficos sencillos de R base y su versión en ggplot2. Cuando me refiero a base R es la función de `plot` que viene con R. Mientras que ggplot2 es una sintaxis especializada para generar gráficos por capas en R. No hay un camino correcto en este caso, lo mejor es que cada quien use el método que más entienda o que más le llame la atención. Yo personalmente entiendo mejor (y se más trucos) al ggplot.
 
 # Datos
 
-Vamos a usar unos datos especiales para realizar la mayoria de las gráficas. Estos datos vienen en un paquete de R llamado `palmerpenguins` y si es sobre pingüinos. Para usarlo tenemos que instalarlo y luego cargar los datos
+Vamos a usar unos datos especiales para realizar la mayoría de las gráficas. Estos datos vienen en un paquete de R llamado `palmerpenguins` y si, es sobre pingüinos. Para usarlo tenemos que instalarlo y luego cargar los datos
 
 ```{r}
 library(ggplot2) # Carguemos ggplo2
@@ -100,9 +100,9 @@ ggplot(data = penguins, # Definir datos
 densidades <- tapply(penguins$bill_length_mm, penguins$species, density, na.rm=TRUE)
 
 # Gráfico
-plot(densidades$Adelie,
-     xlim= c(min(penguins$bill_length_mm, 
-                 na.rm = TRUE),
+plot(densidades$Adelie, # Llamar densidad de una especie
+     xlim= c(min(penguins$bill_length_mm, # Definir limites
+                 na.rm = TRUE),# Existencia de NAs
              max(penguins$bill_length_mm, 
                  na.rm = TRUE)),
      main= "Densidad por especie")# Gráfico principal
@@ -134,30 +134,30 @@ ggplot(penguins, aes(x= bill_length_mm))+ # Datos
 ## Plot
 
 ```{r}
-boxplot(flipper_length_mm ~ species,
-        data = penguins,
-        col= "white",
+boxplot(flipper_length_mm ~ species, # Formula de gráfico
+        data = penguins, # Datos
+        col= "white", # Color del boxplot
         main= "Boxplot",
         ylab= "Largo de aleta (mm)",
         xlab= "Species")
-stripchart(flipper_length_mm ~ species,
-        data = penguins,
-        method= "jitter",
-        pch= 19,
-        col= 2:4,
+stripchart(flipper_length_mm ~ species, # Agregar jitter
+        data = penguins, 
+        method= "jitter", # metodo de puntos
+        pch= 19, # tipo de puntos
+        col= 2:4, # Colores
         vertical= TRUE,
-        add= TRUE)
+        add= TRUE) # Adicionar al anterior
       
 ```
 
 ## Ggplot
 
 ```{r}
-ggplot(penguins, aes(x= species, 
-                     y= flipper_length_mm))+
-  geom_boxplot()+
-  geom_jitter(aes(col=species),
-              width = 0.2)+
+ggplot(penguins, aes(x= species, # Definir x
+                     y= flipper_length_mm))+ #Definit y
+  geom_boxplot()+ # Agregar boxplot
+  geom_jitter(aes(col=species), # Agregar puntos y color
+              width = 0.2)+ #Ancho
   labs(title = "Boxplot con ggplot",
        y= "Largo de aleta (mm)",
        x= "Especies")+
@@ -173,32 +173,32 @@ ggplot(penguins, aes(x= species,
 ## Plot
 
 ```{r}
-plot(x= penguins$bill_length_mm,
-     y= penguins$bill_depth_mm,
-     pch= 16,
+plot(x= penguins$bill_length_mm, #Definir x
+     y= penguins$bill_depth_mm, #Definit y
+     pch= 16, # Tipo de punto
      xlab= "Alto de pico (mm)",
      ylab= "Longitud de pico (mm)")
-abline(lm(bill_depth_mm~bill_length_mm,
+abline(lm(bill_depth_mm~bill_length_mm, # Agregar linea con base en un lm
           data = penguins),
-       col= 4,
-       lwd= 3)
+       col= 4, # Color de linea
+       lwd= 3) # Tipo de linea
 
 coef <- round(coef(lm(bill_depth_mm~bill_length_mm,
-          data = penguins)),
+          data = penguins)), # Extraer coeficientes
           2)
-text(x=36,
-     y=14,
-     paste("Y = ", coef[1], "+", coef[2], "x"))
+text(x=36, # coordenadas del texto
+     y=14, # coordenadas en y del texto
+     paste("Y = ", coef[1], "+", coef[2], "x")) # Texto
 ```
 
 ## Ggplot
 
 ```{r}
-ggplot(penguins, aes(x= bill_length_mm,
-                     y= bill_depth_mm))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  annotate("text", x=36, y=14,
+ggplot(penguins, aes(x= bill_length_mm, # Datos en x
+                     y= bill_depth_mm))+ # datos de y
+  geom_point()+ # Agregar puntos
+  geom_smooth(method = "lm")+ # Agregar modelo
+  annotate("text", x=36, y=14, # Texto
            label= paste("Y = ", coef[1], "+", coef[2], "x") )+
   labs(x= "Alto de pico (mm)",
      y= "Longitud de pico (mm)")+

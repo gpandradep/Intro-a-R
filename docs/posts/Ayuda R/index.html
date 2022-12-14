@@ -23,6 +23,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -142,7 +205,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#errores-y-warnings" id="toc-errores-y-warnings" class="nav-link active" data-scroll-target="#errores-y-warnings">Errores y warnings</a>
+  <ul class="collapse">
+  <li><a href="#mensajes" id="toc-mensajes" class="nav-link" data-scroll-target="#mensajes">Mensajes</a></li>
+  <li><a href="#advertencias-o-warnings" id="toc-advertencias-o-warnings" class="nav-link" data-scroll-target="#advertencias-o-warnings">Advertencias o Warnings</a></li>
+  <li><a href="#errores-o-errors" id="toc-errores-o-errors" class="nav-link" data-scroll-target="#errores-o-errors">Errores o errors</a></li>
+  </ul></li>
+  <li><a href="#enfrentar-errores-y-advertencias" id="toc-enfrentar-errores-y-advertencias" class="nav-link" data-scroll-target="#enfrentar-errores-y-advertencias">Enfrentar errores y advertencias</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -150,8 +225,169 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="errores-y-warnings" class="level1">
+<h1>Errores y warnings</h1>
+<p>La mayoría del tiempo que estemos trabajando en R tendremos <font color="red"> errores</font> (<em>errors</em>) y <font color="orange"> advertencias </font> (<em>warnings</em>). Un error en R es algo rutinario, pasa hasta en las mejores familias de programadores. La diferencia recae en que con la experiencia sabrás identificar y solucionar los errores o advertencias. Aquí trataré de darte herramientas para solucionar dichos errores.</p>
+<p>Lo primero es entender la diferencia entre mensajes, advertencias y errores.</p>
+<section id="mensajes" class="level2">
+<h2 class="anchored" data-anchor-id="mensajes">Mensajes</h2>
+<p>Los mensajes son simplemente eso, mensajes. R te comunica de alguna actividad que hace o que completó. Por ejemplo, es muy común tener mensajes cuando cargas o instalas un paquete. Los mensajes aparecerán en la consola. Dependiendo de tu configuración de R estudio tendrán el mismo color que el texto en la consola.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Esto es un mensaje "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Esto es un mensaje </code></pre>
+</div>
+</div>
+</section>
+<section id="advertencias-o-warnings" class="level2">
+<h2 class="anchored" data-anchor-id="advertencias-o-warnings">Advertencias o Warnings</h2>
+<p>Las advertencias son mensajes que notifican de posibles problemas, pero que no detienen la operación de determinada función. Por tal motivo cuando tienes una advertencia puedes correr tu código y dependiendo del warning tu resultado o no puede ser el esperado. En muchos casos no es grave y puedes continuar con tu código sin problemas.</p>
+<p>Por ejemplo, al cargar el paquete ggplot2 la consola me marcará un Warning, que dice que el paquete fue construido en la versión 4.1.3. Es una versión más actual que la mía, pero aún así el paquete funciona.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.1.3</code></pre>
+</div>
+</div>
+<p>Otro ejemplo que vimos en la sección de gráficos es cuando tenemos un NA en la base de datos. Cuando graficas con ggplot, el te avisará cuando hay valores faltantes con un Warning. En este caso es el NA que agregué en la posición 19. A pesar de eso, todo funciona y el gráfico sale.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Números aleatorios</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numeros[<span class="dv">19</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># Agrego un NA</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(numeros)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(x, <span class="fu">aes</span>(<span class="at">x=</span>numeros))<span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 rows containing non-finite values (stat_bin).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Pero cuidado, hay warnings que pueden afectar futuras operaciones. Por ejemplo si por alguna razón me equivoco y creo un logaritmo base 10 de valores negativos tendré NAS. Si posteriormente quiero calcular la media de dicho vector, tendré un error por el echo de que tengo solo NAs</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>seq_mala <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>loga <span class="ot">&lt;-</span> <span class="fu">log10</span>(seq_mala)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Se han producido NaNs</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loga)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+</div>
+</section>
+<section id="errores-o-errors" class="level2">
+<h2 class="anchored" data-anchor-id="errores-o-errors">Errores o errors</h2>
+<p>Los errores son mensajes fatales. Eso quiere decir que la función u operación se detiene y no se produce el resultado</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">"1"</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="error.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="enfrentar-errores-y-advertencias" class="level1">
+<h1>Enfrentar errores y advertencias</h1>
+<ol type="1">
+<li>Lo primero aunque parezca lógico es leer bien el mensaje. Las personas suelen asustarse y simplemente se confunden, pero no leen de que se trata el error</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grafics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>Error in plot(grafics) : object 'grafics' not found</code></p>
+<p>R no encuentra el objeto <code>grafics</code>. En este caso es porque simplemente no hemos generado ningún objeto con ese nombre. Muchas veces sucede porque olvidamos generar el objeto o porque lo escribimos de forma equivocada.</p>
+<ol start="2" type="1">
+<li><p>Verifica e inspecciona tus objetos. Muchas veces los errores se generan porque nuestro objeto no es del tipo correcto. Por ello es importante usar las funciones para explorar los objetos, visualizar tus tablas, etc.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(letters[<span class="dv">5</span><span class="sc">:</span><span class="dv">20</span>], <span class="at">nrow =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in matrix(letters[5:20], nrow = 5): la longitud de los datos [16] no es
+un submúltiplo o múltiplo del número de filas [5] en la matriz</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(mat): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr [1:5, 1:4] "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" ...</code></pre>
+</div>
+</div></li>
+<li><p>Utiliza el help de cada función para saber que puede estar sucediendo y como solucionarlo</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mat2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">50</span>), <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>mat2[<span class="dv">5</span>,<span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>mat2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]   30   44   14    1   12   38    7   35   26    47
+[2,]   42   39   19   48   45   40   20   27   13    18
+[3,]   37   28   34   32   24   50   16   43   31    23
+[4,]   15   25   22   36    5   41   21    8   29    11
+[5,]    2   46    4   33   NA    3   17    9   10    49</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mat2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Resulta que la función mean tiene un argumento llamado <code>na.rm</code> que sirve para especificar que no considere los NAs en el procedimiento</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mat2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.89796</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Busca en san google. El 99% de las veces los errores que obtienes ya los sufrió otra persona y muy probablemente encontró como solucionarlo.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img-9gag-fun.9cache.com/photo/aqN005R_460s.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>La comunidad de R es muy buena ayudando a al gente, así que si copian y pegan el error en el buscador de google seguro encontrarán una solución. Con el tiempo también aprenderás a buscar en google los errores o cómo aprender a hacer ciertas operaciones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://miro.medium.com/max/1000/1*LNI3TWutq8kj69DAUQqO4g.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Un foro muy famoso es <strong>Stackoverflow</strong>, allí hay preguntas y soluciones a problemas de programación e incluso estadísticos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stackov.png" class="img-fluid figure-img" width="621"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Si después de leer la documentación de la función, revisar los objetos y buscar en Internet no encuentras la solución. Entonces, es el momento de preguntar ya sea en un foro a otro estudiante o a un profesor. Recuerda que la gente que te va ayudar lo hace invirtiendo su tiempo en ti, por lo que hay que intentar hacer que valga la pena. Demuestra que ya has intentado buscar información. Dale toda la información necesaria a la otra persona para que pueda ayudar a solucionar tu problema. Por ejemplo, versión de R, que dice el error, de que se compone tu objeto etc. Se directo, concreto y da las gracias 🤗.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://community.rstudio.com/uploads/default/original/3X/0/8/082a83ce507ed1fd9a28b86b9ffe1f4e0f16d108.jpeg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li><p>Extra ChatGPT <a href="https://chat.openai.com/chat" class="uri">https://chat.openai.com/chat</a>: Este es un chat basado en una inteligencia artificial que intenta resolver cualquier pregunta que hagas, incluido preguntas de programación. Por ahora solo funciona en inglés e incluso da ejemplos en R con código incluido, eso si sabes preguntar</p>
+<p><img src="chatgtp.png" class="img-fluid"></p></li>
+</ol>
+<p>Hay que tener cuidado porque sigue generando respuestas incorrectas, pero con el tiempo supongo que irá mejorando. En todo caso esta interesante y es divertido probarlo.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
