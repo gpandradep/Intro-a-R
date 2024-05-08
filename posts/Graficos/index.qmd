@@ -2,7 +2,7 @@
 title: "6. Gráficos básicos en R"
 description: "Generar y guardar mis gráficos en R"
 author: "Gabriel Andrade Ponce"
-date: "2022-11-26"
+date: "2024-05-06"
 ---
 
 Una de las cosas más divertidas y potentes de R es su capacidad gráfica. En esta sección vamos a explorar algunos gráficos sencillos de R base y su versión en ggplot2. Cuando me refiero a base R es la función de `plot` que viene con R. Mientras que ggplot2 es una sintaxis especializada para generar gráficos por capas en R. No hay un camino correcto en este caso, lo mejor es que cada quien use el método que más entienda o que más le llame la atención. Yo personalmente entiendo mejor (y se más trucos) al ggplot.

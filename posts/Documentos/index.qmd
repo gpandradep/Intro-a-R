@@ -2,5 +2,5 @@
 title: "9. Documentos desde R"
 description: "Lo básico de generar html, pds y words desde R"
 author: "Gabriel Andrade Ponce"
-date: "2022-11-29"
+date: "2024-05-06"
 ---

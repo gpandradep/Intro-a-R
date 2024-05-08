@@ -2,7 +2,7 @@
 title: "2. ¿Qué son R y Rstudio?"
 description: "Antes de empezar un pequeño resumen de que es y para que sirven R y RStudio"
 author: "Gabriel Andrade Ponce"
-date: "2022-11-22"
+date: "2024-05-06"
 bibliography: references.bib
 ---
 

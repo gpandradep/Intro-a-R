@@ -1,8 +1,8 @@
 ---
 title: "5. Carga tus datos a R"
 description: "Ya tengo mis datos, pero ¿Cómo los subo a R?"
-author: "Gabriel Andrade Ponce"
-date: "2022-11-25"
+author: "Gabriel Andrade Ponce y Karen Lorena Velásquez-C"
+date: "2024-05-06"
 ---
 
 Cargar tus datos a R es relativamente sencillo y es algo que harás muchas veces conforme utilices más y más R en distintos proyectos. Sin embargo, es un paso que puede costar bastante a los recién iniciados. Especialmente si vienen del curso de estadística, necesitan tener esto claro si no quieren perder tiempo en el parcial.

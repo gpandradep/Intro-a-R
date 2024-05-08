@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gabriel Andrade Ponce">
-<meta name="dcterms.date" content="2022-11-25">
+<meta name="author" content="Gabriel Andrade Ponce y Karen Lorena Velásquez-C">
+<meta name="dcterms.date" content="2024-05-06">
 <meta name="description" content="Ya tengo mis datos, pero ¿Cómo los subo a R?">
 
 <title>5. Carga tus datos a R</title>
@@ -167,14 +167,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Gabriel Andrade Ponce </p>
+               <p>Gabriel Andrade Ponce y Karen Lorena Velásquez-C </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 25, 2022</p>
+        <p class="date">May 6, 2024</p>
       </div>
     </div>
     
@@ -339,14 +339,12 @@ Coefficients:
 <p>Si, existe la manera de cargar los datos directamente en excel con el paquete readxl. Es un paquete bastante potente y la función <code>read_excel</code> funciona muy parecido a las que ya vimos. Por supuesto esta es una base sencilla por lo que no necesitamos especificar más argumentos. Conforme tengamos más pestañas o libros en excel, podemos especificarlo. Ya saben como ver la ayuda de las funciones entonces pueden explorar todas las opciones</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("readxl")</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readxl' was built under R version 4.1.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"tratamiento.xlsx"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"tratamiento.xlsx"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 4
+<pre><code># A tibble: 4 × 4
   `Sin sombra` `10% Sombra` `50% Sombra` `100% Sombra`
          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;
 1         60.4         54.2         47.5          12.3

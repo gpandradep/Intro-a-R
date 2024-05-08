@@ -2,7 +2,7 @@
 title: "3. Objetos, operadores y funciones"
 description: "Lo básico de R, tipos de objetos, operadores y funciones"
 author: "Gabriel Andrade Ponce/Karen Lorena Velásquez-C"
-date: "2022-05-06"
+date: "2024-05-06"
 ---
 
 # Manos a la obra
