@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,7 +18,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -57,8 +63,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <script>
@@ -91,7 +99,35 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -99,38 +135,40 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
- <span class="menu-text">Inicio</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Inicio</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/gpandradep"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/gpandradep"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/Gatorco_AP"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/Gatorco_AP"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://gpandradep.github.io/gpandradep/"><i class="bi bi-globe" role="img">
+    <a class="nav-link" href="https://gpandradep.github.io/gpandradep/"> <i class="bi bi-globe" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -142,27 +180,27 @@ ul.task-list li input[type="checkbox"] {
                       </div>
   </div>
     
-  <div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-author column-page-left">
     <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-heading">Afiliación</div>
     
       <div class="quarto-title-meta-contents">
-      <a href="https://gpandradep.github.io/gpandradep/">Gabriel Andrade Ponce</a> 
+      <p class="author"><a href="https://gpandradep.github.io/gpandradep/">Gabriel Andrade Ponce</a> </p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
               Posgrado, Instituto de Ecología A.C.
             </p>
         </div>
-      </div>
+    </div>
 
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
         
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">26 de noviembre de 2022</p>
+        <p class="date">7 de mayo de 2024</p>
       </div>
     </div>
     
@@ -189,15 +227,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <section id="bienvendos" class="level1">
 <h1>Bienvendos 🤓</h1>
 <p>Hola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RUNR.jpg" class="img-fluid figure-img" width="470"></p>
+<p><img src="RUNR.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="470"></p>
 </figure>
 </div>
-<p>Nota: <a href="https://gpandradep.github.io/Intro_est_inecol_website/">Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [<svg viewbox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>]</a></p>
+<p>Nota: <a href="https://gpandradep.github.io/Intro_est_inecol_website/">Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [<code>r icons::fontawesome("link")</code>]</a></p>
 </section>
 <section id="talleres" class="level1">
 <h1>Talleres 👨‍💻👩‍💻</h1>
@@ -207,7 +246,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -219,84 +257,87 @@ Título
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1669010400000" data-listing-file-modified-sort="1669526889992" data-listing-reading-time-sort="2.84" data-listing-title-sort="1. Instalar R y RStudio" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="./posts/Instalar R y Rstudio/Uno.gif" style="height: 40px;">
+<tr data-index="0" data-listing-date-sort="1669010400000" data-listing-file-modified-sort="1715138271063" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="568" data-listing-title-sort="1. Instalar R y RStudio" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\Instalar R y Rstudio\Uno.gif" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
-<td class="listing-title">
-<a href="./posts/Instalar R y Rstudio/index.html" class="title">1. Instalar R y RStudio</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1669096800000" data-listing-file-modified-sort="1669862219549" data-listing-reading-time-sort="7.515" data-listing-title-sort="2. ¿Qué son R y Rstudio?" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="./posts/RyRstudio/cronoR.png" style="height: 40px;">
-</td>
-<td class="listing-title">
-<a href="./posts/RyRstudio/index.html" class="title">2. ¿Qué son R y Rstudio?</a>
+<td>
+<a href="./posts/Instalar R y Rstudio/index.html" class="title listing-title">1. Instalar R y RStudio</a>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1669183200000" data-listing-file-modified-sort="1670033563167" data-listing-reading-time-sort="6.005" data-listing-title-sort="3. Objetos, operadores y funciones" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="https://i.redd.it/lpeksn1rfqj81.jpg" style="height: 40px;">
+<tr data-index="1" data-listing-date-sort="1669096800000" data-listing-file-modified-sort="1715138271144" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1503" data-listing-title-sort="2. ¿Qué son R y Rstudio?" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\RyRstudio\cronoR.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
-<td class="listing-title">
-<a href="./posts/Operadores objetos y funciones/index.html" class="title">3. Objetos, operadores y funciones</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1669269600000" data-listing-file-modified-sort="1670470354551" data-listing-reading-time-sort="7.315" data-listing-title-sort="4. Vectores, Matrices, listas y dataframes" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="./posts/Matriz lista dataframe/vectors.png" style="height: 40px;">
-</td>
-<td class="listing-title">
-<a href="./posts/Matriz lista dataframe/index.html" class="title">4. Vectores, Matrices, listas y dataframes</a>
+<td>
+<a href="./posts/RyRstudio/index.html" class="title listing-title">2. ¿Qué son R y Rstudio?</a>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1669356000000" data-listing-file-modified-sort="1670637469079" data-listing-reading-time-sort="4.14" data-listing-title-sort="5. Carga tus datos a R" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="./posts/Cargar datos/ejem.png" style="height: 40px;">
+<tr data-index="2" data-listing-date-sort="1669183200000" data-listing-file-modified-sort="1715138271084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1201" data-listing-title-sort="3. Objetos, operadores y funciones" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
 </td>
-<td class="listing-title">
-<a href="./posts/Cargar datos/index.html" class="title">5. Carga tus datos a R</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1669442400000" data-listing-file-modified-sort="1670982190615" data-listing-reading-time-sort="6.01" data-listing-title-sort="6. Gráficos básicos en R" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png" style="height: 40px;">
-</td>
-<td class="listing-title">
-<a href="./posts/Graficos/index.html" class="title">6. Gráficos básicos en R</a>
+<td>
+<a href="./posts/Operadores objetos y funciones/index.html" class="title listing-title">3. Objetos, operadores y funciones</a>
 </td>
 </tr>
-<tr data-index="6" data-listing-date-sort="1669528800000" data-listing-file-modified-sort="1670990072850" data-listing-reading-time-sort="4.135" data-listing-title-sort="7. Errores en R y donde solucionarlos" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<img src="./posts/Ayuda R/error.png" style="height: 40px;">
+<tr data-index="3" data-listing-date-sort="1669269600000" data-listing-file-modified-sort="1715138271079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1463" data-listing-title-sort="4. Vectores, Matrices, listas y dataframes" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\Matriz lista dataframe\vectors.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
-<td class="listing-title">
-<a href="./posts/Ayuda R/index.html" class="title">7. Errores en R y donde solucionarlos</a>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1669615200000" data-listing-file-modified-sort="1670991894052" data-listing-reading-time-sort="3.075" data-listing-title-sort="8. Modo tidyverse" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<div class="table-img" style="height: 40px;">
-&nbsp;
-</div>
-</td>
-<td class="listing-title">
-<a href="./posts/Tidyverse/index.html" class="title">8. Modo tidyverse</a>
+<td>
+<a href="./posts/Matriz lista dataframe/index.html" class="title listing-title">4. Vectores, Matrices, listas y dataframes</a>
 </td>
 </tr>
-<tr data-index="8" data-listing-date-sort="1669701600000" data-listing-file-modified-sort="1669527100792" data-listing-reading-time-sort="0.005" data-listing-title-sort="9. Documentos desde R" data-listing-filename-sort="index.qmd">
-<td class="listing-image">
-<div class="table-img" style="height: 40px;">
-&nbsp;
-</div>
+<tr data-index="4" data-listing-date-sort="1669356000000" data-listing-file-modified-sort="1715138270985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="828" data-listing-title-sort="5. Carga tus datos a R" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\Cargar datos\ejem.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
-<td class="listing-title">
-<a href="./posts/Documentos/index.html" class="title">9. Documentos desde R</a>
+<td>
+<a href="./posts/Cargar datos/index.html" class="title listing-title">5. Carga tus datos a R</a>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1669442400000" data-listing-file-modified-sort="1715138271003" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202" data-listing-title-sort="6. Gráficos básicos en R" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
+</td>
+<td>
+<a href="./posts/Graficos/index.html" class="title listing-title">6. Gráficos básicos en R</a>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1669528800000" data-listing-file-modified-sort="1715138270960" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="827" data-listing-title-sort="7. Errores en R y donde solucionarlos" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\Ayuda R\index_files\figure-html\unnamed-chunk-3-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+</td>
+<td>
+<a href="./posts/Ayuda R/index.html" class="title listing-title">7. Errores en R y donde solucionarlos</a>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1669615200000" data-listing-file-modified-sort="1715138271163" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="615" data-listing-title-sort="8. Modo tidyverse" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><p class="card-img-top"><img src="posts\Tidyverse\index_files\figure-html\unnamed-chunk-16-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+</td>
+<td>
+<a href="./posts/Tidyverse/index.html" class="title listing-title">8. Modo tidyverse</a>
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="1669701600000" data-listing-file-modified-sort="1715138271000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="9. Documentos desde R" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
+</td>
+<td>
+<a href="./posts/Documentos/index.html" class="title listing-title">9. Documentos desde R</a>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1715119345985" data-listing-reading-time-sort="6" data-listing-word-count-sort="1029" data-listing-title-sort="Introducción a R" data-listing-filename-sort="PresentacionKLV.qmd">
+<td>
+<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
+</td>
+<td>
+<a href="./posts/RyRstudio/PresentacionKLV.html" class="title listing-title">Introducción a R</a>
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No hay resultados
@@ -329,9 +370,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -367,10 +422,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -380,8 +452,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -393,9 +474,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -438,10 +755,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2022, Gabriel Andrade-Ponce</div>   
-    <div class="nav-footer-right">Página construida con <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-left">
+<p>© Copyright 2022, Gabriel Andrade-Ponce</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Página construida con <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

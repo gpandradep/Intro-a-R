@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,14 +20,16 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -41,8 +43,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -76,8 +83,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -88,38 +97,40 @@ div.csl-indent {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
- <span class="menu-text">Inicio</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Inicio</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/gpandradep"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/gpandradep"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/Gatorco_AP"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/Gatorco_AP"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://gpandradep.github.io/gpandradep/"><i class="bi bi-globe" role="img">
+    <a class="nav-link" href="https://gpandradep.github.io/gpandradep/"> <i class="bi bi-globe" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -192,6 +203,7 @@ div.csl-indent {
 
 
 
+
 <section id="qué-es-r" class="level1">
 <h1>¿Qué es R?</h1>
 <p>En pocas palabras R es un lenguaje y un ambiente creado para realizar operaciones estadísticas y gráficas. En un principio R se derivó de otro lenguaje, <strong>S</strong>. El lenguaje S fue un proyecto que inició en 1976 de la mano de John Chambers y que maduró hasta 1998. La idea de <strong>S</strong> era generar una interfaz que facilitara el análisis de datos a los programadores, pero paulatinamente también a un público menos especializado. Es decir, querían crear algo que nos permitiera escribir un código sin sentirnos programadores.</p>
@@ -200,7 +212,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="cronoR.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cronología de R</figcaption><p></p>
+<figcaption>Cronología de R</figcaption>
 </figure>
 </div>
 </section>
@@ -211,7 +223,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Rstudio.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cheatsheets de la página de posit</figcaption><p></p>
+<figcaption>Cheatsheets de la página de posit</figcaption>
 </figure>
 </div>
 <section id="los-proyectos-de-rstudio" class="level2">
@@ -221,14 +233,14 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="crear proyecto.gif" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Crear un proyecto</figcaption><p></p>
+<figcaption>Crear un proyecto</figcaption>
 </figure>
 </div>
 <p>Para abrir el proyecto simplemente nos vamos a la carpeta que escogimos y abrimos el archivo .Rproj. Este archivo automáticamente abre RStudio. Para verificar que estamos dentro de un proyecto podemos observar en la parte superior derecha del RStudio, donde estará el nombre de nuestro proyecto.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="abrir el proyecto.gif" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">abrir el proyecto</figcaption><p></p>
+<figcaption>abrir el proyecto</figcaption>
 </figure>
 </div>
 </section>
@@ -238,7 +250,7 @@ div.csl-indent {
 <p>Te estarás preguntando porque después de años de perfeccionar tus poderes en Excel, ahora tienes que aprender R. Te puedo dar una razón”fea” y es que en este curso y en muchos de posgrado, ya es un requisito saber R.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="bob.png" class="img-fluid figure-img" width="286"></p>
+<p><img src="bob.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="286"></p>
 </figure>
 </div>
 <p>Pero tranquil@, R no debería ser una tortura y hay muchas razones más bonitas para aprenderlo:</p>
@@ -258,7 +270,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://bookdown.org/content/3515/Libro_files/figure-html/leftjoin-1.gif" class="img-fluid figure-img" width="512"></p>
-<p></p><figcaption class="figure-caption">https://bookdown.org/content/3515/tidydata.html</figcaption><p></p>
+<figcaption>https://bookdown.org/content/3515/tidydata.html</figcaption>
 </figure>
 </div>
 </section>
@@ -268,7 +280,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lakens.github.io/statistical_inferences/images/animatep2.gif" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">https://lakens.github.io/statistical_inferences</figcaption><p></p>
+<figcaption>https://lakens.github.io/statistical_inferences</figcaption>
 </figure>
 </div>
 </section>
@@ -283,7 +295,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="markdonw quarto.png" class="img-fluid figure-img" width="566"></p>
-<p></p><figcaption class="figure-caption">https://yihui.org/en/2022/04/quarto-r-markdown/</figcaption><p></p>
+<figcaption>https://yihui.org/en/2022/04/quarto-r-markdown/</figcaption>
 </figure>
 </div>
 </section>
@@ -301,22 +313,30 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://imgs.njtierney.com/code_hero_rstats.png" class="img-fluid figure-img" width="518"></p>
-<p></p><figcaption class="figure-caption">Allison Horst code hero</figcaption><p></p>
+<figcaption>Allison Horst code hero</figcaption>
 </figure>
 </div>
 <p>Quizás lo mejor que tiene R y RStudio es su comunidad. Existen mucha información, tutoriales, guías, páginas de ayuda, foros y comunidades enfocadas en ayudar y enseñar. Lo mejor de todo es que casi siempre es de manera gratuita siguiendo la filosofía de R.</p>
 <p>Existe incluso conferencias de R dirigidas a Latinoamérica, patrocinadas por RStudio (ahora posit). Casi todas las charlas están grabadas en youtube así que le pueden chismosear:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://github.com/LatinR/presentaciones-LatinR2022"><img src="https://community-cdn.rstudio.com/uploads/default/original/3X/5/8/583cb8f87098fca9a0a0eaa276aff0b11f07fff1.jpeg" class="img-fluid figure-img" width="352"></a></p>
-<p></p><figcaption class="figure-caption">Logo R latin america</figcaption><p></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://github.com/LatinR/presentaciones-LatinR2022"><img src="https://community-cdn.rstudio.com/uploads/default/original/3X/5/8/583cb8f87098fca9a0a0eaa276aff0b11f07fff1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="352" alt="Logo R latin america"></a></p>
+</figure>
+</div>
+<figcaption>Logo R latin america</figcaption>
 </figure>
 </div>
 <p>Otro ejemplo muy importante de como se organiza la comunidad de R, es el de <a href="https://twitter.com/RLadiesGlobal">Rladies</a>. R-laides busca promover la diversidad de género en la comunidad de R. Existe un capítulo de R-ladies en Xalapa y su misión es proporcionar un espacio comunitario seguro para cualquier persona que se identifique como género minoritario. Yo soy muy fan de estas comunidades porque comparten cosas muy bonitas y divertidas de aprender.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.facebook.com/profile.php?id=100042617837216&amp;paipv=0&amp;eav=AfbqFij-bTFOhb3mBQnlB2LJIACjLQUVQy7NN7gxVbJ5jUOYZfTB41H-MJmQ-tOAaO0"><img src="https://pbs.twimg.com/profile_images/1124352295448092672/kruQyvMK_400x400.jpg" class="img-fluid figure-img" width="342"></a></p>
-<p></p><figcaption class="figure-caption">Logo R-ladies Xalapa</figcaption><p></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.facebook.com/profile.php?id=100042617837216&amp;paipv=0&amp;eav=AfbqFij-bTFOhb3mBQnlB2LJIACjLQUVQy7NN7gxVbJ5jUOYZfTB41H-MJmQ-tOAaO0"><img src="https://pbs.twimg.com/profile_images/1124352295448092672/kruQyvMK_400x400.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="342" alt="Logo R-ladies Xalapa"></a></p>
+</figure>
+</div>
+<figcaption>Logo R-ladies Xalapa</figcaption>
 </figure>
 </div>
 </section>
@@ -326,14 +346,14 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="timeR.PNG" class="img-fluid figure-img" width="592"></p>
-<p></p><figcaption class="figure-caption">Lawlor J, Banville F, Forero-Muñoz N-R, Hébert K, Martínez-Lanfranco JA, Rogy P, et al.&nbsp;(2022) Ten simple rules for teaching yourself R. PLoS Comput Biol 18(9): e1010372. https://doi.org/10.1371/journal.pcbi.1010372</figcaption><p></p>
+<figcaption>Lawlor J, Banville F, Forero-Muñoz N-R, Hébert K, Martínez-Lanfranco JA, Rogy P, et al.&nbsp;(2022) Ten simple rules for teaching yourself R. PLoS Comput Biol 18(9): e1010372. https://doi.org/10.1371/journal.pcbi.1010372</figcaption>
 </figure>
 </div>
 <p>En conclusión, que aprendas R dependerá de cuanto tiempo le dediques, no de que tomes este tutorial o no <span class="citation" data-cites="lawlor2022">(<a href="#ref-lawlor2022" role="doc-biblioref">Lawlor et al. 2022</a>)</span>. Así que mucho ánimo y éxitos en tu aventura.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://bcullen.rbind.io/post/2020-10-19-teaching-an-r-bootcamp-remotely/r_rollercoaster.png" class="img-fluid figure-img" width="642"></p>
-<p></p><figcaption class="figure-caption">Allison Horst rollercoaster</figcaption><p></p>
+<figcaption>Allison Horst rollercoaster</figcaption>
 </figure>
 </div>
 </section>
@@ -344,23 +364,23 @@ div.csl-indent {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-auker2020" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-auker2020" class="csl-entry" role="listitem">
 Auker, Linda A., and Erika L. Barthelmess. 2020. <span>“Teaching R in the Undergraduate Ecology Classroom: Approaches, Lessons Learned, and Recommendations.”</span> <em>Ecosphere</em> 11 (4): e03060. <a href="https://doi.org/10.1002/ecs2.3060">https://doi.org/10.1002/ecs2.3060</a>.
 </div>
-<div id="ref-feng2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-feng2020" class="csl-entry" role="listitem">
 Feng, Xiao, Huijie Qiao, and Brian J Enquist. 2020. <span>“Doubling Demands in Programming Skills Call for Ecoinformatics Education.”</span> <em>Frontiers in Ecology and the Environment</em> 18 (3): 123–24. <a href="https://doi.org/10.1002/fee.2179">https://doi.org/10.1002/fee.2179</a>.
 </div>
-<div id="ref-ihaka1996" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ihaka1996" class="csl-entry" role="listitem">
 Ihaka, Ross, and Robert Gentleman. 1996. <span>“R: A Language for Data Analysis and Graphics.”</span> <em>Journal of Computational and Graphical Statistics</em> 5 (3): 299–314. <a href="https://doi.org/10.2307/1390807">https://doi.org/10.2307/1390807</a>.
 </div>
-<div id="ref-lai2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lai2019" class="csl-entry" role="listitem">
 Lai, Jiangshan, Christopher J. Lortie, Robert A. Muenchen, Jian Yang, and Keping Ma. 2019. <span>“Evaluating the Popularity of R in Ecology.”</span> <em>Ecosphere</em> 10 (1): e02567. <a href="https://doi.org/10.1002/ecs2.2567">https://doi.org/10.1002/ecs2.2567</a>.
 </div>
-<div id="ref-lawlor2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lawlor2022" class="csl-entry" role="listitem">
 Lawlor, Jake, Francis Banville, Norma-Rocio Forero-Muñoz, Katherine Hébert, Juan Andrés Martínez-Lanfranco, Pierre Rogy, and A. Andrew M. MacDonald. 2022. <span>“Ten Simple Rules for Teaching Yourself R.”</span> <em>PLOS Computational Biology</em> 18 (9): e1010372. <a href="https://doi.org/10.1371/journal.pcbi.1010372">https://doi.org/10.1371/journal.pcbi.1010372</a>.
 </div>
-<div id="ref-rcoreteam2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rcoreteam2017" class="csl-entry" role="listitem">
 R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing,. Vienna, Austria. <a href="http://www.R-project.org/.">http://www.R-project.org/.</a>
 </div>
 </div></section></div></main> <!-- /main -->
@@ -391,9 +411,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -429,10 +463,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -442,8 +493,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -455,9 +515,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -500,10 +796,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2022, Gabriel Andrade-Ponce</div>   
-    <div class="nav-footer-right">Página construida con <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-left">
+<p>© Copyright 2022, Gabriel Andrade-Ponce</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Página construida con <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 
