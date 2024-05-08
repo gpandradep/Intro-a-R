@@ -1,8 +1,8 @@
 ---
 title: "1. Instalar R y RStudio"
 description: "Aprende el procedimiento para instalar R y su interfaz RStudio"
-author: "Gabriel Andrade Ponce"
-date: "2022-11-21"
+author: "Gabriel Andrade Ponce/Karen Lorena Velásquez-C"
+date: "2024-05-06"
 ---
 
 # Instalar R
