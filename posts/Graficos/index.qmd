@@ -205,3 +205,7 @@ ggplot(penguins, aes(x= bill_length_mm, # Datos en x
   theme_minimal()
 ```
 :::
+
+### Ejemplo avanzado
+
+![](Especies_reportadas2.png){fig-align="center" width="800"}
