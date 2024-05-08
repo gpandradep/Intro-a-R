@@ -3,6 +3,9 @@ title: "Introducción a R y RStudio"
 author: 
  - name: "Gabriel Andrade Ponce"
    url: https://gpandradep.github.io/gpandradep/ 
+   affiliation: Posdoctoral research SFASU
+ - name: "Karen Lorena Velásquez-C"
+   url: https://github.com/klvelasquezc   
    affiliation: Posgrado, Instituto de Ecología A.C.
 date: last-modified
 listing:
