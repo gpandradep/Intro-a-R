@@ -20,7 +20,11 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
+![“Artwork by \@allison_horst”](palmerpenguins.png){fig-align="center" width="400"}
+
 # Datos
+
+Datos colectados en las Islas Palmer de 2007 - 2009 por Dr. Kristen Gorman
 
 ```{r}
 data(package = 'palmerpenguins')
@@ -28,6 +32,8 @@ head(penguins)
 
 df <- penguins
 ```
+
+![“Artwork by \@allison_horst”](culmen_depth.png){fig-align="center" width="600"}
 
 # Algunas funciones
 
