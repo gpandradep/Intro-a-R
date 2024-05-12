@@ -131,6 +131,8 @@ resum <- summarise(df_group,
 
 “%\>%” es una herramienta para la ejecución de pipeline o tuberías de comandos que permite una encadenamiento de funciones de la forma [@araneda2021a].
 
+![](Pipe.jpg){fig-align="center" width="900"}
+
 Forma "normal"
 
 ```{r}

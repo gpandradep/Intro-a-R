@@ -1,0 +1,17 @@
+{
+  "hash": "ceac10be72f83b1080189dad956833d9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"9. Documentos desde R\"\ndescription: \"Lo básico de generar html, pds y words desde R\"\nauthor: \"Karen Lorena Velásquez-C\"\ndate: \"2024-05-10\"\n---\n\n\n## Instalación\n\nPara iniciar, es necesario instalar las siguientes paqueterias:\n\n-   `rmarkdown`\n-   `prettydoc`\n-   `imager`\n-   `knitr`\n\n## Introducción\n\n### *¿Que es?*\n\n`rmarkdown` es una paqueteria que se basa en la sintaxis de marcas *markdown*, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio con el fin de conjugar el lenguaje R con la generación de textos científicos.\n\n### *¿Cómo funciona?*\n\nRstudio emplea *pandoc* como conversor universal de documentos, permitiendo así los diferentes tipos de salida de `rmarkdown`.\n\nLa paqueteria `knitr` es la encargada de generar la interacción entre R y *pandoc* y de tal forma la obtención del documento en el formato deseado.\n\n![](rmarkdownflow.jpg){fig-align=\"center\" width=\"1000\"}\n\n## *Diferentes tipos de salida*\n\n## *Temas en archivos html*\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-2.png){width=672}\n:::\n:::\n\n\n## Formatos de texto\n\n-   *Rladies* :Cursiva\n-   **Rladies** :Negrita\n-   `Rladies` :\"código\"\n-   Tamaño de fuente \"#\"\n\n#Rladies : Primer nivel\n##RLadies\n#####Rladies\n\n\n-   ~~Rladies~~ : Tachado\n-   [Rladies meetup Xalapa](https://www.meetup.com/es-ES/rladies-xalapa/)\n-   Rladies ![](RladiesXalapa.jpg)\n\n## Diferentes formas de cargar imagenes\n\nMarkdown permite cargar imagenes en formatos *.jpg*, *.png*, y *.jpeg*.\n\nPrimera forma:\n\n`![](imagen.jpg)`\n\nEjemplo:\n\n![](Rladies_integrantes.jpeg)\n\nSegunda forma:\n\nMediante el uso de la libreria `imager` podemos cargar diversos tipos de imagenes y modificar su aspecto.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(imager) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nF1<- load.image('Rladies_integrantes.jpg') \nF2<- load.image('logo.png') \nplot(F1, axes= F, margin(t = 1, r =4, b = 1, l = 1)) \nplot(F2, axes = F, margin(t = 1, r =4, b = 1, l = 1))\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(knitr) \nX1 <- include_graphics('RladiesXal.jpg', dpi=300) \nX2 <- include_graphics('Rladies_integrantes.jpg', dpi=300) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nX1;X2\n```\n\n::: {.cell-output-display}\n![](RladiesXal.jpg){width=252}\n:::\n\n::: {.cell-output-display}\n![](Rladies_integrantes.jpg){width=410}\n:::\n:::\n\n\n## Chunks: formas de generar un chunk\n\n## Generación de tablas\n\n| Periodo | Inclinación |\n|---------|-------------|\n| 75      | 642         |\n| 76      | 644         |\n| 77      | 656         |\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

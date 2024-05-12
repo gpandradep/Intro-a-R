@@ -5,6 +5,7 @@ author: "Karen Lorena Velásquez-C"
 date: "2024-05-10"
 ---
 
+
 ## Instalación
 
 Para iniciar, es necesario instalar las siguientes paqueterías:
@@ -32,6 +33,7 @@ La paqueteria `knitr` es la encargada de generar la interacción entre R y *pand
 
 ## *Temas en archivos html*
 
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 library(imager) 
@@ -44,6 +46,7 @@ plot(F2, axes = F, margin(t = 1, r =0, b = 1, l = 0))
 
 ```
 
+
 ## Formatos de texto
 
 -   *Rladies* :Cursiva
@@ -51,23 +54,15 @@ plot(F2, axes = F, margin(t = 1, r =0, b = 1, l = 0))
 -   `Rladies` :"código"
 -   Tamaño de fuente "\#"
 
-# Rladies Header 1
-
-## Rladies Header 2...
-
-### Rladies
-
-#### Rladies
-
-Rladies (Normal)
+### Garen
 
 -   ~~Rladies~~ : Tachado
 -   [Rladies meetup Xalapa](https://www.meetup.com/es-ES/rladies-xalapa/)
 -   Rladies ![](RladiesXalapa.jpg)
 
-## Diferentes formas de cargar imágenes
+## Diferentes formas de cargar imagenes
 
-Markdown permite cargar imágenes en formatos *.jpg*, *.png*, y *.jpeg*.
+Markdown permite cargar imagenes en formatos *.jpg*, *.png*, y *.jpeg*.
 
 Primera forma:
 
@@ -79,7 +74,8 @@ Ejemplo:
 
 Segunda forma:
 
-Mediante el uso de la librería `imager` podemos cargar diversos tipos de imágenes y modificar su aspecto.
+Mediante el uso de la libreria `imager` podemos cargar diversos tipos de imagenes y modificar su aspecto.
+
 
 ```{r}
 library(imager) 
@@ -98,18 +94,14 @@ par(mfrow = c(2,1), mar=c(1,1,1,1))
 X1;X2
 ```
 
+
 ## Chunks: formas de generar un chunk
 
-```{r RladiesXal}
-
-
-```
-
-## Generación de tablas/
-
+## Generación de tablas
 
 | Periodo | Inclinación |
 |---------|-------------|
 | 75      | 642         |
 | 76      | 644         |
 | 77      | 656         |
+
