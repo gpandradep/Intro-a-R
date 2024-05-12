@@ -382,14 +382,14 @@
     "href": "posts/Documentos/index.html",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nquarto\nrmarkdown\nprettydoc\nimager\nknitr"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\n\nY también instalaremos Quarto"
   },
   {
     "objectID": "posts/Documentos/index.html#instalación",
     "href": "posts/Documentos/index.html#instalación",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nquarto\nrmarkdown\nprettydoc\nimager\nknitr"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\n\nY también instalaremos Quarto"
   },
   {
     "objectID": "posts/Documentos/index.html#introducción",

@@ -9,11 +9,15 @@ date: "2024-05-10"
 
 Para iniciar, es necesario instalar las siguientes paqueterías:
 
--   `quarto`
 -   `rmarkdown`
+
 -   `prettydoc`
+
 -   `imager`
+
 -   `knitr`
+
+Y también instalaremos `Quarto`
 
 ## Introducción
 
