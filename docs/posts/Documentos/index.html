@@ -193,15 +193,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#instalación" id="toc-instalación" class="nav-link active" data-scroll-target="#instalación">Instalación</a></li>
   <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a>
   <ul class="collapse">
-  <li><a href="#que-es" id="toc-que-es" class="nav-link" data-scroll-target="#que-es"><em>¿Que es?</em></a></li>
+  <li><a href="#que-es-rmarkdown" id="toc-que-es-rmarkdown" class="nav-link" data-scroll-target="#que-es-rmarkdown"><em>¿Que es rmarkdown?</em></a></li>
   <li><a href="#cómo-funciona" id="toc-cómo-funciona" class="nav-link" data-scroll-target="#cómo-funciona"><em>¿Cómo funciona?</em></a></li>
+  <li><a href="#y-qué-es-quarto" id="toc-y-qué-es-quarto" class="nav-link" data-scroll-target="#y-qué-es-quarto"><em>¿Y qué es Quarto?</em></a></li>
   </ul></li>
-  <li><a href="#diferentes-tipos-de-salida" id="toc-diferentes-tipos-de-salida" class="nav-link" data-scroll-target="#diferentes-tipos-de-salida"><em>Diferentes tipos de salida</em></a></li>
-  <li><a href="#temas-en-archivos-html" id="toc-temas-en-archivos-html" class="nav-link" data-scroll-target="#temas-en-archivos-html"><em>Temas en archivos html</em></a></li>
+  <li><a href="#diferentes-tipos-de-salida" id="toc-diferentes-tipos-de-salida" class="nav-link" data-scroll-target="#diferentes-tipos-de-salida">Diferentes tipos de salida</a>
+  <ul class="collapse">
+  <li><a href="#temas-en-archivos-html" id="toc-temas-en-archivos-html" class="nav-link" data-scroll-target="#temas-en-archivos-html">Temas en archivos html</a></li>
   <li><a href="#formatos-de-texto" id="toc-formatos-de-texto" class="nav-link" data-scroll-target="#formatos-de-texto">Formatos de texto</a></li>
-  <li><a href="#diferentes-formas-de-cargar-imagenes" id="toc-diferentes-formas-de-cargar-imagenes" class="nav-link" data-scroll-target="#diferentes-formas-de-cargar-imagenes">Diferentes formas de cargar imagenes</a></li>
-  <li><a href="#chunks-formas-de-generar-un-chunk" id="toc-chunks-formas-de-generar-un-chunk" class="nav-link" data-scroll-target="#chunks-formas-de-generar-un-chunk">Chunks: formas de generar un chunk</a></li>
-  <li><a href="#generación-de-tablas" id="toc-generación-de-tablas" class="nav-link" data-scroll-target="#generación-de-tablas">Generación de tablas</a></li>
+  </ul></li>
+  <li><a href="#rladies-header-1" id="toc-rladies-header-1" class="nav-link" data-scroll-target="#rladies-header-1">Rladies Header 1</a>
+  <ul class="collapse">
+  <li><a href="#rladies-header-2" id="toc-rladies-header-2" class="nav-link" data-scroll-target="#rladies-header-2">Rladies Header 2…</a>
+  <ul class="collapse">
+  <li><a href="#rladies" id="toc-rladies" class="nav-link" data-scroll-target="#rladies">Rladies</a></li>
+  <li><a href="#diferentes-formas-de-cargar-imágenes" id="toc-diferentes-formas-de-cargar-imágenes" class="nav-link" data-scroll-target="#diferentes-formas-de-cargar-imágenes">Diferentes formas de cargar imágenes</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -214,8 +222,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="instalación" class="level2">
 <h2 class="anchored" data-anchor-id="instalación">Instalación</h2>
-<p>Para iniciar, es necesario instalar las siguientes paqueterias:</p>
+<p>Para iniciar, es necesario instalar las siguientes paqueterías:</p>
 <ul>
+<li><code>quarto</code></li>
 <li><code>rmarkdown</code></li>
 <li><code>prettydoc</code></li>
 <li><code>imager</code></li>
@@ -224,9 +233,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<section id="que-es" class="level3">
-<h3 class="anchored" data-anchor-id="que-es"><em>¿Que es?</em></h3>
-<p><code>rmarkdown</code> es una paqueteria que se basa en la sintaxis de marcas <em>markdown</em>, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio con el fin de conjugar el lenguaje R con la generación de textos científicos.</p>
+<section id="que-es-rmarkdown" class="level3">
+<h3 class="anchored" data-anchor-id="que-es-rmarkdown"><em>¿Que es rmarkdown?</em></h3>
+<p><code>rmarkdown</code> es una paqueteria que se basa en la sintaxis de marcas <em>markdown</em>, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio (Posit) con el fin de conjugar el lenguaje R con la generación de textos científicos.</p>
 </section>
 <section id="cómo-funciona" class="level3">
 <h3 class="anchored" data-anchor-id="cómo-funciona"><em>¿Cómo funciona?</em></h3>
@@ -238,12 +247,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
+<section id="y-qué-es-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="y-qué-es-quarto"><em>¿Y qué es Quarto?</em></h3>
+<p>Quarto es una versión multi-lenguaje y de nueva generación de R Markdown de Posit e incluye docenas de nuevas características y capacidades, al tiempo que es capaz de renderizar la mayoría de los archivos Rmd existentes sin modificaciones. Quarto es una herramienta de interfaz de línea de comandos, no un paquete R.</p>
+<p><img src="quartoflow.jpg" class="img-fluid" width="1000"></p>
+</section>
 </section>
 <section id="diferentes-tipos-de-salida" class="level2">
-<h2 class="anchored" data-anchor-id="diferentes-tipos-de-salida"><em>Diferentes tipos de salida</em></h2>
-</section>
-<section id="temas-en-archivos-html" class="level2">
-<h2 class="anchored" data-anchor-id="temas-en-archivos-html"><em>Temas en archivos html</em></h2>
+<h2 class="anchored" data-anchor-id="diferentes-tipos-de-salida">Diferentes tipos de salida</h2>
+<section id="temas-en-archivos-html" class="level3">
+<h3 class="anchored" data-anchor-id="temas-en-archivos-html">Temas en archivos html</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -261,30 +274,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="formatos-de-texto" class="level2">
-<h2 class="anchored" data-anchor-id="formatos-de-texto">Formatos de texto</h2>
+<section id="formatos-de-texto" class="level3">
+<h3 class="anchored" data-anchor-id="formatos-de-texto">Formatos de texto</h3>
 <ul>
 <li><em>Rladies</em> :Cursiva</li>
 <li><strong>Rladies</strong> :Negrita</li>
 <li><code>Rladies</code> :“código”</li>
 <li>Tamaño de fuente “#”</li>
 </ul>
-<p>#Rladies : Primer nivel ##RLadies #####Rladies</p>
+</section>
+</section>
+<section id="rladies-header-1" class="level1">
+<h1>Rladies Header 1</h1>
+<section id="rladies-header-2" class="level2">
+<h2 class="anchored" data-anchor-id="rladies-header-2">Rladies Header 2…</h2>
+<section id="rladies" class="level3">
+<h3 class="anchored" data-anchor-id="rladies">Rladies</h3>
+<section id="rladies-1" class="level4">
+<h4 class="anchored" data-anchor-id="rladies-1">Rladies</h4>
+<p>Rladies (Normal)</p>
 <ul>
 <li><del>Rladies</del> : Tachado</li>
 <li><a href="https://www.meetup.com/es-ES/rladies-xalapa/">Rladies meetup Xalapa</a></li>
 <li>Rladies <img src="RladiesXalapa.jpg" class="img-fluid"></li>
 </ul>
 </section>
-<section id="diferentes-formas-de-cargar-imagenes" class="level2">
-<h2 class="anchored" data-anchor-id="diferentes-formas-de-cargar-imagenes">Diferentes formas de cargar imagenes</h2>
-<p>Markdown permite cargar imagenes en formatos <em>.jpg</em>, <em>.png</em>, y <em>.jpeg</em>.</p>
+</section>
+<section id="diferentes-formas-de-cargar-imágenes" class="level3">
+<h3 class="anchored" data-anchor-id="diferentes-formas-de-cargar-imágenes">Diferentes formas de cargar imágenes</h3>
+<p>Markdown permite cargar imágenes en formatos <em>.jpg</em>, <em>.png</em>, y <em>.jpeg</em>.</p>
 <p>Primera forma:</p>
 <p><code>![](imagen.jpg)</code></p>
 <p>Ejemplo:</p>
-<p><img src="Rladies_integrantes.jpeg" class="img-fluid"></p>
+<p><img src="Rladies_integrantes.jpg" class="img-fluid"></p>
 <p>Segunda forma:</p>
-<p>Mediante el uso de la libreria <code>imager</code> podemos cargar diversos tipos de imagenes y modificar su aspecto.</p>
+<p>Mediante el uso de la librería <code>imager</code> podemos cargar diversos tipos de imágenes y modificar su aspecto.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(imager) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)) </span>
@@ -321,36 +345,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="chunks-formas-de-generar-un-chunk" class="level2">
-<h2 class="anchored" data-anchor-id="chunks-formas-de-generar-un-chunk">Chunks: formas de generar un chunk</h2>
-</section>
-<section id="generación-de-tablas" class="level2">
-<h2 class="anchored" data-anchor-id="generación-de-tablas">Generación de tablas</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Periodo</th>
-<th>Inclinación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>75</td>
-<td>642</td>
-</tr>
-<tr class="even">
-<td>76</td>
-<td>644</td>
-</tr>
-<tr class="odd">
-<td>77</td>
-<td>656</td>
-</tr>
-</tbody>
-</table>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

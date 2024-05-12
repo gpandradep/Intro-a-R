@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introducción a R y RStudio",
     "section": "",
-    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\n\n\nTaller Rmarkdown - Rladies\n\n\n\n\n\nNo hay resultados"
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -382,28 +382,28 @@
     "href": "posts/Documentos/index.html",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterias:\n\nrmarkdown\nprettydoc\nimager\nknitr"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nquarto\nrmarkdown\nprettydoc\nimager\nknitr"
   },
   {
     "objectID": "posts/Documentos/index.html#instalación",
     "href": "posts/Documentos/index.html#instalación",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterias:\n\nrmarkdown\nprettydoc\nimager\nknitr"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nquarto\nrmarkdown\nprettydoc\nimager\nknitr"
   },
   {
     "objectID": "posts/Documentos/index.html#introducción",
     "href": "posts/Documentos/index.html#introducción",
     "title": "9. Documentos desde R",
     "section": "Introducción",
-    "text": "Introducción\n\n¿Que es?\nrmarkdown es una paqueteria que se basa en la sintaxis de marcas markdown, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio con el fin de conjugar el lenguaje R con la generación de textos científicos.\n\n\n¿Cómo funciona?\nRstudio emplea pandoc como conversor universal de documentos, permitiendo así los diferentes tipos de salida de rmarkdown.\nLa paqueteria knitr es la encargada de generar la interacción entre R y pandoc y de tal forma la obtención del documento en el formato deseado."
+    "text": "Introducción\n\n¿Que es rmarkdown?\nrmarkdown es una paqueteria que se basa en la sintaxis de marcas markdown, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio (Posit) con el fin de conjugar el lenguaje R con la generación de textos científicos.\n\n\n¿Cómo funciona?\nRstudio emplea pandoc como conversor universal de documentos, permitiendo así los diferentes tipos de salida de rmarkdown.\nLa paqueteria knitr es la encargada de generar la interacción entre R y pandoc y de tal forma la obtención del documento en el formato deseado.\n\n\n\n\n\n\n\n¿Y qué es Quarto?\nQuarto es una versión multi-lenguaje y de nueva generación de R Markdown de Posit e incluye docenas de nuevas características y capacidades, al tiempo que es capaz de renderizar la mayoría de los archivos Rmd existentes sin modificaciones. Quarto es una herramienta de interfaz de línea de comandos, no un paquete R."
   },
   {
     "objectID": "posts/Documentos/index.html#diferentes-tipos-de-salida",
     "href": "posts/Documentos/index.html#diferentes-tipos-de-salida",
     "title": "9. Documentos desde R",
     "section": "Diferentes tipos de salida",
-    "text": "Diferentes tipos de salida"
+    "text": "Diferentes tipos de salida\n\nTemas en archivos html\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFormatos de texto\n\nRladies :Cursiva\nRladies :Negrita\nRladies :“código”\nTamaño de fuente “#”"
   },
   {
     "objectID": "posts/Documentos/index.html#temas-en-archivos-html",
@@ -417,7 +417,7 @@
     "href": "posts/Documentos/index.html#formatos-de-texto",
     "title": "9. Documentos desde R",
     "section": "Formatos de texto",
-    "text": "Formatos de texto\n\nRladies :Cursiva\nRladies :Negrita\nRladies :“código”\nTamaño de fuente “#”\n\n#Rladies : Primer nivel ##RLadies #####Rladies\n\nRladies : Tachado\nRladies meetup Xalapa\nRladies"
+    "text": "Formatos de texto\n\nRladies :Cursiva\nRladies :Negrita\nRladies :“código”\nTamaño de fuente “#”"
   },
   {
     "objectID": "posts/Documentos/index.html#diferentes-formas-de-cargar-imagenes",
@@ -437,7 +437,21 @@
     "objectID": "posts/Documentos/index.html#generación-de-tablas",
     "href": "posts/Documentos/index.html#generación-de-tablas",
     "title": "9. Documentos desde R",
-    "section": "Generación de tablas",
-    "text": "Generación de tablas\n\n\n\nPeriodo\nInclinación\n\n\n\n\n75\n642\n\n\n76\n644\n\n\n77\n656"
+    "section": "Generación de tablas/",
+    "text": "Generación de tablas/\n\n\n\nPeriodo\nInclinación\n\n\n\n\n75\n642\n\n\n76\n644\n\n\n77\n656"
+  },
+  {
+    "objectID": "posts/Documentos/index.html#rladies-header-2",
+    "href": "posts/Documentos/index.html#rladies-header-2",
+    "title": "9. Documentos desde R",
+    "section": "Rladies Header 2…",
+    "text": "Rladies Header 2…\n\nRladies\n\nRladies\nRladies (Normal)\n\nRladies : Tachado\nRladies meetup Xalapa\nRladies \n\n\n\n\nDiferentes formas de cargar imágenes\nMarkdown permite cargar imágenes en formatos .jpg, .png, y .jpeg.\nPrimera forma:\n![](imagen.jpg)\nEjemplo:\n\nSegunda forma:\nMediante el uso de la librería imager podemos cargar diversos tipos de imágenes y modificar su aspecto.\n\nlibrary(imager) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nF1&lt;- load.image('Rladies_integrantes.jpg') \nF2&lt;- load.image('logo.png') \nplot(F1, axes= F, margin(t = 1, r =4, b = 1, l = 1)) \nplot(F2, axes = F, margin(t = 1, r =4, b = 1, l = 1))\n\n\n\n\n\n\n\n\n\nlibrary(knitr) \nX1 &lt;- include_graphics('RladiesXal.jpg', dpi=300) \nX2 &lt;- include_graphics('Rladies_integrantes.jpg', dpi=300) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nX1;X2"
+  },
+  {
+    "objectID": "posts/Documentos/index.html#diferentes-formas-de-cargar-imágenes",
+    "href": "posts/Documentos/index.html#diferentes-formas-de-cargar-imágenes",
+    "title": "9. Documentos desde R",
+    "section": "Diferentes formas de cargar imágenes",
+    "text": "Diferentes formas de cargar imágenes\nMarkdown permite cargar imágenes en formatos .jpg, .png, y .jpeg.\nPrimera forma:\n![](imagen.jpg)\nEjemplo:\n\nSegunda forma:\nMediante el uso de la librería imager podemos cargar diversos tipos de imágenes y modificar su aspecto.\n\nlibrary(imager) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nF1&lt;- load.image('Rladies_integrantes.jpg') \nF2&lt;- load.image('logo.png') \nplot(F1, axes= F, margin(t = 1, r =4, b = 1, l = 1)) \nplot(F2, axes = F, margin(t = 1, r =4, b = 1, l = 1))\n\n\n\n\n\n\n\n\n\nlibrary(knitr) \nX1 &lt;- include_graphics('RladiesXal.jpg', dpi=300) \nX2 &lt;- include_graphics('Rladies_integrantes.jpg', dpi=300) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nX1;X2"
   }
 ]

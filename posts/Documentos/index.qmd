@@ -9,6 +9,7 @@ date: "2024-05-10"
 
 Para iniciar, es necesario instalar las siguientes paqueterías:
 
+-   `quarto`
 -   `rmarkdown`
 -   `prettydoc`
 -   `imager`
@@ -16,9 +17,9 @@ Para iniciar, es necesario instalar las siguientes paqueterías:
 
 ## Introducción
 
-### *¿Que es?*
+### *¿Que es rmarkdown?*
 
-`rmarkdown` es una paqueteria que se basa en la sintaxis de marcas *markdown*, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio con el fin de conjugar el lenguaje R con la generación de textos científicos.
+`rmarkdown` es una paqueteria que se basa en la sintaxis de marcas *markdown*, generada con el fin de facilitar el desarrollo de paginas web, dicha sintaxis fue integrada por Rstudio (Posit) con el fin de conjugar el lenguaje R con la generación de textos científicos.
 
 ### *¿Cómo funciona?*
 
@@ -28,9 +29,15 @@ La paqueteria `knitr` es la encargada de generar la interacción entre R y *pand
 
 ![](rmarkdownflow.jpg){fig-align="center" width="1000"}
 
-## *Diferentes tipos de salida*
+### *¿Y qué es Quarto?*
 
-## *Temas en archivos html*
+Quarto es una versión multi-lenguaje y de nueva generación de R Markdown de Posit e incluye docenas de nuevas características y capacidades, al tiempo que es capaz de renderizar la mayoría de los archivos Rmd existentes sin modificaciones. Quarto es una herramienta de interfaz de línea de comandos, no un paquete R.
+
+![](quartoflow.jpg){width="1000"}
+
+## Diferentes tipos de salida
+
+### Temas en archivos html
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -44,7 +51,7 @@ plot(F2, axes = F, margin(t = 1, r =0, b = 1, l = 0))
 
 ```
 
-## Formatos de texto
+### Formatos de texto
 
 -   *Rladies* :Cursiva
 -   **Rladies** :Negrita
@@ -65,7 +72,7 @@ Rladies (Normal)
 -   [Rladies meetup Xalapa](https://www.meetup.com/es-ES/rladies-xalapa/)
 -   Rladies ![](RladiesXalapa.jpg)
 
-## Diferentes formas de cargar imágenes
+### Diferentes formas de cargar imágenes
 
 Markdown permite cargar imágenes en formatos *.jpg*, *.png*, y *.jpeg*.
 
@@ -75,7 +82,7 @@ Primera forma:
 
 Ejemplo:
 
-![](Rladies_integrantes.jpeg)
+![](Rladies_integrantes.jpg)
 
 Segunda forma:
 
@@ -97,19 +104,3 @@ X2 <- include_graphics('Rladies_integrantes.jpg', dpi=300)
 par(mfrow = c(2,1), mar=c(1,1,1,1)) 
 X1;X2
 ```
-
-## Chunks: formas de generar un chunk
-
-```{r RladiesXal}
-
-
-```
-
-## Generación de tablas/
-
-
-| Periodo | Inclinación |
-|---------|-------------|
-| 75      | 642         |
-| 76      | 644         |
-| 77      | 656         |
