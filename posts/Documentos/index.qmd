@@ -1,6 +1,6 @@
 ---
 title: "9. Documentos desde R"
-description: "Lo básico de generar html, pds y words desde R"
+description: "Lo básico de generar html, pdfs y words desde R"
 author: "Karen Lorena Velásquez-C"
 date: "2024-05-10"
 ---
