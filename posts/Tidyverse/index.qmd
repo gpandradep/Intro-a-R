@@ -1,11 +1,16 @@
 ---
 title: "8. Modo tidyverse"
 description: "Paquetes y filosofia tidyverse"
-author: "Gabriel Andrade Ponce"
-date: "2024-05-06"
+author: "Gabriel Andrade Ponce y Karen Velásquez-C"
+date: "2024-05-11"
+bibliography: references.bib
 ---
 
 # ¿Qué es?
+
+**Tidyverse** es una colección de paquetes disponibles en **R** y orientados a la manipulación, importación, exploración y visualización de datos y que se utiliza exhaustivamente en ciencia de datos. El uso de Tidyverse permite facilitar el trabajo estadístico y la generación de trabajos reproducibles. Está compuesto de los siguientes paquetes [@araneda2021].
+
+![](Tidypaquetes.jpeg){fig-align="center" width="500"}
 
 # Instalar paquetes
 
@@ -20,11 +25,11 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-![“Artwork by \@allison_horst”](palmerpenguins.png){fig-align="center" width="400"}
+![“Artwork by \@allison_horst”](palmerpenguins.png){fig-align="center" width="350"}
 
 # Datos
 
-Datos colectados en las Islas Palmer de 2007 - 2009 por Dr. Kristen Gorman
+Datos colectados en las Islas Palmer de 2007 - 2009 por Dr. Kristen Gorman [@horst2020]
 
 ```{r}
 data(package = 'palmerpenguins')
@@ -33,7 +38,7 @@ head(penguins)
 df <- penguins
 ```
 
-![“Artwork by \@allison_horst”](culmen_depth.png){fig-align="center" width="600"}
+![“Artwork by \@allison_horst”](culmen_depth.png){fig-align="center" width="500"}
 
 # Algunas funciones
 
@@ -78,7 +83,7 @@ df_sel <- dplyr::select(df_fil1, species, island)
 dplyr::select(df_fil1, -species, -island)
 ```
 
-incluso permite reordenar y renombrar
+incluso permite re ordenar y renombrar
 
 ```{r}
 dplyr::select(df_fil1, 
@@ -95,19 +100,23 @@ dplyr::select(df, where(is.factor))
 
 ## Nuevas columnas y operaciones
 
+`mutate()` función que nos permite crear, modificar y eliminar columnas
+
 ```{r}
 df_mut <- mutate(df_fil1, 
                  porportion= largo_pico/length(df_fil1$species))
 ```
 
-## Conteos
+### Conteos
 
 ```{r}
 count(df_mut, species)
 count(df_mut, porportion)
 ```
 
-pero es más divertido agrupandola
+### Agrupar
+
+pero es más divertido agrupando los datos y poder realizar más de una operación sobre los datos
 
 ```{r}
 df_group <- group_by(df_mut, island)
@@ -115,10 +124,25 @@ df_group <- group_by(df_mut, island)
 resum <- summarise(df_group,
                    total_peso= sum(peso),
                    promedio_peso= mean(peso),
-                   sd_pespo= sd(peso))
+                   sd_peso= sd(peso))
 ```
 
 ## Uso de tuberías o pipes
+
+“%\>%” es una herramienta para la ejecución de pipeline o tuberías de comandos que permite una encadenamiento de funciones de la forma [@araneda2021a].
+
+Forma "normal"
+
+```{r}
+df_pipe <- rename(df, peso= "body_mass_g",
+         largo_pico = "bill_length_mm",
+         prof_pico = "bill_depth_mm")
+df_pipe <- select(df_pipe, -island)
+df_pipe <- filter(df_pipe, peso>4000)
+df_pipe <- mutate(df_pipe, relacion= largo_pico/prof_pico)
+```
+
+Forma "pipe"
 
 ```{r}
 df_pipe <- df %>%
@@ -133,7 +157,7 @@ df_pipe <- df %>%
 
 ## Especificando ggplot
 
-Grámatica para hacer gráficos. La filosifía de ggplot va en capas
+Gramática para hacer gráficos. La filosofía de ggplot va en capas
 
 1\. Capa es para los datos y la estética de los datos
 
@@ -174,7 +198,7 @@ ggplot(data= df2,
   geom_point()
 ```
 
-Hay varios temas por defecto en ggplot que controlan las carácteristicas del gráfico
+Hay varios temas por defecto en ggplot que controlan las características del gráfico
 
 ```{r}
 ggplot(data= df2, 
