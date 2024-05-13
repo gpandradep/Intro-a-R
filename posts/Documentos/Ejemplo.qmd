@@ -1,0 +1,12 @@
+---
+title: "My Document"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+Hola mi nombre es Karen
+
+Karencita

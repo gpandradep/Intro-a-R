@@ -1,0 +1,23 @@
+---
+title: "Tarea 8 (Imaginaria)"
+format: docx
+---
+
+```{r data}
+library(palmerpenguins)
+df <- penguins
+
+
+```
+
+1.  Relación entre el tamaño del pico y el peso.
+
+```{r}
+mod1 <- lm(df$bill_length_mm ~ df$body_mass_g)
+summary(mod1)
+
+```
+
+```{r}
+plot(mod1)
+```

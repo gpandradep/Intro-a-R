@@ -1,0 +1,17 @@
+{
+  "hash": "3e2f5036cc2996c35a8f5a16c64fcb81",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tarea 8 (Imaginaria)\"\nformat: docx\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(palmerpenguins)\ndf <- penguins\n```\n:::\n\n\n1.  Relación entre el tamaño del pico y el peso.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmod1 <- lm(df$bill_length_mm ~ df$body_mass_g)\nsummary(mod1)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = df$bill_length_mm ~ df$body_mass_g)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.1251  -3.0434  -0.8089   2.0711  16.1109 \n\nCoefficients:\n                Estimate Std. Error t value Pr(>|t|)    \n(Intercept)    2.690e+01  1.269e+00   21.19   <2e-16 ***\ndf$body_mass_g 4.051e-03  2.967e-04   13.65   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.394 on 340 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.3542,\tAdjusted R-squared:  0.3523 \nF-statistic: 186.4 on 1 and 340 DF,  p-value: < 2.2e-16\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(mod1)\n```\n\n::: {.cell-output-display}\n![](Ejemplo-Word_files/figure-docx/unnamed-chunk-2-1.png)\n:::\n\n::: {.cell-output-display}\n![](Ejemplo-Word_files/figure-docx/unnamed-chunk-2-2.png)\n:::\n\n::: {.cell-output-display}\n![](Ejemplo-Word_files/figure-docx/unnamed-chunk-2-3.png)\n:::\n\n::: {.cell-output-display}\n![](Ejemplo-Word_files/figure-docx/unnamed-chunk-2-4.png)\n:::\n:::\n",
+    "supporting": [
+      "Ejemplo-Word_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

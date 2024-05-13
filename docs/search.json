@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introducción a R y RStudio",
     "section": "",
-    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\nNo hay resultados"
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\n\n\nMy Document\n\n\n\n\n\n\n\nTarea 8 (Imaginaria)\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -453,5 +453,12 @@
     "title": "9. Documentos desde R",
     "section": "Diferentes formas de cargar imágenes",
     "text": "Diferentes formas de cargar imágenes\nMarkdown permite cargar imágenes en formatos .jpg, .png, y .jpeg.\nPrimera forma:\n![](imagen.jpg)\nEjemplo:\n\nSegunda forma:\nMediante el uso de la librería imager podemos cargar diversos tipos de imágenes y modificar su aspecto.\n\nlibrary(imager) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nF1&lt;- load.image('Rladies_integrantes.jpg') \nF2&lt;- load.image('logo.png') \nplot(F1, axes= F, margin(t = 1, r =4, b = 1, l = 1)) \nplot(F2, axes = F, margin(t = 1, r =4, b = 1, l = 1))\n\n\n\n\n\n\n\n\n\nlibrary(knitr) \nX1 &lt;- include_graphics('RladiesXal.jpg', dpi=300) \nX2 &lt;- include_graphics('Rladies_integrantes.jpg', dpi=300) \npar(mfrow = c(2,1), mar=c(1,1,1,1)) \nX1;X2"
+  },
+  {
+    "objectID": "posts/Documentos/Ejemplo.html",
+    "href": "posts/Documentos/Ejemplo.html",
+    "title": "My Document",
+    "section": "",
+    "text": "Hola mi nombre es Karen"
   }
 ]
