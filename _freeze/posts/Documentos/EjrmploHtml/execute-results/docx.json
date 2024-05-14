@@ -1,0 +1,17 @@
+{
+  "hash": "574725c95ee90662528f370394571997",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Ejemplo HTML\"\nauthor: \"Karen V.\"\nformat: docx\n---\n\n\n## Ejemplo Islas Palmer\n\nVamos a revisar la relación entre la longitud del pico y la masa corporal de los pingüinos de las especies XX.\n\nPrimero cargamos los datos:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(palmerpenguins)\ndf <- as.data.frame(penguins)\n```\n:::\n\n\nPrimer modelo\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmod1 <- lm(bill_length_mm ~ body_mass_g, df)\nsummary(mod1)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = bill_length_mm ~ body_mass_g, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.1251  -3.0434  -0.8089   2.0711  16.1109 \n\nCoefficients:\n             Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 2.690e+01  1.269e+00   21.19   <2e-16 ***\nbody_mass_g 4.051e-03  2.967e-04   13.65   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.394 on 340 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.3542,\tAdjusted R-squared:  0.3523 \nF-statistic: 186.4 on 1 and 340 DF,  p-value: < 2.2e-16\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(mod1)\n```\n\n::: {.cell-output-display}\n![](EjrmploHtml_files/figure-docx/plot modelo 1-1.png)\n:::\n\n::: {.cell-output-display}\n![](EjrmploHtml_files/figure-docx/plot modelo 1-2.png)\n:::\n\n::: {.cell-output-display}\n![](EjrmploHtml_files/figure-docx/plot modelo 1-3.png)\n:::\n\n::: {.cell-output-display}\n![](EjrmploHtml_files/figure-docx/plot modelo 1-4.png)\n:::\n:::\n",
+    "supporting": [
+      "EjrmploHtml_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

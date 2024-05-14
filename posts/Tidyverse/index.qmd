@@ -86,7 +86,7 @@ dplyr::select(df_fil1, -species, -island)
 incluso permite re ordenar y renombrar
 
 ```{r}
-dplyr::select(df_fil1, 
+selec <- dplyr::select(df_fil1, 
               isla=island, 
               aleta=flipper_length_mm, 
               species)
@@ -207,7 +207,7 @@ ggplot(data= df2,
        aes(x=largo_pico, y=peso))+
   geom_point(aes(color=species, shape= species))+
   geom_smooth(aes(color= species),method = "lm", se= T)+
-  theme_void()
+  theme_bw()
 ```
 
 probemos a hacer histogramas
@@ -263,5 +263,5 @@ ggplot(data = df2, aes(x=flipper_length_mm))+
   labs(x= "Largo de la aleta (mm)",
        y= " Frecuencia",
        title = " Histograma de aletas")+
-  facet_grid(~year)
+  facet_grid(~island)
 ```

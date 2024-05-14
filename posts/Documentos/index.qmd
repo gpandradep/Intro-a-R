@@ -7,6 +7,8 @@ date: "2024-05-10"
 
 ## Instalación
 
+![Rladies reunión](Rladies_integrantes.jpg){fig-align="center" width="300"}
+
 Para iniciar, es necesario instalar las siguientes paqueterías:
 
 -   `rmarkdown`
@@ -16,6 +18,8 @@ Para iniciar, es necesario instalar las siguientes paqueterías:
 -   `imager`
 
 -   `knitr`
+
+-   `Tinytex`
 
 Y también instalaremos `Quarto`
 
@@ -52,6 +56,10 @@ F1<- load.image('Slide2.jpg')
 F2<- load.image('Slide3.jpg') 
 plot(F1, axes= F, margin(t = 1, r =0, b = 1, l = 0)) 
 plot(F2, axes = F, margin(t = 1, r =0, b = 1, l = 0))
+
+```
+
+```{r}
 
 ```
 

@@ -1,0 +1,392 @@
+---
+title: "Exploratorios 2024"
+author: "Karen Velásquez-C"
+date: 10-05-2024 
+format:
+  html:
+   message: false
+   warning: false
+   code-fold: false
+   code-tools: true
+   toc: true
+   toc-title: Contenido
+   self-contained: true
+   theme: journal
+page-layout: full
+title-block-banner: true
+lang: en
+---
+
+## Introducción a exploratorios
+
+Para esta clase emplearemos la paquetería `lterdatasampler` la cual tiene como objetivo proporcionar subconjuntos de datos medioambientales útiles para la enseñanza y la formación en ciencia de datos.
+
+### Instalación paquetería
+
+Podemos instalar la paquetería desde CRAN o la versión en desarrollo en GitHub
+
+```{r instalar libreria}
+#install.packages("lterdatasampler", repos = "http://cran.us.r-project.org")
+#remotes::install_github("lter/lterdatasampler")
+```
+
+![](lterdatasampler.jpg){fig-align="center" width="250"}
+
+## Relaciones Univariadas
+
+Emplearemos los datos del cangrejo violinista (*Minuca pugnax*) en marismas de Florida a Massachusetts durante el verano de 2016 en la isla Plum.
+
+```{r librerias}
+library(lterdatasampler)
+library(tidyverse)
+library(ggrepel)
+library(ggridges)
+library(patchwork)
+```
+
+Primero exploraremos la tabla de datos, y observaremos las medias, mínimos, máximos....
+
+mean(crab)
+
+```{r data}
+crab <- pie_crab %>% select(where(is.numeric))
+summary(crab)
+
+```
+
+Podemos centrarnos en una única variable
+
+```{r summary variable}
+summary(crab$size)
+```
+
+## Boxplot
+
+### Boxplot básico
+
+```{r boxplot}
+boxplot(crab$size, range=1.5, ylab="Size")
+```
+
+```{r boxplot 2}
+crab2 <- stack(crab)
+```
+
+```{r boxplot 3}
+
+filter(crab2, ind == "size") %>% #selecciono variable que me importa
+  ggplot(aes(x= ind, y= values))+ # Creo la capa de datos
+  geom_boxplot(outlier.color = "red", #color de outlier
+               fill= "gray")+ # color de la caja
+#  geom_text(aes(label= values), position = position_dodge2(0.3))+
+  labs(title = " Boxplot de tamaño",
+       y= " Valores",
+       x= "")+
+  theme_classic()
+
+
+```
+
+Una buena regla de dedo para identificar datos atípicos es: que los puntos que caen mas allá del 3er+1.5\*(intercuartil) o mas bajo que 1er-1.5\*(intercuartil) son valores atípicos.
+
+#### Ejemplo:
+
+```{r atipicos}
+iqsize <- 17.34-12.02
+atip_inf <-(12.02-(iqsize*1.5))
+atip_inf
+atip_sup <- (17.34+(iqsize*1.5))
+atip_sup
+```
+
+```{r boxplot todos}
+
+boxplot(crab)
+```
+
+```{r todos log}
+
+boxplot(log(crab+1))
+```
+
+En ggplot tenemos que usar la base de datos que tenemos en formato “long”
+
+```{r ggplot todos}
+ ggplot(crab2, aes(x= ind, y= values, fill= ind))+ # Creo la capa de datos
+  geom_boxplot(outlier.color = "red") # color outlier
+#  geom_text(aes(label= values), position = position_dodge2(0.3))+
+  labs(title = " Boxplot de tamaño",
+       y= " Valores",
+       x= "")+
+  theme_classic()#+
+ # theme(legend.position ="none") # leyendas variable
+```
+
+```{r ggplot todos log}
+
+ggplot(crab2, aes(x= ind, y= log(values+1), fill= ind))+ # Creo la capa de datos
+  geom_boxplot(outlier.color = "red", notch = TRUE) # color outlier
+#  geom_text(aes(label= values), position = position_dodge2(0.3))+
+  labs(title = " Boxplot de tamaño",
+       y= " Valores",
+       x= "")+
+  theme_classic()#+
+ # theme(legend.position ="none") # leyendas variable
+
+
+```
+
+```{r violín}
+
+
+ggplot(crab2, aes(x=ind, y= log(values+1), fill=ind))+
+  geom_violin()+ # geometría de violin
+  geom_jitter(aes(col= ind), alpha= 0.6)+
+    labs(title = "Gráfico de violín", 
+         x= "", y= "variables scala log")+
+  theme_minimal()+
+  theme(legend.position = "none") #quitar leyenda de variables
+
+
+```
+
+#### Ahora en conjunto
+
+```{r conjunto}
+
+ggplot(crab2, aes(x=ind, y= log(values+1)))+
+  geom_jitter( aes(color=ind),width = 0.2, alpha= 0.6)+
+  geom_violin(aes(color=ind),
+              scale = "width", 
+              alpha= 0.1, # valor de opacidad
+              size= 0.8)+ # tamaño de la linea
+  geom_boxplot(width = 0.3, alpha= 0.1, size= 0.8,
+               outlier.color = "red",
+               outlier.alpha = 0.9,
+               outlier.size = 2)+
+  labs(title = "Gráfico conjunto", 
+       x= "", y= "Variables scala log")+
+  theme_bw()+
+  theme(legend.position = "none", # quitar leyenda de variables
+       text = element_text(size= 11, face = "bold")) # Ajustar tamaño de texto
+
+
+```
+
+## Dotplots
+
+#### Con base R
+
+```{r dotchart}
+dotchart(crab$size, 
+         ylab = "Order of observations", 
+         xlab = "SO2", 
+         main = "Cleveland dotplot")
+
+```
+
+#### Modo ggplot
+
+```{r dotplots ggplot}
+
+d_plot <-  crab %>% 
+   mutate(index = seq(n())) %>%
+  select_if(is.numeric) %>% 
+  pivot_longer(cols = !index, 
+               names_to = "Variable", 
+               values_to = "Value") %>%
+  ggplot(aes(x= Value, y= index, col= Variable))+
+  geom_point(size= 2, alpha=0.6)+
+  scale_color_viridis_d(option = "mako", 
+                        begin = 0.1,
+                        end = 0.8)+
+  facet_wrap(~Variable, scales = "free")+
+  labs(y= "Order of ovservation")+
+   theme_bw()+
+   theme(legend.position = "none",
+         text = element_text(size=10))
+
+
+```
+
+## Histogramas
+
+```{r histograma 1}
+
+hist(crab$size,lwd=2)
+abline(v = 14.65, col = "blue")
+abline(v = 14.435, col = "red")
+
+
+```
+
+#### Todas las variables juntas (base R)
+
+```{r hist juntos base R}
+
+par(mfrow=c(3,2))
+hist(crab$size,lwd=2); abline(v = c(14.65,14.435), col = c("blue", "red"))
+hist(crab$latitude,lwd=2)
+hist(crab$air_temp,lwd=2)
+hist(crab$air_temp_sd,lwd=2)
+hist(crab$water_temp,lwd=2)
+hist(crab$water_temp_sd,lwd=2)
+
+
+```
+
+#### Modo ggplot
+
+Volvemos a emplear nuestra base `crab2` en modo largo
+
+```{r hist junto ggplot}
+
+ggplot(crab2, aes(x=values, fill= ind))+
+  geom_histogram( bins = 7, color="black")+
+  facet_wrap(.~ind, scales = "free")+ # Crear los paneles por variable
+  theme_bw()+
+  theme(legend.position = "none")+
+  labs(x="", y= " Frequency")
+
+```
+
+## Gráficos de densidad
+
+#### ggplot de una variable
+
+```{r densidad size}
+
+ggplot(crab, aes(x= size))+
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 7,
+                 fill= "gray",
+                 color="black")+
+  geom_density(size=1)+
+  theme_classic()
+
+```
+
+#### ggplot de todas las variables 
+
+```{r densidad ggplot todas}
+
+ggplot(crab2, aes(x=log(values+1), fill= ind))+
+  geom_histogram(aes(y = stat(density), fill= ind), 
+                 bins = 7, color="black")+
+  geom_density(aes(fill= ind),
+               size=1, alpha= 0.5)+
+  facet_wrap(.~ind, scales = "free")+ # Crear los paneles por variable
+  theme_classic()+
+  theme(legend.position = "none")+
+  labs(x="", y= " Frequency")
+
+```
+
+Ahora pondremos las variables a la misma escala y las exploraremos con un gráfico de olas
+
+```{r todas grafico olas}
+
+ggplot(crab2, aes(x= log(values+1), y= ind, fill= ind))+
+  geom_density_ridges()+
+  theme_ridges() + 
+  theme(legend.position = "none")
+
+```
+
+## QQ-plots
+
+Primero con plot base
+
+```{r qqplot size base}
+qqnorm(crab$size, main="Q-Q plot Size")
+qqline(crab$size, col = 2, lty = 2)
+
+```
+
+#### modo ggplot para QQplot
+
+```{r qqplot ggplot}
+
+ggplot(crab, aes(sample=size))+
+  stat_qq()+
+  stat_qq_line(linetype= "dashed")+
+    labs(title = "Q-Q plot", 
+       x= "Theoretical Quantiles", 
+       y= "Education sample cuantiles")+
+  theme_bw()
+
+```
+
+## Relaciones Bivariadas
+
+Veamos que relación hay entre las distintas variables. Aquí utilizo una función smoooth (regresión con pesos locales) que permite sugerir con los propios datos que tipo de relación pudieran tener.
+
+```{r panel bivariado}
+pairs(crab, panel=panel.smooth)
+
+```
+
+Veamos la relación entre el tamaño de los cangrejos y la latitud
+
+```{r bivariado size latitud}
+ggplot(data = pie_crab, aes(y = latitude, x = water_temp)) +
+  geom_point()
+```
+
+En general, la temperatura del agua dentro del área de estudio disminuye hacia latitudes más bajas.
+
+```{r summarise por grupo}
+crab_stats <- pie_crab %>% group_by(latitude, site) %>% 
+  summarise(
+  n = n(), 
+  mean_mm = mean(size),
+  min_mm = min(size),
+  max_mm = max(size),
+  sd_mm = sd(size),
+  median_mm = median(size)
+  ) 
+```
+
+```{r}
+crab_stats
+```
+
+Aquí, creamos un boxplot del tamaño del caparazón del cangrejo (mm) por latitud. En general, el tamaño de los cangrejos aumenta hacia latitudes más altas, siguiendo la regla de Bergmann.
+
+```{r}
+pie_crab %>%
+  ggplot(aes(y=latitude)) +
+  geom_boxplot(aes(size, group = latitude, color=-latitude), outlier.size=0.8) +
+  geom_text(data = crab_stats,
+            aes(label = (paste('n =', n)), 
+                group = latitude, 
+                color = -latitude, 
+                x= max_mm + 0.2, 
+                y= latitude + 0.15), 
+            size=3.5) +
+  scale_x_continuous(breaks = seq(from = 7, to = 23, by = 2), limits = c(6.5,24))+
+  scale_y_continuous(breaks = seq(from = 29, to = 43, by = 2), limits = c(29, 43.5)) +
+  theme(legend.position= "none") 
+```
+
+```{r}
+crab_summary <- pie_crab %>% group_by(site, latitude) %>%
+  summarise(
+    mean_size = mean(size)
+    ) %>% ungroup()
+```
+
+A continuación se muestra otro gráfico del tamaño del caparazón (mm) según la latitud del lugar, con los tamaños medios registrados para cada lugar mostrados como puntos morados (todas las observaciones incluidas como puntos gris claro), lo que revela una relación aproximadamente lineal entre el tamaño medio del caparazón y la latitud.
+
+```{r}
+ggplot(data = crab_summary, aes(y = latitude, x = mean_size)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color="black") +
+  geom_point(color = "purple", size=3) +
+  geom_point(aes(x = size, y = latitude), data = pie_crab, color = "gray", alpha = 0.5) +
+  geom_text(aes(label = site), nudge_x = 0.3, nudge_y = 0.3, size=3) +
+  labs(y = "Latitude", 
+       x = "Mean carapace width (mm)",
+       title = "Mean carapace width of male fiddler crabs by latitude") +
+  theme_minimal()
+```

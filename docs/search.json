@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introducción a R y RStudio",
     "section": "",
-    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\n\n\nMy Document\n\n\n\n\n\n\n\nTarea 8 (Imaginaria)\n\n\n\n\n\nNo hay resultados"
+    "text": "Bienvendos 🤓\nHola a todos. En esta página encontrarán los scripts de introducción al R y RStudio.\n\n\n\n\n\nNota: Si vienes del curso de Introducción a estadística del Instituto de Ecología A.C., puedes regresar a la página del curso con este link [r icons::fontawesome(\"link\")]\n\n\nTalleres 👨‍💻👩‍💻\n\n\n\n\n\n\n\n\n\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n\n1. Instalar R y RStudio\n\n\n\n\n\n\n\n2. ¿Qué son R y Rstudio?\n\n\n\n\n\n\n\n3. Objetos, operadores y funciones\n\n\n\n\n\n\n\n4. Vectores, Matrices, listas y dataframes\n\n\n\n\n\n\n\n5. Carga tus datos a R\n\n\n\n\n\n\n\n6. Gráficos básicos en R\n\n\n\n\n\n\n\n7. Errores en R y donde solucionarlos\n\n\n\n\n\n\n\n8. Modo tidyverse\n\n\n\n\n\n\n\n9. Documentos desde R\n\n\n\n\n\n\n\nExploratorios 2024\n\n\n\n\n\n\n\nIntroducción a R\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -382,14 +382,14 @@
     "href": "posts/Documentos/index.html",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\n\nY también instalaremos Quarto"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\nTinytex\n\nY también instalaremos Quarto"
   },
   {
     "objectID": "posts/Documentos/index.html#instalación",
     "href": "posts/Documentos/index.html#instalación",
     "title": "9. Documentos desde R",
     "section": "",
-    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\n\nY también instalaremos Quarto"
+    "text": "Para iniciar, es necesario instalar las siguientes paqueterías:\n\nrmarkdown\nprettydoc\nimager\nknitr\nTinytex\n\nY también instalaremos Quarto"
   },
   {
     "objectID": "posts/Documentos/index.html#introducción",
@@ -459,6 +459,83 @@
     "href": "posts/Documentos/Ejemplo.html",
     "title": "My Document",
     "section": "",
-    "text": "Hola mi nombre es Karen"
+    "text": "Hola mi nombre es Karen\nKarencita"
+  },
+  {
+    "objectID": "posts/Documentos/EjrmploHtml.html",
+    "href": "posts/Documentos/EjrmploHtml.html",
+    "title": "Ejemplo HTML",
+    "section": "",
+    "text": "Vamos a revisar la relación entre la longitud del pico y la masa corporal de los pingüinos de las especies XX.\nPrimero cargamos los datos:\n\nlibrary(palmerpenguins)\ndf &lt;- as.data.frame(penguins)\n\nPrimer modelo\n\nmod1 &lt;- lm(bill_length_mm ~ body_mass_g, df)\nsummary(mod1)\n\n\nCall:\nlm(formula = bill_length_mm ~ body_mass_g, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.1251  -3.0434  -0.8089   2.0711  16.1109 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 2.690e+01  1.269e+00   21.19   &lt;2e-16 ***\nbody_mass_g 4.051e-03  2.967e-04   13.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.394 on 340 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.3542,    Adjusted R-squared:  0.3523 \nF-statistic: 186.4 on 1 and 340 DF,  p-value: &lt; 2.2e-16\n\n\n\nplot(mod1)"
+  },
+  {
+    "objectID": "posts/Documentos/EjrmploHtml.html#ejemplo-islas-palmer",
+    "href": "posts/Documentos/EjrmploHtml.html#ejemplo-islas-palmer",
+    "title": "Ejemplo HTML",
+    "section": "",
+    "text": "Vamos a revisar la relación entre la longitud del pico y la masa corporal de los pingüinos de las especies XX.\nPrimero cargamos los datos:\n\nlibrary(palmerpenguins)\ndf &lt;- as.data.frame(penguins)\n\nPrimer modelo\n\nmod1 &lt;- lm(bill_length_mm ~ body_mass_g, df)\nsummary(mod1)\n\n\nCall:\nlm(formula = bill_length_mm ~ body_mass_g, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.1251  -3.0434  -0.8089   2.0711  16.1109 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 2.690e+01  1.269e+00   21.19   &lt;2e-16 ***\nbody_mass_g 4.051e-03  2.967e-04   13.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.394 on 340 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.3542,    Adjusted R-squared:  0.3523 \nF-statistic: 186.4 on 1 and 340 DF,  p-value: &lt; 2.2e-16\n\n\n\nplot(mod1)"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html",
+    "href": "posts/Exploratorios/Exploratorios2024.html",
+    "title": "Exploratorios 2024",
+    "section": "",
+    "text": "Para esta clase emplearemos la paquetería lterdatasampler la cual tiene como objetivo proporcionar subconjuntos de datos medioambientales útiles para la enseñanza y la formación en ciencia de datos.\n\n\nPodemos instalar la paquetería desde CRAN o la versión en desarrollo en GitHub\n\n#install.packages(\"lterdatasampler\", repos = \"http://cran.us.r-project.org\")\n#remotes::install_github(\"lter/lterdatasampler\")"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#introducción-a-exploratorios",
+    "href": "posts/Exploratorios/Exploratorios2024.html#introducción-a-exploratorios",
+    "title": "Exploratorios 2024",
+    "section": "",
+    "text": "Para esta clase emplearemos la paquetería lterdatasampler la cual tiene como objetivo proporcionar subconjuntos de datos medioambientales útiles para la enseñanza y la formación en ciencia de datos.\n\n\nPodemos instalar la paquetería desde CRAN o la versión en desarrollo en GitHub\n\n#install.packages(\"lterdatasampler\", repos = \"http://cran.us.r-project.org\")\n#remotes::install_github(\"lter/lterdatasampler\")"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#relaciones-univariadas",
+    "href": "posts/Exploratorios/Exploratorios2024.html#relaciones-univariadas",
+    "title": "Exploratorios 2024",
+    "section": "Relaciones Univariadas",
+    "text": "Relaciones Univariadas\nEmplearemos los datos del cangrejo violinista (Minuca pugnax) en marismas de Florida a Massachusetts durante el verano de 2016 en la isla Plum.\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\nlibrary(ggrepel)\nlibrary(ggridges)\nlibrary(patchwork)\n\nPrimero exploraremos la tabla de datos, y observaremos las medias, mínimos, máximos….\nmean(crab)\n\ncrab &lt;- pie_crab %&gt;% select(where(is.numeric))\nsummary(crab)\n\n    latitude          size          air_temp      air_temp_sd   \n Min.   :30.00   Min.   : 6.64   Min.   :10.29   Min.   :6.391  \n 1st Qu.:34.00   1st Qu.:12.02   1st Qu.:12.05   1st Qu.:8.110  \n Median :39.10   Median :14.44   Median :13.93   Median :8.410  \n Mean   :37.69   Mean   :14.66   Mean   :15.20   Mean   :8.654  \n 3rd Qu.:41.60   3rd Qu.:17.34   3rd Qu.:18.63   3rd Qu.:9.483  \n Max.   :42.70   Max.   :23.43   Max.   :21.79   Max.   :9.965  \n   water_temp    water_temp_sd  \n Min.   :13.98   Min.   :4.838  \n 1st Qu.:14.33   1st Qu.:6.567  \n Median :17.50   Median :6.998  \n Mean   :17.65   Mean   :7.252  \n 3rd Qu.:20.54   3rd Qu.:7.865  \n Max.   :24.50   Max.   :9.121  \n\n\nPodemos centrarnos en una única variable\n\nsummary(crab$size)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   6.64   12.02   14.44   14.66   17.34   23.43"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#boxplot",
+    "href": "posts/Exploratorios/Exploratorios2024.html#boxplot",
+    "title": "Exploratorios 2024",
+    "section": "Boxplot",
+    "text": "Boxplot\n\nBoxplot básico\n\nboxplot(crab$size, range=1.5, ylab=\"Size\")\n\n\n\n\n\n\n\n\n\ncrab2 &lt;- stack(crab)\n\n\nfilter(crab2, ind == \"size\") %&gt;% #selecciono variable que me importa\n  ggplot(aes(x= ind, y= values))+ # Creo la capa de datos\n  geom_boxplot(outlier.color = \"red\", #color de outlier\n               fill= \"gray\")+ # color de la caja\n#  geom_text(aes(label= values), position = position_dodge2(0.3))+\n  labs(title = \" Boxplot de tamaño\",\n       y= \" Valores\",\n       x= \"\")+\n  theme_classic()\n\n\n\n\n\n\n\n\nUna buena regla de dedo para identificar datos atípicos es: que los puntos que caen mas allá del 3er+1.5*(intercuartil) o mas bajo que 1er-1.5*(intercuartil) son valores atípicos.\n\nEjemplo:\n\niqsize &lt;- 17.34-12.02\natip_inf &lt;-(12.02-(iqsize*1.5))\natip_inf\n\n[1] 4.04\n\natip_sup &lt;- (17.34+(iqsize*1.5))\natip_sup\n\n[1] 25.32\n\n\n\nboxplot(crab)\n\n\n\n\n\n\n\n\n\nboxplot(log(crab+1))\n\n\n\n\n\n\n\n\nEn ggplot tenemos que usar la base de datos que tenemos en formato “long”\n\n ggplot(crab2, aes(x= ind, y= values, fill= ind))+ # Creo la capa de datos\n  geom_boxplot(outlier.color = \"red\") # color outlier\n\n\n\n\n\n\n\n#  geom_text(aes(label= values), position = position_dodge2(0.3))+\n  labs(title = \" Boxplot de tamaño\",\n       y= \" Valores\",\n       x= \"\")+\n  theme_classic()#+\n\nNULL\n\n # theme(legend.position =\"none\") # leyendas variable\n\n\nggplot(crab2, aes(x= ind, y= log(values+1), fill= ind))+ # Creo la capa de datos\n  geom_boxplot(outlier.color = \"red\", notch = TRUE) # color outlier\n\n\n\n\n\n\n\n#  geom_text(aes(label= values), position = position_dodge2(0.3))+\n  labs(title = \" Boxplot de tamaño\",\n       y= \" Valores\",\n       x= \"\")+\n  theme_classic()#+\n\nNULL\n\n # theme(legend.position =\"none\") # leyendas variable\n\n\nggplot(crab2, aes(x=ind, y= log(values+1), fill=ind))+\n  geom_violin()+ # geometría de violin\n  geom_jitter(aes(col= ind), alpha= 0.6)+\n    labs(title = \"Gráfico de violín\", \n         x= \"\", y= \"variables scala log\")+\n  theme_minimal()+\n  theme(legend.position = \"none\") #quitar leyenda de variables\n\n\n\n\n\n\n\n\n\n\nAhora en conjunto\n\nggplot(crab2, aes(x=ind, y= log(values+1)))+\n  geom_jitter( aes(color=ind),width = 0.2, alpha= 0.6)+\n  geom_violin(aes(color=ind),\n              scale = \"width\", \n              alpha= 0.1, # valor de opacidad\n              size= 0.8)+ # tamaño de la linea\n  geom_boxplot(width = 0.3, alpha= 0.1, size= 0.8,\n               outlier.color = \"red\",\n               outlier.alpha = 0.9,\n               outlier.size = 2)+\n  labs(title = \"Gráfico conjunto\", \n       x= \"\", y= \"Variables scala log\")+\n  theme_bw()+\n  theme(legend.position = \"none\", # quitar leyenda de variables\n       text = element_text(size= 11, face = \"bold\")) # Ajustar tamaño de texto"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#dotplots",
+    "href": "posts/Exploratorios/Exploratorios2024.html#dotplots",
+    "title": "Exploratorios 2024",
+    "section": "Dotplots",
+    "text": "Dotplots\n\nCon base R\n\ndotchart(crab$size, \n         ylab = \"Order of observations\", \n         xlab = \"SO2\", \n         main = \"Cleveland dotplot\")\n\n\n\n\n\n\n\n\n\n\nModo ggplot\n\nd_plot &lt;-  crab %&gt;% \n   mutate(index = seq(n())) %&gt;%\n  select_if(is.numeric) %&gt;% \n  pivot_longer(cols = !index, \n               names_to = \"Variable\", \n               values_to = \"Value\") %&gt;%\n  ggplot(aes(x= Value, y= index, col= Variable))+\n  geom_point(size= 2, alpha=0.6)+\n  scale_color_viridis_d(option = \"mako\", \n                        begin = 0.1,\n                        end = 0.8)+\n  facet_wrap(~Variable, scales = \"free\")+\n  labs(y= \"Order of ovservation\")+\n   theme_bw()+\n   theme(legend.position = \"none\",\n         text = element_text(size=10))"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#histogramas",
+    "href": "posts/Exploratorios/Exploratorios2024.html#histogramas",
+    "title": "Exploratorios 2024",
+    "section": "Histogramas",
+    "text": "Histogramas\n\nhist(crab$size,lwd=2)\nabline(v = 14.65, col = \"blue\")\nabline(v = 14.435, col = \"red\")\n\n\n\n\n\n\n\n\n\nTodas las variables juntas (base R)\n\npar(mfrow=c(3,2))\nhist(crab$size,lwd=2); abline(v = c(14.65,14.435), col = c(\"blue\", \"red\"))\nhist(crab$latitude,lwd=2)\nhist(crab$air_temp,lwd=2)\nhist(crab$air_temp_sd,lwd=2)\nhist(crab$water_temp,lwd=2)\nhist(crab$water_temp_sd,lwd=2)\n\n\n\n\n\n\n\n\n\n\nModo ggplot\nVolvemos a emplear nuestra base crab2 en modo largo\n\nggplot(crab2, aes(x=values, fill= ind))+\n  geom_histogram( bins = 7, color=\"black\")+\n  facet_wrap(.~ind, scales = \"free\")+ # Crear los paneles por variable\n  theme_bw()+\n  theme(legend.position = \"none\")+\n  labs(x=\"\", y= \" Frequency\")"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#gráficos-de-densidad",
+    "href": "posts/Exploratorios/Exploratorios2024.html#gráficos-de-densidad",
+    "title": "Exploratorios 2024",
+    "section": "Gráficos de densidad",
+    "text": "Gráficos de densidad\n\nggplot de una variable\n\nggplot(crab, aes(x= size))+\n  geom_histogram(aes(y = stat(density)), \n                 bins = 7,\n                 fill= \"gray\",\n                 color=\"black\")+\n  geom_density(size=1)+\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nggplot de todas las variables\n\nggplot(crab2, aes(x=log(values+1), fill= ind))+\n  geom_histogram(aes(y = stat(density), fill= ind), \n                 bins = 7, color=\"black\")+\n  geom_density(aes(fill= ind),\n               size=1, alpha= 0.5)+\n  facet_wrap(.~ind, scales = \"free\")+ # Crear los paneles por variable\n  theme_classic()+\n  theme(legend.position = \"none\")+\n  labs(x=\"\", y= \" Frequency\")\n\n\n\n\n\n\n\n\nAhora pondremos las variables a la misma escala y las exploraremos con un gráfico de olas\n\nggplot(crab2, aes(x= log(values+1), y= ind, fill= ind))+\n  geom_density_ridges()+\n  theme_ridges() + \n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#qq-plots",
+    "href": "posts/Exploratorios/Exploratorios2024.html#qq-plots",
+    "title": "Exploratorios 2024",
+    "section": "QQ-plots",
+    "text": "QQ-plots\nPrimero con plot base\n\nqqnorm(crab$size, main=\"Q-Q plot Size\")\nqqline(crab$size, col = 2, lty = 2)\n\n\n\n\n\n\n\n\n\nmodo ggplot para QQplot\n\nggplot(crab, aes(sample=size))+\n  stat_qq()+\n  stat_qq_line(linetype= \"dashed\")+\n    labs(title = \"Q-Q plot\", \n       x= \"Theoretical Quantiles\", \n       y= \"Education sample cuantiles\")+\n  theme_bw()"
+  },
+  {
+    "objectID": "posts/Exploratorios/Exploratorios2024.html#relaciones-bivariadas",
+    "href": "posts/Exploratorios/Exploratorios2024.html#relaciones-bivariadas",
+    "title": "Exploratorios 2024",
+    "section": "Relaciones Bivariadas",
+    "text": "Relaciones Bivariadas\nVeamos que relación hay entre las distintas variables. Aquí utilizo una función smoooth (regresión con pesos locales) que permite sugerir con los propios datos que tipo de relación pudieran tener.\n\npairs(crab, panel=panel.smooth)\n\n\n\n\n\n\n\n\nVeamos la relación entre el tamaño de los cangrejos y la latitud\n\nggplot(data = pie_crab, aes(y = latitude, x = water_temp)) +\n  geom_point()\n\n\n\n\n\n\n\n\nEn general, la temperatura del agua dentro del área de estudio disminuye hacia latitudes más bajas.\n\ncrab_stats &lt;- pie_crab %&gt;% group_by(latitude, site) %&gt;% \n  summarise(\n  n = n(), \n  mean_mm = mean(size),\n  min_mm = min(size),\n  max_mm = max(size),\n  sd_mm = sd(size),\n  median_mm = median(size)\n  ) \n\n\ncrab_stats\n\n# A tibble: 13 × 8\n# Groups:   latitude [13]\n   latitude site      n mean_mm min_mm max_mm sd_mm median_mm\n      &lt;dbl&gt; &lt;chr&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n 1     30   GTM      28   12.4    7.55   14.9  1.80     12.6 \n 2     31.4 SI       30    9.85   6.64   13.6  1.79      9.55\n 3     33.3 NIB      30   13.3    8.52   17.3  2.42     13.3 \n 4     34   ZI       35   12.1    8.05   15.7  2.01     12.0 \n 5     34.7 RC       25   12.5    9.4    17.6  2.34     12.1 \n 6     37.2 VCR      30   16.3   11.7    21.4  2.94     16.0 \n 7     39.1 DB       30   15.6   11.5    20.4  2.12     15.1 \n 8     39.6 JC       30   15.3    9.58   20.9  2.72     15.4 \n 9     41.3 CT       33   14.7   11.0    19.5  2.36     15.5 \n10     41.6 NB       29   17.1   13.2    21.9  2.29     17.2 \n11     41.9 CC       27   16.8   10.6    19.8  2.05     16.7 \n12     42.2 BC       37   16.2    9.01   23.4  4.81     17.3 \n13     42.7 PIE      28   18.5    9.92   22.1  2.30     18.4 \n\n\nAquí, creamos un boxplot del tamaño del caparazón del cangrejo (mm) por latitud. En general, el tamaño de los cangrejos aumenta hacia latitudes más altas, siguiendo la regla de Bergmann.\n\npie_crab %&gt;%\n  ggplot(aes(y=latitude)) +\n  geom_boxplot(aes(size, group = latitude, color=-latitude), outlier.size=0.8) +\n  geom_text(data = crab_stats,\n            aes(label = (paste('n =', n)), \n                group = latitude, \n                color = -latitude, \n                x= max_mm + 0.2, \n                y= latitude + 0.15), \n            size=3.5) +\n  scale_x_continuous(breaks = seq(from = 7, to = 23, by = 2), limits = c(6.5,24))+\n  scale_y_continuous(breaks = seq(from = 29, to = 43, by = 2), limits = c(29, 43.5)) +\n  theme(legend.position= \"none\") \n\n\n\n\n\n\n\n\n\ncrab_summary &lt;- pie_crab %&gt;% group_by(site, latitude) %&gt;%\n  summarise(\n    mean_size = mean(size)\n    ) %&gt;% ungroup()\n\nA continuación se muestra otro gráfico del tamaño del caparazón (mm) según la latitud del lugar, con los tamaños medios registrados para cada lugar mostrados como puntos morados (todas las observaciones incluidas como puntos gris claro), lo que revela una relación aproximadamente lineal entre el tamaño medio del caparazón y la latitud.\n\nggplot(data = crab_summary, aes(y = latitude, x = mean_size)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE, color=\"black\") +\n  geom_point(color = \"purple\", size=3) +\n  geom_point(aes(x = size, y = latitude), data = pie_crab, color = \"gray\", alpha = 0.5) +\n  geom_text(aes(label = site), nudge_x = 0.3, nudge_y = 0.3, size=3) +\n  labs(y = \"Latitude\", \n       x = \"Mean carapace width (mm)\",\n       title = \"Mean carapace width of male fiddler crabs by latitude\") +\n  theme_minimal()"
   }
 ]
